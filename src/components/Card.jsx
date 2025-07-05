@@ -1,13 +1,15 @@
 import { AiOutlineHeart, AiOutlineEye } from 'react-icons/ai';
 
-function Card({name, price, discountedPrice, image, rating, ratingCount, onLove, onView }) {
+function Card({name, price, discountedPrice, image, rating, ratingCount, onLove, onView,hidePercentageOff }) {
     const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
 
   return (
     <div className="bg-white rounded-lg shadow-md relative md:w-full md:mx-0">
-       <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
-       - {percentageOff}% 
-      </div>  
+      {!hidePercentageOff && (
+        <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+          - {percentageOff}%
+        </div>
+      )}
       <div className="absolute  right-2 top-20 grid gap-4">
         <button onClick={onLove} aria-label="Add to wishlist">
           <AiOutlineHeart className="text-gray-500 hover:text-red-600 bg-white rounded-full p-1" size={22} />
