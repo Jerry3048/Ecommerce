@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+button{
+    cursor: pointer;
+}
+
+Nav a.active{
+    text-decoration: none;
+    font-weight: bold;
+}
+.scroll-container {
+  overflow-x: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}

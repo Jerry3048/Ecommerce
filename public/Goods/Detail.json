@@ -1,0 +1,162 @@
+[
+  {
+    "name": "iPhone 14 Series",
+    "description": "Up to 10% off Voucher",
+    "price": 900000,
+    "discountedPrice": 850000,
+    "image": "/assets/productimage/Iphone14.png",
+    "rating": 4,
+    "ratingCount": 120,
+    "category": "electronics"
+  },
+  {
+    "name": "Samsung Galaxy S23",
+    "description": "Save ₦30,000 on purchase",
+    "price": 800000,
+    "discountedPrice": 770000,
+    "image": "https://example.com/s23.jpg",
+    "rating": 5,
+    "ratingCount": 98,
+    "category": "electronics"
+  },
+  {
+    "name": "Pixel 19 Pro",
+    "description": "Special deal for first 100 buyers",
+    "price": 700000,
+    "discountedPrice": 670000,
+    "image": "https://example.com/pixel19.jpg",
+    "rating": 3,
+    "ratingCount": 45,
+    "category": "electronics"
+  },
+  {
+    "name": "Huawei Pura 80 Series",
+    "description": "₦5,000 cashback available",
+    "price": 600000,
+    "discountedPrice": 580000,
+    "image": "https://example.com/huawei.jpg",
+    "rating": 4,
+    "ratingCount": 60,
+    "category": "electronics"
+  },
+  {
+    "name": "Xiaomi 15 Series",
+    "description": "Free shipping on all orders",
+    "price": 500000,
+    "discountedPrice": 480000,
+    "image": "https://example.com/xiaomi15.jpg",
+    "rating": 4,
+    "ratingCount": 80,
+    "category": "electronics"
+  },
+  {
+    "name": "OnePlus 11",
+    "description": "Limited time offer: Free case",
+    "price": 550000,
+    "discountedPrice": 530000,
+    "image": "https://example.com/oneplus11.jpg",
+    "rating": 5,
+    "ratingCount": 70,
+    "category": "electronics"
+  },
+  {
+    "name": "Oppo Find X5",
+    "description": "Buy 1 Get 1 50% Off",
+    "price": 480000,
+    "discountedPrice": 460000,
+    "image": "https://example.com/oppo.jpg",
+    "rating": 3,
+    "ratingCount": 40,
+    "category": "electronics"
+  },
+  {
+    "name": "Vivo X80",
+    "description": "Extra warranty included",
+    "price": 470000,
+    "discountedPrice": 450000,
+    "image": "https://example.com/vivo.jpg",
+    "rating": 4,
+    "ratingCount": 55,
+    "category": "electronics"
+  },
+  {
+    "name": "Realme GT 2",
+    "description": "Special student discount",
+    "price": 420000,
+    "discountedPrice": 400000,
+    "image": "https://example.com/realme.jpg",
+    "rating": 4,
+    "ratingCount": 30,
+    "category": "electronics"
+  },
+  {
+    "name": "Tecno Phantom X2",
+    "description": "Free screen protector",
+    "price": 390000,
+    "discountedPrice": 370000,
+    "image": "https://example.com/tecno.jpg",
+    "rating": 3,
+    "ratingCount": 25,
+    "category": "electronics"
+  },
+  {
+    "name": "Paracetamol",
+    "description": "Effective pain relief",
+    "price": 2000,
+    "discountedPrice": 1800,
+    "image": "https://example.com/paracetamol.jpg",
+    "rating": 5,
+    "ratingCount": 200,
+    "category": "medicine"
+  },
+  {
+    "name": "Women's Summer Dress",
+    "description": "Light and comfortable for summer",
+    "price": 15000,
+    "discountedPrice": 12000,
+    "image": "https://example.com/women-dress.jpg",
+    "rating": 4,
+    "ratingCount": 85,
+    "category": "womenFashion"
+  },
+  {
+    "name": "Men's Classic Shirt",
+    "description": "Perfect for office and casual wear",
+    "price": 10000,
+    "discountedPrice": 8000,
+    "image": "https://example.com/men-shirt.jpg",
+    "rating": 4,
+    "ratingCount": 60,
+    "category": "menFashion"
+  },
+  {
+    "name": "Yoga Mat",
+    "description": "Non-slip and durable",
+    "price": 5000,
+    "discountedPrice": 4000,
+    "image": "https://example.com/yogamat.jpg",
+    "rating": 5,
+    "ratingCount": 150,
+    "category": "sportOutdoor"
+  },
+  {
+    "name": "Baby Stroller",
+    "description": "Safe and comfortable for babies",
+    "price": 35000,
+    "discountedPrice": 32000,
+    "image": "https://example.com/babystroller.jpg",
+    "rating": 4,
+    "ratingCount": 40,
+    "category": "babiesToys"
+  },
+  {
+  "name": "Toddler Car Seat",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 45000,
+  "discountedPrice": 42000,
+  "image": "/assets/phoneinfo/Iphone14.png",
+  "rating": 5,
+  "ratingCount": 65,
+  "category": "babiesToys"
+}
+]
