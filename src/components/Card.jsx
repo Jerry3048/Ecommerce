@@ -4,21 +4,21 @@ function Card({name, price, discountedPrice, image, rating, ratingCount, onLove,
     const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
 
   return (
-    <div className="bg-white rounded-lg shadow-md relative md:w-full md:mx-0">
+    <div className=" rounded-lg shadow-md relative md:w-full md:mx-0 ">
       {!hidePercentageOff && (
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
           - {percentageOff}%
         </div>
       )}
-      <div className="absolute  right-2 top-20 grid gap-4">
+      <div className="absolute  right-1 top-5 grid gap-1">
         <button onClick={onLove} aria-label="Add to wishlist">
-          <AiOutlineHeart className="text-gray-500 hover:text-red-600 bg-white rounded-full p-1" size={22} />
+          <AiOutlineHeart className="text-black hover:text-red-600 bg-white rounded-full p-1" size={24} />
         </button>
         <button onClick={onView} aria-label="View again">
-          <AiOutlineEye className="text-gray-500 hover:text-blue-500 bg-white rounded-full p-1" size={22} />
+          <AiOutlineEye className="text-black hover:text-blue-500 bg-white rounded-full p-1" size={24} />
         </button>
       </div>
-      <img src={image} alt={name} className="w-full h-40 object-cover rounded" />
+      <div className='bg-gray-300'><img src={image} alt={name} className=" h-40 object-cover rounded mx-auto w-full p-7" /></div>
       <div className='w-[80%] mx-auto'>
           <h3 className="mt-2 text-lg font-semibold">{name}</h3>
           <div className="flex items-center mt-1">
@@ -31,7 +31,7 @@ function Card({name, price, discountedPrice, image, rating, ratingCount, onLove,
           </div>
           <div className="flex items-center mt-2">
             {[...Array(5)].map((_, i) => (
-              <span key={i} className={i < rating ? "text-yellow-400" : "text-gray-300"}>
+              <span key={i} className={i < rating ? "text-yellow-600" : "text-gray-400"}>
                 ★
               </span>
             ))}

@@ -27,6 +27,13 @@ function Timer({duration}) {
   const [showAllMonth,setShowAllMonth] = useState(false);
 
 
+  //  const [ProductBatch, setProductBatch] = useState([]);
+   const [showAllProduct,setShowAllProduct] = useState(false);
+   const [ProductDetails, setProductDetails] = useState([]);
+  const [ProductCurrentBatch, setProductCurrentBatch] = useState([]);
+  const [ProductBatchIndex, setProductBatchIndex] = useState(0)
+
+
   const [Error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -87,6 +94,11 @@ function Timer({duration}) {
         const batches3 = getBatches(shuffled3, 1);
         setMonthSingleBatch(batches3[0] || []);
 
+        const shuffled4 = shuffleArray(res.data);
+        const batches4 = getBatches(shuffled4, 8);
+        setProductDetails(batches4);
+        setProductCurrentBatch(batches4[0] || []);
+
 
         setAllItems(res.data);
       })
@@ -102,6 +114,8 @@ function Timer({duration}) {
   }, [time]);
 
 
+
+  // flash sales
   useEffect(() => {
   if (!showAllFlash) {
     const interval = setInterval(() => {
@@ -111,14 +125,15 @@ function Timer({duration}) {
           scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
           scrollRef.current.scrollWidth
         ) {
+          // Just reset scrollLeft to 0, do NOT change the batch
           scrollRef.current.scrollLeft = 0;
         }
       }
-    }, 30); // Speed of scroll
-
+    }, 20);
     return () => clearInterval(interval);
   }
 }, [flashCurrentBatch, showAllFlash]);
+
 
   const handleFlashNext = () => {
     const nextIndex = (flashBatchIndex + 1) % flashDetails.length;
@@ -131,6 +146,21 @@ function Timer({duration}) {
     setFlashBatchIndex(prevIndex);
     setFlashCurrentBatch(flashDetails[prevIndex]);
   };
+
+
+   // product
+  const handleProductNext = () => {
+    const nextIndex = (ProductBatchIndex + 1) % ProductDetails.length;
+    setProductBatchIndex(nextIndex);
+    setProductCurrentBatch(ProductDetails[nextIndex]);
+  };
+
+  const handleProductPrev = () => {
+    const prevIndex = (ProductBatchIndex - 1 + ProductDetails.length) % ProductDetails.length;
+    setProductBatchIndex(prevIndex);
+    setProductCurrentBatch(ProductDetails[prevIndex]);
+  };
+
 
   // Categories
   useEffect(() => {
@@ -160,7 +190,6 @@ function Timer({duration}) {
   };
 
 
-
    return (
     <div className="space-y-10">
 
@@ -175,7 +204,7 @@ function Timer({duration}) {
             <div className="font-semibold text-3xl flex gap-4 items-end">
               <p className="mr-8">Flash Sales</p>
               <div className="flex flex-col items-center">
-                <span className="text-xs">Days</span>
+                <span className="text-[11px]">Days</span>
                 <span>{timeParts.days}</span>
               </div>
               <span className="text-orange-500 text-3xl mx-1">:</span>
@@ -219,9 +248,13 @@ function Timer({duration}) {
               ))}
             </div>
           ) : (
-            <div ref={scrollRef} className="flex overflow-x-auto gap-4 py-4 px-2 scroll-container">
+            <div
+            ref={scrollRef}
+           className="flex overflow-x-auto gap-4 py-4 px-2 scroll-container no-scrollbar"
+           style={{ whiteSpace: "nowrap", scrollBehavior: "auto", scrollSnapType: "x mandatory" }}
+>
               {flashCurrentBatch.map((item, idx) => (
-                <div key={idx} className="flex-shrink-0 w-[260px]">
+                <div key={idx} className="flex-shrink-0 w-[260px] inline-block">
                   <Card {...item} />
                 </div>
               ))}
@@ -330,31 +363,37 @@ function Timer({duration}) {
                 </div>
               )}
 
-              <div className="border-b-1 border-gray-300 mb-10"></div>
+              {/* category of 1 */}
+               <div className= "w-full mb-5 mt-20 bg-black text-white flex justify-between">
 
-               <div className= "w-full mb-5 bg-black  text-red-600 flex justify-between">
-
-                    <div className="font-semibold text-3xl flex gap-4 items-end mb-10 ml-10">
+                    <div className="font-semibold grid m-10 mr-0 space-y-5">
+                        <p className="text-green-400">Category</p>
+                        <p className="text-5xl ">
+                          Enhance Your Music Experience 
+                        </p>
                     
-                      <div className="flex flex-col items-center gap-4">
-                        <span className="text-xs">Days</span>
-                        <span className="bg-white rounded-full w-20 h-20 items-center flex justify-center">{timeParts.days}</span>
-                      </div>
-        
-                      <div className="flex flex-col items-center  gap-4">
-                        <span className="text-xs">Hours</span>
-                        <span className="bg-white rounded-full w-20 h-20 items-center flex justify-center">{timeParts.hours}</span>
-                      </div>
-          
-                      <div className="flex flex-col items-center  gap-4">
-                        <span className="text-xs">Minutes</span>
-                        <span className="bg-white rounded-full w-20 h-20 items-center flex justify-center">{timeParts.minutes}</span>
-                      </div>
-          
-                      <div className="flex flex-col items-center  gap-4">
-                        <span className="text-xs">Seconds</span>
-                        <span className="bg-white rounded-full w-20 h-20 items-center flex justify-center">{timeParts.seconds}</span>
-                      </div>
+                        <div className="font-semibold text-2xl text-black flex gap-4 items-end mb-10">
+                            <div className="flex-col bg-white rounded-full w-15 h-15 items-center flex justify-center">
+                              <span>{timeParts.days}</span>
+                              <span className="text-[11px]">Days</span>
+                            </div>
+              
+                            <div className="flex-col bg-white rounded-full w-15 h-15 items-center flex justify-center">
+                              <span>{timeParts.hours}</span>
+                              <span className="text-[11px]">Hours</span>
+                            </div>
+                
+                            <div className="flex-col bg-white rounded-full w-15 h-15 items-center flex justify-center">
+                              <span>{timeParts.minutes}</span>
+                              <span className="text-[11px]">Minutes</span>
+                            </div>
+                
+                            <div className="flex-col bg-white rounded-full w-15 h-15 items-center flex justify-center">
+                              <span className="">{timeParts.seconds}</span>
+                              <span className="text-[11px]">Seconds</span>
+                            </div>
+                        </div>
+                        <button className="bg-green-400 p-2 w-[100px] h-[40px]">Buy Now</button>
                     </div>
 
 
@@ -378,6 +417,71 @@ function Timer({duration}) {
                     </div>
 
                  </div>
+
+
+            {/* ******* products*/}
+                 <div>
+                     <div className="space-y-10 mt-20">
+                        <div className="flex space-x-2">
+                          <div className="w-4 h-7 rounded-md bg-red-600"></div>
+                          <p className="text-rose-600 text-[10px] flex items-center">Our Products</p>
+                        </div>
+
+                        <div className="flex justify-between items-center">
+                          <div className="font-semibold text-3xl flex gap-4 items-end">
+                            <p className="mr-8">Explore Our Products</p>
+                          </div>
+
+                          <div className="flex space-x-4">
+                            <button onClick={handleProductPrev} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
+                              <img src={LeftArrow} alt="Left" className="w-4 h-4" />
+                            </button>
+                            <button onClick={handleProductNext} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
+                              <img src={RightArrow} alt="Right" className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </div>
+
+                      
+                        {loading ? (
+                          <div className="flex justify-center items-center h-40">
+                            <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
+                          </div>
+                        ) : Error ? (
+                          <div className="text-red-500 text-center">{Error.message}</div>
+                        ) : showAllProduct ? (
+                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {AllItems.map((item, idx) => (
+                              <Card key={idx} {...item} hidePercentageOff/>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {ProductCurrentBatch.map((item, idx) => (
+                              <div key={idx}>
+                                <Card {...item} hidePercentageOff/>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        <div className="grid justify-center mt-6">
+                          <button
+                            className="bg-red-600 text-white rounded-sm text-xs p-4"
+                            onClick={() => setShowAllProduct(!showAllProduct)}
+                          >
+                            {showAllProduct ? "view Less Products" : "View All Products"}
+                          </button>
+                        </div>
+                        <div className="border-b-1 border-gray-300 "></div>
+                      </div>
+
+
+                      {/* new arrival */}
+                      <div>
+                    
+                    </div>
+                    </div>
             </div>
         </div>
 
