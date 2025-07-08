@@ -2,9 +2,13 @@ import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch, AiOutlineUser }
 import { NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import "../I18n"; // Make sure i18n is initialized
+import { useLocation } from "react-router";
 
 function Nav() {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+
+    const hideIcons = [ "/signup"].includes(location.pathname);
 
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
@@ -47,7 +51,7 @@ function Nav() {
                       {t("contact")}
                     </NavLink>
                     <NavLink
-                    to="/SignIn"
+                    to="/signup"
                     className="rounded hover:underline font-semibold">
                     {t("signUp")}
                     </NavLink>
@@ -63,15 +67,19 @@ function Nav() {
                     <AiOutlineSearch size={20} className="absolute right-0 top-2 font-light " />
                 </button>
               </div>
-                <button className="ml-4 font-light" aria-label="Wishlist"> 
-                  <AiOutlineHeart size={24} />
-                </button>
-                <button className="ml-2 font-light" aria-label="Cart">
-                  <AiOutlineShoppingCart size={24} />
-                </button>
-                <button className="ml-2 font-light" aria-label="Account">
-                  <AiOutlineUser size={24} />
-                </button>
+                {!hideIcons && (
+                  <>
+                    <button className="ml-4 font-light" aria-label="Wishlist">
+                      <AiOutlineHeart size={24} />
+                    </button>
+                    <button className="ml-2 font-light" aria-label="Cart">
+                      <AiOutlineShoppingCart size={24} />
+                    </button>
+                    <button className="ml-2 font-light" aria-label="Account">
+                      <AiOutlineUser size={24} />
+                    </button>
+                  </>
+                )}
             </div>
         </div>
        </div>

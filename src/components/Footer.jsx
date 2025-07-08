@@ -52,7 +52,7 @@ function Footer() {
                 <p>Contact</p>
             </div>
     
-            <div className="space-y-7 mt-20">
+            <div className="space-y-3 mt-20">
                 <p>Download App</p>
                 <p>Save $3 with App New User Only</p>
                 <div className="flex space-x-2 items-center">

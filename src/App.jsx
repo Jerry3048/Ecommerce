@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Home from   "./Pages/home";
-import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
+
+
 
 function App() {
   return (
     <BrowserRouter>
           <Routes>
             <Route index path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+
             {/* <Route path="*" element={<Nomatchcomponent/>} /> */}
 
           </Routes>
