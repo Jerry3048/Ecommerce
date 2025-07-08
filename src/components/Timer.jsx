@@ -6,6 +6,35 @@ import axios from "axios";
 import { useRef } from "react";
 import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
 
+import {
+  FaCamera,
+  FaMobileAlt,
+  FaDesktop,
+  FaHeadphones,
+  FaGamepad,
+  FaTv,
+  FaVolumeUp,
+  FaClock,
+  FaTshirt,
+  FaShoePrints,
+  
+  FaHatCowboy,
+  FaBlender,
+  FaFan,
+  FaMicrophone,
+  FaSnowflake,
+  FaRobot,
+  FaCar,
+  FaPuzzlePiece,
+  FaBook,
+  FaCalculator,
+  FaPen,
+  FaChild,
+  
+  FaLuggageCart,
+  FaTabletAlt
+} from "react-icons/fa";
+
 
 
 function Timer({duration}) {
@@ -33,12 +62,12 @@ function Timer({duration}) {
   //  const [ProductBatch, setProductBatch] = useState([]);
    const [showAllProduct,setShowAllProduct] = useState(false);
    const [ProductDetails, setProductDetails] = useState([]);
-  const [ProductCurrentBatch, setProductCurrentBatch] = useState([]);
-  const [ProductBatchIndex, setProductBatchIndex] = useState(0)
+   const [ProductCurrentBatch, setProductCurrentBatch] = useState([]);
+   const [ProductBatchIndex, setProductBatchIndex] = useState(0)
 
 
-  const [Error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+   const [Error, setError] = useState(null);
+   const [loading, setLoading] = useState(true);
   
  
 
@@ -193,6 +222,37 @@ function Timer({duration}) {
   };
 
 
+  const categoryIcons = {
+  Camera: <FaCamera />,
+  CellPhone: <FaMobileAlt />,
+  Tablet: <FaTabletAlt />,
+  Computer: <FaDesktop />,
+  Headphone: <FaHeadphones />,
+  Gamepad: <FaGamepad />,
+  TV: <FaTv />,
+  Speaker: <FaVolumeUp />,
+  Watch: <FaClock />,
+  Shirt: <FaTshirt />,
+  Shoes: <FaShoePrints />,
+  Hat: <FaHatCowboy />,
+  Microwave: <FaMicrophone />,
+  Refrigerator: <FaSnowflake />,
+  Fan: <FaFan />,
+  Blender: <FaBlender />,
+  Drone: <FaRobot />,
+  "Toy Car": <FaCar />,
+  Puzzle: <FaPuzzlePiece />,
+  "Teddy Bear": <FaChild />,
+  Doll: <FaChild />,
+  LEGO: <FaPuzzlePiece />,
+  Books: <FaBook />,
+  Notebook: <FaBook />,
+  Stationery: <FaPen />,
+  Calculator: <FaCalculator />,
+  "Laptop Bag": <FaLuggageCart />
+};
+
+
    return (
     <div className="space-y-10">
 
@@ -304,21 +364,22 @@ function Timer({duration}) {
             <div className="text-red-500 text-center">{categoryError.message}</div>
           ) : (
             <div className="flex gap-4">
-              {categoryCurrentBatch.map((cat, idx) => (
-                <div
-                  key={idx}
-                  className={`border border-gray-300 w-full text-center py-2 ${
-                    cat.name === "Camera" ? "bg-red-500 text-white" : ""
-                  }`}
-                >
-                  <img
+             {categoryCurrentBatch.map((cat, idx) => (
+              <div key={idx} className="border border-gray-300 w-full text-center py-4 rounded">
+                <div className="flex flex-col items-center space-y-2">
+                  {categoryIcons[cat.name] ? (
+                    <div className="text-4xl">{categoryIcons[cat.name]}</div>
+                  ) : (
+                    <img
                       src={cat.image}
                       alt={cat.name}
-                      className="h-[100px] w-[100px] mx-auto rounded object-cover"
+                      className="h-[60px] w-[60px] mx-auto object-cover"
                     />
-                  <div>{cat.name}</div>
+                  )}
+                  <div className="text-sm font-medium">{cat.name}</div>
                 </div>
-              ))}
+              </div>
+            ))}
             </div>
           )}
           <div className="border-b-1 border-gray-300 mb-19"></div>

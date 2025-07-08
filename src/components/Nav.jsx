@@ -47,7 +47,7 @@ function Nav() {
                       {t("contact")}
                     </NavLink>
                     <NavLink
-                    to="/signup"
+                    to="/SignIn"
                     className="rounded hover:underline font-semibold">
                     {t("signUp")}
                     </NavLink>

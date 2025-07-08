@@ -10,11 +10,11 @@
     "category": "electronics"
   },
   {
-    "name": "Samsung Galaxy S23",
+    "name": "Samsung Galaxy S25",
     "description": "Save ₦30,000 on purchase",
     "price": 800000,
     "discountedPrice": 770000,
-    "image": "/assets/productimage/Iphone14.png",
+    "image": "/assets/productimage/s25Image.webp",
     "rating": 5,
     "ratingCount": 98,
     "category": "electronics"
@@ -24,7 +24,7 @@
     "description": "Special deal for first 100 buyers",
     "price": 700000,
     "discountedPrice": 670000,
-    "image": "/assets/productimage/Iphone14.png",
+    "image": "/assets/productimage/pixel9image.jpg",
     "rating": 3,
     "ratingCount": 45,
     "category": "electronics"
@@ -34,7 +34,7 @@
     "description": "₦5,000 cashback available",
     "price": 600000,
     "discountedPrice": 580000,
-    "image": "/assets/productimage/Iphone14.png",
+    "image": "/assets/productimage/huaweipura80.jpg",
     "rating": 4,
     "ratingCount": 60,
     "category": "electronics"
@@ -44,7 +44,7 @@
     "description": "Free shipping on all orders",
     "price": 500000,
     "discountedPrice": 480000,
-    "image": "/assets/productimage/Iphone14.png",
+    "image": "/assets/productimage/Xiomi15image.jpg",
     "rating": 4,
     "ratingCount": 80,
     "category": "electronics"
@@ -158,5 +158,85 @@
   "rating": 5,
   "ratingCount": 65,
   "category": "babiesToys"
+},
+{
+  "name": "CANON EOS DSLR Camera",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 360,
+  "discountedPrice": 42000,
+  "image": "/assets/productimage/CANON EOS DSLR Camera.png",
+  "rating": 4,
+  "ratingCount": 95,
+  "category": "camera"
+},
+{
+  "name": "ASUS FHD Gaming Laptop",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 700,
+  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+  "rating": 5,
+  "ratingCount": 325,
+  "category": "Laptop"
+},
+{
+  "name": "Quilted Satin Jacket",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 500,
+  "image": "/assets/productimage/Quilted Satin Jacket.png",
+  "rating": 5,
+  "ratingCount": 325,
+  "category": "Laptop"
+},
+{
+  "name": "Curology Product Set",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 500,
+  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+  "rating": 4,
+  "ratingCount": 145,
+  "category": "skincare"
+},
+{
+  "name": "Curology Product Set",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 500,
+  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+  "rating": 4,
+  "ratingCount": 145,
+  "category": "skincare"
+},
+{
+  "name": "Kids Electric Car",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 900,
+  "image": "/assets/productimage/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png",
+  "rating": 5,
+  "ratingCount": 65,
+  "category": "toy car"
+},
+{
+  "name": "Jr.Zoom Soccer Gamepad",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 1160,
+  "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
+  "rating": 5,
+  "ratingCount": 35,
+  "category": "shoes"
+},
+{
+  "name": "Jr.Zoom Soccer Gamepad",
+  "description": "Secure and ergonomic design for toddlers",
+  "price": 0,
+  "discountedPrice": 1160,
+  "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
+  "rating": 5,
+  "ratingCount": 35,
+  "category": "shoes"
 }
 ]

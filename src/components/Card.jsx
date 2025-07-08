@@ -18,7 +18,7 @@ function Card({name, price, discountedPrice, image, rating, ratingCount, onLove,
           <AiOutlineEye className="text-black hover:text-blue-500 bg-white rounded-full p-1" size={24} />
         </button>
       </div>
-      <div className='bg-gray-300'><img src={image} alt={name} className=" h-40 object-cover rounded mx-auto w-full p-7" /></div>
+      <div className='bg-gray-300'><img src={image} alt={name} className=" h-70  rounded mx-auto w-full  p-5" /></div>
       <div className='w-[80%] mx-auto'>
           <h3 className="mt-2 text-lg font-semibold">{name}</h3>
           <div className="flex items-center mt-1">

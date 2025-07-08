@@ -14,7 +14,7 @@
   { "name": "Shirt", "image": "/assets/categories/Category-Shirt.png", "category": "fashion" },
   { "name": "Shoes", "image": "/assets/categories/Category-Shoes.png", "category": "fashion" },
   { "name": "Watch", "image": "/assets/categories/Category-Watch.png", "category": "fashion" },
-  { "name": "Backpack", "image": "/assets/categories/Category-Backpack.png", "category": "fashion" },
+ 
   { "name": "Hat", "image": "/assets/categories/Category-Hat.png", "category": "fashion" },
 
   { "name": "Microwave", "image": "/assets/categories/Category-Microwave.png", "category": "home" },
