@@ -16,6 +16,7 @@ import Pixel19 from "/assets/productimage/pixel9image.jpg"
 import HuwaweiLogo from "/assets/productimage/HuwaweiLogo.png";
 import Huaweipura80 from "/assets/productimage/huaweipura80.jpg"
 import Timer from '../components/Timer';
+import Footer from '../components/Footer';
 
 
 
@@ -148,6 +149,9 @@ function Home() {
 
         <div>
           <Timer duration = {2 * 24 * 60 * 60 * 1000}/>
+        </div>
+        <div>
+          <Footer/>
         </div>
     </div>
   );

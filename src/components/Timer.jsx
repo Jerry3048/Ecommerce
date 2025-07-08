@@ -4,6 +4,9 @@ import LeftArrow from "/assets/arrow/leftarrowblk.png";
 import Card from "../components/Card";
 import axios from "axios";
 import { useRef } from "react";
+import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
+
+
 
 function Timer({duration}) {
      const scrollRef = useRef(null);
@@ -251,7 +254,7 @@ function Timer({duration}) {
             <div
             ref={scrollRef}
            className="flex overflow-x-auto gap-4 py-4 px-2 scroll-container no-scrollbar"
-           style={{ whiteSpace: "nowrap", scrollBehavior: "auto", scrollSnapType: "x mandatory" }}
+           style={{ whiteSpace: "nowrap", scrollBehavior: "auto", scrollSnapType: "x mandatory"}}
 >
               {flashCurrentBatch.map((item, idx) => (
                 <div key={idx} className="flex-shrink-0 w-[260px] inline-block">
@@ -409,7 +412,7 @@ function Timer({duration}) {
                                       key = {idx}
                                       src={single.image}
                                       alt={single.name}
-                                      className="h-[350px] w-screen mt-10"
+                                      className="h-[350px] w-[700px] mt-10"
                                     />
                               ))}
                             </div>
@@ -417,73 +420,213 @@ function Timer({duration}) {
                     </div>
 
                  </div>
-
-
-            {/* ******* products*/}
-                 <div>
-                     <div className="space-y-10 mt-20">
-                        <div className="flex space-x-2">
-                          <div className="w-4 h-7 rounded-md bg-red-600"></div>
-                          <p className="text-rose-600 text-[10px] flex items-center">Our Products</p>
-                        </div>
-
-                        <div className="flex justify-between items-center">
-                          <div className="font-semibold text-3xl flex gap-4 items-end">
-                            <p className="mr-8">Explore Our Products</p>
-                          </div>
-
-                          <div className="flex space-x-4">
-                            <button onClick={handleProductPrev} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
-                              <img src={LeftArrow} alt="Left" className="w-4 h-4" />
-                            </button>
-                            <button onClick={handleProductNext} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
-                              <img src={RightArrow} alt="Right" className="w-4 h-4" />
-                            </button>
-                          </div>
-                        </div>
-
-                      
-                        {loading ? (
-                          <div className="flex justify-center items-center h-40">
-                            <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
-                          </div>
-                        ) : Error ? (
-                          <div className="text-red-500 text-center">{Error.message}</div>
-                        ) : showAllProduct ? (
-                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {AllItems.map((item, idx) => (
-                              <Card key={idx} {...item} hidePercentageOff/>
-                            ))}
-                          </div>
-                        ) : (
-                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {ProductCurrentBatch.map((item, idx) => (
-                              <div key={idx}>
-                                <Card {...item} hidePercentageOff/>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-
-                        <div className="grid justify-center mt-6">
-                          <button
-                            className="bg-red-600 text-white rounded-sm text-xs p-4"
-                            onClick={() => setShowAllProduct(!showAllProduct)}
-                          >
-                            {showAllProduct ? "view Less Products" : "View All Products"}
-                          </button>
-                        </div>
-                        <div className="border-b-1 border-gray-300 "></div>
-                      </div>
-
-
-                      {/* new arrival */}
-                      <div>
-                    
-                    </div>
-                    </div>
             </div>
         </div>
+
+             {/* ******* products*/}
+            <div className="space-y-10 mt-20 w-[80%] mx-auto">
+              <div className="flex space-x-2">
+                <div className="w-4 h-7 rounded-md bg-red-600"></div>
+                <p className="text-rose-600 text-[10px] flex items-center">Our Products</p>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="font-semibold text-3xl flex gap-4 items-end">
+                  <p className="mr-8">Explore Our Products</p>
+                </div>
+
+                <div className="flex space-x-4">
+                  <button onClick={handleProductPrev} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
+                    <img src={LeftArrow} alt="Left" className="w-4 h-4" />
+                  </button>
+                  <button onClick={handleProductNext} className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center">
+                    <img src={RightArrow} alt="Right" className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+            
+              {loading ? (
+                <div className="flex justify-center items-center h-40">
+                  <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
+                </div>
+              ) : Error ? (
+                <div className="text-red-500 text-center">{Error.message}</div>
+              ) : showAllProduct ? (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {AllItems.map((item, idx) => (
+                    <Card key={idx} {...item} hidePercentageOff/>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {ProductCurrentBatch.map((item, idx) => (
+                    <div key={idx}>
+                      <Card {...item} hidePercentageOff/>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="grid justify-center mt-6">
+                <button
+                  className="bg-red-600 text-white rounded-sm text-xs p-4"
+                  onClick={() => setShowAllProduct(!showAllProduct)}
+                >
+                  {showAllProduct ? "view Less Products" : "View All Products"}
+                </button>
+              </div>
+              <div className="border-b-1 border-gray-300 "></div>
+            </div>
+
+        {/* new arival     */}
+            <div className="mx-auto space-y-10 mt-10 w-[80%]">
+              <div className="flex space-x-2">
+                <div className="w-4 h-7 rounded-md bg-red-600"></div>
+                <p className="text-rose-600 text-[10px] flex items-center">Featured</p>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="font-semibold text-3xl flex gap-4 items-end">
+                  <p className="mr-8">New Arrival</p>
+                </div>
+             </div>
+
+        
+          <div className="flex space-x-5 justify-between items-center w-full ">
+                <div className="relative bg-black h-[616px] w-[50%] flex justify-end items-center">
+                    
+                    {Error ? (
+                      <div className=" text-center">{Error.message}</div>
+                        ) : (
+                        <div className="">
+                          {monthSingleBatch.map((single, idx) => (
+                          
+                          <img
+                              key = {idx}
+                              src={single.image}
+                              alt={single.name}
+                              className="h-[400px] "
+                            />
+                          ))}
+                        </div>
+                    )}
+                    <div className="absolute left-10 bottom-10 text-white w-[40%] space-y-7">
+                      <p className="text-3xl">Play Station 5</p>
+                      <p>black and white version of the PS5 coming out on sale</p>
+                      <button className="font-semibold underline">shop Now</button>
+                    </div>
+                </div>
+
+
+            
+              <div className="grid grid-cols-1 gap-4" >
+
+                  <div className="relative">
+                      
+                        {Error ? (
+                          <div className=" text-center">{Error.message}</div>
+                            ) : (
+                            <div className="bg-black flex justify-end">
+                              {monthSingleBatch.map((single, idx) => (
+                              
+                                  <img
+                                      key = {idx}
+                                      src={single.image}
+                                      alt={single.name}
+                                      className="h-[300px]"
+                                    />
+                              ))}
+                            </div>
+                        )}
+                        <div className="absolute left-10 bottom-7 text-white w-[40%] space-y-7">
+                          <p className="text-3xl">Play Station 5</p>
+                          <p>black and white version of the PS5 coming out on sale</p>
+                          <button className="font-semibold underline">shop Now</button>
+                        </div>
+                    
+                    </div>
+
+                    <div className="flex space-x-4 w-full">
+                      <div className="relative">
+                          
+                          {Error ? (
+                            <div className=" text-center">{Error.message}</div>
+                              ) : (
+                              <div className="">
+                                {monthSingleBatch.map((single, idx) => (
+                                
+                                    <img
+                                        key = {idx}
+                                        src={single.image}
+                                        alt={single.name}
+                                        className="h-[300px] w-full"
+                                      />
+                                ))}
+                              </div>
+                          )}
+                          <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
+                            <p className="text-2xl">Play Station 5</p>
+                            <p>black and white version of the PS5 coming out on sale</p>
+                            <button className="font-semibold underline">shop Now</button>
+                          </div>
+                      </div>
+
+                      <div className="relative">
+                        
+                        {Error ? (
+                          <div className=" text-center">{Error.message}</div>
+                            ) : (
+                            <div className="">
+                              {monthSingleBatch.map((single, idx) => (
+                              
+                                  <img
+                                      key = {idx}
+                                      src={single.image}
+                                      alt={single.name}
+                                      className="h-[300px]"
+                                    />
+                              ))}
+                            </div>
+                        )}
+                          <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
+                            <p className="text-2xl">Play Station 5</p>
+                            <p>black and white version of the PS5 coming out on sale</p>
+                            <button className="font-semibold underline">shop Now</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+        {/* service section */}
+        <div className="flex justify-between items-center mb-50 mt-20 w-[60%] mx-auto">
+              <div className="flex flex-col items-center">
+                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
+                    <FaShippingFast size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
+                </div>
+                <p className="text-2xl font-semibold">FREE AND FAST DELIVERY</p>
+                <p>Free delivery for all orders over $140</p>
+              </div>
+                 <div className="flex flex-col items-center">
+                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
+                    <FaHeadset size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
+                </div>
+                <p className="text-2xl font-semibold">24/7 CUSTOMER SERVICE</p>
+                <p>Friendly 24/7 customer support</p>
+              </div>
+                <div className="flex flex-col items-center">
+                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
+                    <FaMoneyBillWave size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
+                </div>
+                <p className="text-2xl font-semibold">MONEY BACK GUARANTEE</p>
+                <p>we return money within 30 days</p>
+              </div> 
+        </div>
+
+       
 
     </div>
   );
