@@ -7,8 +7,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 function Footer() {
   return (
 <div className="bg-black text-white">
-        <div className='w-[80%] mx-auto flex justify-between h-[400px]'>
-          <div className="space-y-7 mt-20">
+        <div className='w-[90%] mx-auto flex justify-evenly h-[400px] gap-x-8'>
+          <div className="space-y-7 mt-20 flex-1">
             <p className="font-bold text-lg">Exclusive</p>
             <p className="">Subscribe</p>
             <p className="">Get 10% off your first order</p>
@@ -16,26 +16,26 @@ function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-3 py-2 text-white outline-none "
+                className="px-1 py-2 text-white outline-none "
               />
               <button
                 type="submit"
-                className=" px-3 py-2 flex items-center justify-center"
+                className=" px-1 py-1 flex items-center justify-center"
               >
                 <img src={Entericon} alt="enter" className="w-4 h-4" />
               </button>
             </form>
           </div>
     
-          <div className="space-y-7 mt-20">
+          <div className="space-y-7 mt-20 flex-1">
             <p>Support</p>
-            <p>111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh. </p>
+            <p className="">111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh. </p>
             <p>exclusive@gmail.com</p>
             <p>+88015-88888-9999</p>
             <p></p>
           </div>
     
-          <div className="space-y-7 mt-20">
+          <div className="space-y-7 mt-20 flex-1">
             <p>Account</p>
             <p>My Account</p>
             <p>Login / Register</p>
@@ -44,7 +44,7 @@ function Footer() {
              <p>Shop</p>
           </div>
     
-            <div className="space-y-7 mt-20">
+            <div className="space-y-7 mt-20 flex-1">
                 <p>Quick Link</p>
                 <p>Privacy Policy</p>
                 <p>Terms of Use</p>
@@ -52,7 +52,7 @@ function Footer() {
                 <p>Contact</p>
             </div>
     
-            <div className="space-y-3 mt-20">
+            <div className="space-y-3 mt-20 flex-1">
                 <p>Download App</p>
                 <p>Save $3 with App New User Only</p>
                 <div className="flex space-x-2 items-center">

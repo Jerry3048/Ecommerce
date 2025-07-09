@@ -1,35 +1,92 @@
+import { useNavigate } from "react-router";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import SideImg from "/assets/arrow/Side Image.png";
-import Googleicon from "/assets/arrow/Icon-Google.png"
+import { auth, googleProvider } from "../Firebase"; // <-- import auth
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  // GoogleAuthProvider,
+} from "firebase/auth";
+import Googleicon from "/assets/arrow/Icon-Google.png";
 
 function Auth() {
   const [isSignIn, setIsSignIn] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState(""); // Only for sign-up
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/"); // Redirect to home
+      alert("Signed up!");
+    } catch (err) {
+      setError(err.message);
+    }
+      setName("");
+      setEmail("");
+      setPassword("");
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/"); // Redirect to home
+      alert("Logged in!");
+    } catch (err) {
+      setError(err.message);
+    }
+      setEmail("");
+    setPassword("");
+  };
+
+
+  const handleGoogleSignIn = async () => {
+  try {
+    await signInWithPopup(auth, googleProvider);
+    navigate("/"); // Redirect to home
+    alert("Signed in with Google!");
+  } catch (err) {
+    setError(err.message);
+  }
+};
   return (
     <div>
       <Nav />
       <div className="flex items-center">
-        <img src={SideImg} alt="Side" className="screen w-[805px] pt-10 pb-10" />
+        <img src={SideImg} alt="Side" className="w-[805px] pt-10 pb-10" />
         <div className="flex-col justify-center items-center w-[50%] mx-auto">
           {isSignIn ? (
-              <form className="space-y-4 w-[50%] mx-auto">
+            <form onSubmit={handleSignUp} className="space-y-4 w-[50%] mx-auto">
               <h2 className="text-2xl font-bold mb-6">Create an account</h2>
               <p>Enter your details below</p>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
               <input
                 type="text"
                 placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full p-3 border-b focus:outline-none focus:border-blue-500"
               />
               <input
-                type="email"
-                placeholder="Email or Phone Number"
+                type="email/number"
+                placeholder="Email/number"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 border-b focus:outline-none focus:border-blue-500"
               />
               <input
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border-b focus:outline-none focus:border-blue-500"
               />
               <button
@@ -40,9 +97,11 @@ function Auth() {
               </button>
               <button
                 type="button"
-                className="w-full py-2 rounded border-1 border-gray-400 flex justify-center items-center"
+                className="flex justify-center w-full py-2 rounded border-1 border-gray-400"
+                 onClick={handleGoogleSignIn}
               >
-                <img src={Googleicon} alt="goggleicon" className="w-6 h-6 mr-2" />
+                <img src={Googleicon} alt="Googleicon" className="h-6 w-6 mr-2" />
+
                 Sign up with Google
               </button>
               <p className="text-sm text-center mt-4">
@@ -50,24 +109,32 @@ function Auth() {
                 <button
                   type="button"
                   className="text-blue-600 underline ml-3"
-                  onClick={() => setIsSignIn(false)}
+                  onClick={() => {
+                    setIsSignIn(false);
+                    setError("");
+                  }}
                 >
                   Log in
                 </button>
               </p>
             </form>
           ) : (
-             <form className="space-y-4 w-[50%] mx-auto">
+            <form onSubmit={handleLogin} className="space-y-4 w-[50%] mx-auto">
               <h2 className="text-2xl font-bold mb-6">Log into Exclusive</h2>
               <p>Enter your details below</p>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
               <input
                 type="email"
-                placeholder="Email or Phone Number"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 border-b focus:outline-none focus:border-blue-500"
               />
               <input
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border-b focus:outline-none focus:border-blue-500"
               />
               <div className="flex justify-between items-center">
@@ -88,7 +155,10 @@ function Auth() {
                 <button
                   type="button"
                   className="text-blue-600 underline ml-3"
-                  onClick={() => setIsSignIn(true)}
+                  onClick={() => {
+                    setIsSignIn(true);
+                    setError("");
+                  }}
                 >
                   Sign Up
                 </button>
