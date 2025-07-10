@@ -24,8 +24,9 @@ function Auth() {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to home
-      alert("Signed up!");
+      navigate("/");
+      // alert("Signed up!");
+
     } catch (err) {
       setError(err.message);
     }
@@ -38,8 +39,8 @@ function Auth() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to home
-      alert("Logged in!");
+      navigate("/"); 
+      // alert("Logged in!");
     } catch (err) {
       setError(err.message);
     }
@@ -51,8 +52,8 @@ function Auth() {
   const handleGoogleSignIn = async () => {
   try {
     await signInWithPopup(auth, googleProvider);
-    navigate("/"); // Redirect to home
-    alert("Signed in with Google!");
+    navigate("/"); 
+    // alert("Signed in with Google!");
   } catch (err) {
     setError(err.message);
   }

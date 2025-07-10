@@ -12,15 +12,15 @@ function Footer() {
             <p className="font-bold text-lg">Exclusive</p>
             <p className="">Subscribe</p>
             <p className="">Get 10% off your first order</p>
-            <form className="flex items-center bg-black rounded overflow-hidden border-white border-1">
+            <form className="flex items-center p-2 bg-black rounded overflow-hidden border-white border-1">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-1 py-2 text-white outline-none "
+                className=" text-white outline-none w-full"
               />
               <button
                 type="submit"
-                className=" px-1 py-1 flex items-center justify-center"
+                className="flex items-center justify-center"
               >
                 <img src={Entericon} alt="enter" className="w-4 h-4" />
               </button>

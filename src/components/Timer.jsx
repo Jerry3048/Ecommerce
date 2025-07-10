@@ -567,12 +567,12 @@ function Timer({duration}) {
                               key = {idx}
                               src={single.image}
                               alt={single.name}
-                              className="h-[400px] "
+                              className="h-[400px]"
                             />
                           ))}
                         </div>
                     )}
-                    <div className="absolute left-10 bottom-10 text-white w-[40%] space-y-7">
+                    <div className="absolute left-10 bottom-10 text-white w-[50%] space-y-7">
                       <p className="text-3xl">Play Station 5</p>
                       <p>black and white version of the PS5 coming out on sale</p>
                       <button className="font-semibold underline">shop Now</button>
@@ -668,21 +668,21 @@ function Timer({duration}) {
                 <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
                     <FaShippingFast size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
                 </div>
-                <p className="text-2xl font-semibold">FREE AND FAST DELIVERY</p>
+                <p className="text-2xl font-semibold text-center">FREE AND FAST DELIVERY</p>
                 <p>Free delivery for all orders over $140</p>
               </div>
                  <div className="flex flex-col items-center">
                 <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
                     <FaHeadset size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
                 </div>
-                <p className="text-2xl font-semibold">24/7 CUSTOMER SERVICE</p>
+                <p className="text-2xl font-semibold text-center">24/7 CUSTOMER SERVICE</p>
                 <p>Friendly 24/7 customer support</p>
               </div>
                 <div className="flex flex-col items-center">
                 <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
                     <FaMoneyBillWave size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
                 </div>
-                <p className="text-2xl font-semibold">MONEY BACK GUARANTEE</p>
+                <p className="text-2xl font-semibold text-center">MONEY BACK GUARANTEE</p>
                 <p>we return money within 30 days</p>
               </div> 
         </div>

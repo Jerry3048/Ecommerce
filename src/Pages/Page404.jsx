@@ -7,7 +7,7 @@ function Page404() {
   return (
     <div className="">
       <Nav/>
-       <div className="text-7xl grid justify-center items-center h-[500px] mx-auto">
+       <div className="text-7xl grid justify-center items-center h-[90vh] mx-auto">
            PAGE NOT FOUND
         <button onClick={() => navigate("/")}className="bg-red-600 p-4 text-sm w-[30%] mx-auto rounded-full">return to home page</button>   
        </div>
