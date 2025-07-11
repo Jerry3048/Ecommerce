@@ -57,6 +57,7 @@ function Home() {
   ];
    const [activeTab, setActiveTab] = useState(0);
   const tab = tabs[activeTab];
+  const [activeMenu, setActiveMenu] = useState(null);
 
 
   useEffect(() => {
@@ -84,29 +85,42 @@ function Home() {
     { name: t("groceriesPets") },
     { name: t("healthBeauty") }
   ];
+   
 
+    const toggleMenu = (index) => {
+    setActiveMenu(activeMenu === index ? null : index);
+  };
 
   return (
     <div>
-        <Nav />
+    <Nav />
         <div className="w-[80%] mx-auto flex">
           <ul className="flex flex-col gap-5 border-r-1 w-[15%] border-gray-300 ">
-            {categories.map((cat) => (
-              <li
-                key={cat.name}
-                className="relative group p-1 pl-0 flex justify-between cursor-pointer rounded hover:bg-gray-200 font-normal"
-              >
-                {cat.name}
-                {cat.sub && <AiOutlineRight/>}
-                {cat.sub && (
-                  <ul className="hidden group-hover:block absolute left-full top-0 rounded shadow-lg  text-left font-normal bg-white z-50">
-                    {cat.sub.map((subcat) => (
+            {categories.map((cat, index) => (
+              <li key={index} className="relative group">
+                <button
+                  onClick={() => toggleMenu(index)}
+                  className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center justify-between"
+                >
+                  {cat.name}
+                    {cat.sub && cat.sub.length > 0 && (
+                    <AiOutlineRight className=" inline" />
+                  )}
+                </button>
+
+                <ul
+                  className={`absolute left-full top-0 bg-white shadow-lg rounded z-50
+                    ${activeMenu === index ? "block" : "hidden"} 
+                    group-hover:block 
+                  `}
+                >
+                  {Array.isArray(cat.sub) &&
+                    cat.sub.map((subcat) => (
                       <li key={subcat} className="px-4 py-2 hover:bg-gray-200">
                         {subcat}
                       </li>
                     ))}
-                  </ul>
-                )}
+                </ul>
               </li>
             ))}
           </ul>

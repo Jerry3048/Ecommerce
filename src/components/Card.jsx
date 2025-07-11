@@ -1,21 +1,73 @@
-import { AiOutlineHeart, AiOutlineEye } from 'react-icons/ai';
+import { useState } from 'react';
+import { AiOutlineHeart, AiOutlineShoppingCart,AiOutlineEye } from 'react-icons/ai';
+import { useAuthStore } from "../store/Authstore";
 
-function Card({name, price, discountedPrice, image, rating, ratingCount, onLove, onView,hidePercentageOff }) {
-    const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
+function Card({name, price, discountedPrice, image, rating, ratingCount, onLove, onView, onCart,hidePercentageOff }) {
+   const item = { name, price, discountedPrice, image, rating, ratingCount };
+   const { addToCart, toggleWishlist, } = useAuthStore();
+   const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
+   const [loved, setLoved] = useState(false);
+   const [viewed, setViewed] = useState(false);
+   const[carted, setCarted]= useState(false)
 
   return (
     <div className=" rounded-lg shadow-md relative md:w-full md:mx-0 ">
-      {!hidePercentageOff && (
+      {!hidePercentageOff && percentageOff > 0 && (
         <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
           - {percentageOff}%
         </div>
       )}
-      <div className="absolute  right-1 top-5 grid gap-1">
-        <button onClick={onLove} aria-label="Add to wishlist">
-          <AiOutlineHeart className="text-black hover:text-red-600 bg-white rounded-full p-1" size={24} />
+
+      
+      <div className="absolute right-1 top-5 grid gap-1">
+        {/* Heart Icon */}
+        <button
+          onClick={() => {
+            setLoved(!loved);
+            onLove && onLove(); // trigger external handler
+            toggleWishlist(item); // add to wishlist
+          }}
+          aria-label="Add to wishlist"
+        >
+          <AiOutlineHeart
+            className={`bg-white rounded-full p-1 ${
+              loved ? " text-red-600" : "text-black"
+            }`}
+            size={24}
+          />
         </button>
-        <button onClick={onView} aria-label="View again">
-          <AiOutlineEye className="text-black hover:text-blue-500 bg-white rounded-full p-1" size={24} />
+
+        {/* Eye Icon */}
+        <button
+          onClick={() => {
+            setViewed(!viewed);
+            onView && onView(); // trigger external handler
+            addToCart(item)
+          }}
+          aria-label="View again"
+        >
+          <AiOutlineEye
+            className={`bg-white rounded-full p-1 ${
+              viewed ? " text-red-600" : "text-black"
+            }`}
+            size={24}
+          />
+        </button>
+
+        <button
+          onClick={() => {
+            setCarted(!carted);
+            onCart && onCart(); // trigger external handler
+            addToCart(item)
+          }}
+          aria-label="View again"
+        >
+          <AiOutlineShoppingCart
+            className={`bg-white rounded-full p-1 ${
+              carted ? " text-red-600" : "text-black"
+            }`}
+            size={24}
+          />
         </button>
       </div>
       <div className='bg-gray-300'><img src={image} alt={name} className=" h-70  rounded mx-auto w-full  p-5" /></div>

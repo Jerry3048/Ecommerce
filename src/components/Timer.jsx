@@ -614,7 +614,7 @@ function Timer({duration}) {
                           {Error ? (
                             <div className=" text-center">{Error.message}</div>
                               ) : (
-                              <div className="">
+                              <div className="bg-black">
                                 {monthSingleBatch.map((single, idx) => (
                                 
                                     <img
@@ -638,7 +638,7 @@ function Timer({duration}) {
                         {Error ? (
                           <div className=" text-center">{Error.message}</div>
                             ) : (
-                            <div className="">
+                            <div className="bg-black">
                               {monthSingleBatch.map((single, idx) => (
                               
                                   <img

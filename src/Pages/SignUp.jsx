@@ -3,16 +3,18 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import SideImg from "/assets/arrow/Side Image.png";
-import { auth, googleProvider } from "../Firebase"; // <-- import auth
+import { auth, googleProvider } from "../firebase"; // <-- import auth
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   // GoogleAuthProvider,
 } from "firebase/auth";
+
 import Googleicon from "/assets/arrow/Icon-Google.png";
 
 function Auth() {
+  
   const [isSignIn, setIsSignIn] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +28,7 @@ function Auth() {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate("/");
       // alert("Signed up!");
-
+      // setSignIn(true)
     } catch (err) {
       setError(err.message);
     }
@@ -40,9 +42,11 @@ function Auth() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/"); 
+      // setSignIn(true)
       // alert("Logged in!");
     } catch (err) {
       setError(err.message);
+      
     }
       setEmail("");
     setPassword("");
@@ -53,6 +57,7 @@ function Auth() {
   try {
     await signInWithPopup(auth, googleProvider);
     navigate("/"); 
+    // setSignIn(true)
     // alert("Signed in with Google!");
   } catch (err) {
     setError(err.message);
@@ -68,7 +73,7 @@ function Auth() {
             <form onSubmit={handleSignUp} className="space-y-4 w-[50%] mx-auto">
               <h2 className="text-2xl font-bold mb-6">Create an account</h2>
               <p>Enter your details below</p>
-              {error && <p className="text-red-500 text-sm">{error}</p>}
+              {error && <p className="text-white text-sm bg-black  flex justify-center items-center rounded-lg h-[40px]">{error}</p>}
               <input
                 type="text"
                 placeholder="Name"
