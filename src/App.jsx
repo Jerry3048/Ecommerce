@@ -6,8 +6,8 @@ import Page404 from './Pages/Page404';
 import CartPage from './Pages/CartPage';
 import Wishlist from './Pages/Wishlist';
 
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase"; // your firebase config
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase'; // your firebase config
 import { useAuthStore } from './store/Authstore';
 
 function App() {
