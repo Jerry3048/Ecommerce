@@ -1,5 +1,6 @@
 import { useAuthStore } from "../store/Authstore";
 import Nav from "../components/Nav";
+import { AiOutlineDelete,AiOutlineShoppingCart } from "react-icons/ai";
 
 function Wishlist() {
   const { wishlist, addToCart, removeFromWishlist } = useAuthStore();
@@ -8,7 +9,7 @@ function Wishlist() {
     <div>
       <Nav />
       <div className="p-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Recently Viewed Items</h2>
+        <h2 className="text-2xl font-bold mb-6">Recently Liked Items</h2>
 
         {wishlist.length === 0 ? (
           <p className="text-gray-600">No items viewed yet.</p>
@@ -18,10 +19,10 @@ function Wishlist() {
               <div key={idx} className="bg-white border rounded-lg shadow-sm p-4 relative">
                 <button
                   onClick={() => removeFromWishlist(item.name)}
-                  className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+                  className="absolute top-2 right-2 text-red-600 bg-white w-10 h-10 hover:text-red-700 rounded-full flex justify-center items-center"
                   title="Remove"
                 >
-                  ✕
+                  <AiOutlineDelete size={24} className="" />
                 </button>
                 <img
                   src={item.image}
@@ -33,11 +34,11 @@ function Wishlist() {
                   <span className="text-orange-600 font-bold mr-2">
                     ${item.discountedPrice}
                   </span>
-                  <span className="text-gray-400 line-through text-sm">
+                  {/* <span className="text-gray-400 line-through text-sm">
                     ${item.price}
-                  </span>
+                  </span> */}
                 </div>
-                <div className="flex items-center mt-1">
+                {/* <div className="flex items-center mt-1">
                   {[...Array(5)].map((_, i) => (
                     <span
                       key={i}
@@ -49,11 +50,12 @@ function Wishlist() {
                   <span className="ml-2 text-sm text-gray-600">
                     ({item.ratingCount})
                   </span>
-                </div>
+                </div> */}
                 <button
                   onClick={() => addToCart(item)}
                   className="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
                 >
+                  <AiOutlineShoppingCart className="inline mr-2" size={24}/>
                   Add to Cart
                 </button>
               </div>

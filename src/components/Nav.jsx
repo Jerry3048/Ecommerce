@@ -18,7 +18,7 @@ import { useLocation } from "react-router";
 import "../I18n";
 
 function Nav() {
-  const { user, setUser } = useAuthStore();
+  const { user, setUser , wishlist, cartItems} = useAuthStore();
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -116,12 +116,28 @@ function Nav() {
 
             {!hideIcons && (
               <>
-                <NavLink to="/Wishlist" className="ml-4 font-light" aria-label="Wishlist">
-                  <AiOutlineHeart size={24} />
-                </NavLink>
-                <NavLink to="/CartPage" className="ml-2 font-light" aria-label="Cart">
-                  <AiOutlineShoppingCart size={24} />
-                </NavLink>
+                <div className="relative ml-4">
+  <NavLink to="/Wishlist" aria-label="Wishlist">
+    <AiOutlineHeart size={24} />
+  </NavLink>
+  {wishlist.length > 0 && (
+    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+      {wishlist.length}
+    </span>
+  )}
+</div>
+
+{/* Cart with count */}
+<div className="relative ml-2">
+  <NavLink to="/CartPage" aria-label="Cart">
+    <AiOutlineShoppingCart size={24} />
+  </NavLink>
+  {cartItems.length > 0 && (
+    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+      {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+    </span>
+  )}
+</div>
                 {user && (
                   <div className="relative ml-2 bg-red-600 rounded-full text-white h-7 w-7 flex justify-center items-center" ref={dropdownRef}>
                     <button

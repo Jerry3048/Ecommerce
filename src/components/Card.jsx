@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { AiOutlineHeart, AiOutlineShoppingCart,AiOutlineEye } from 'react-icons/ai';
 import { useAuthStore } from "../store/Authstore";
 
-function Card({name, price, discountedPrice, image, rating, ratingCount, onLove, onView, onCart,hidePercentageOff }) {
+function Card({name, price, discountedPrice, image, rating, ratingCount,hidePercentageOff }) {
    const item = { name, price, discountedPrice, image, rating, ratingCount };
    const { addToCart, toggleWishlist, } = useAuthStore();
    const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
    const [loved, setLoved] = useState(false);
-   const [viewed, setViewed] = useState(false);
    const[carted, setCarted]= useState(false)
 
   return (
@@ -24,7 +23,6 @@ function Card({name, price, discountedPrice, image, rating, ratingCount, onLove,
         <button
           onClick={() => {
             setLoved(!loved);
-            onLove && onLove(); // trigger external handler
             toggleWishlist(item); // add to wishlist
           }}
           aria-label="Add to wishlist"
@@ -37,27 +35,10 @@ function Card({name, price, discountedPrice, image, rating, ratingCount, onLove,
           />
         </button>
 
-        {/* Eye Icon */}
-        <button
-          onClick={() => {
-            setViewed(!viewed);
-            onView && onView(); // trigger external handler
-            addToCart(item)
-          }}
-          aria-label="View again"
-        >
-          <AiOutlineEye
-            className={`bg-white rounded-full p-1 ${
-              viewed ? " text-red-600" : "text-black"
-            }`}
-            size={24}
-          />
-        </button>
 
         <button
-          onClick={() => {
-            setCarted(!carted);
-            onCart && onCart(); // trigger external handler
+          onClickCapture={() => {
+            setCarted(true);
             addToCart(item)
           }}
           aria-label="View again"

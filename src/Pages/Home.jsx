@@ -93,14 +93,14 @@ function Home() {
 
   return (
     <div>
-    <Nav />
+    <Nav  className= ""/>
         <div className="w-[80%] mx-auto flex">
-          <ul className="flex flex-col gap-5 border-r-1 w-[15%] border-gray-300 ">
+          <ul className="flex flex-col gap-5 border-r-1 w-[20%] border-gray-300 ">
             {categories.map((cat, index) => (
               <li key={index} className="relative group">
                 <button
                   onClick={() => toggleMenu(index)}
-                  className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center justify-between"
+                  className="w-full text-left  py-2 hover:bg-gray-100 flex items-center justify-between"
                 >
                   {cat.name}
                     {cat.sub && cat.sub.length > 0 && (

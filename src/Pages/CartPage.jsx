@@ -2,7 +2,7 @@ import { useAuthStore } from "../store/Authstore";
 import Nav from "../components/Nav";
 
 function CartPage() {
-  const { cartItems, updateCartQuantity, removeFromCart } = useAuthStore();
+  const { cartItems, updateCartQuantity, removeFromCart,} = useAuthStore();
 
   const handleQuantityChange = (e, name) => {
     const qty = parseInt(e.target.value);
@@ -32,7 +32,7 @@ function CartPage() {
                     <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
                     <div>
                       <h3 className="font-semibold">{item.name}</h3>
-                      <p className="text-gray-600 text-sm">${item.discountedPrice} each</p>
+                      <p className="text-red-600 text-sm">${item.discountedPrice} each</p>
                       <p className="text-sm text-gray-700 line-through">${item.price}</p>
                     </div>
                   </div>

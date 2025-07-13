@@ -257,13 +257,13 @@ function Timer({duration}) {
     <div className="space-y-10">
 
         {/* Flash Sales Section */}
-        <div className="mx-auto w-[80%] space-y-10 mt-10">
-          <div className="flex space-x-2">
+        <div className=" space-y-10 mt-10">
+          <div className="flex space-x-2 mx-auto w-[80%]">
             <div className="w-4 h-7 rounded-md bg-red-600"></div>
             <p className="text-rose-600 text-[10px] flex items-center">Today's</p>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mx-auto w-[80%]">
             <div className="font-semibold text-3xl flex gap-4 items-end">
               <p className="mr-8">Flash Sales</p>
               <div className="flex flex-col items-center">
@@ -299,7 +299,7 @@ function Timer({duration}) {
 
         
           {loading ? (
-            <div className="flex justify-center items-center h-40">
+            <div className="flex justify-center items-center h-40 ">
               <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
             </div>
           ) : Error ? (
