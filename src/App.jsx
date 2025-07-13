@@ -1,19 +1,14 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Home from   "./Pages/home";
-import SignUp from './Pages/SignUp';
-import Page404 from './Pages/Page404';
-import CartPage from './Pages/CartPage';
-import Wishlist from './Pages/Wishlist';
+import Home from   "./pages/home";
+import SignUp from './pages/SignUp';
+import Page404 from './pages/Page404';
+import CartPage from './pages/CartPage';
+import Wishlist from './pages/Wishlist';
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase"; // your firebase config
 import { useAuthStore } from './store/Authstore';
-
-
-
-
-
 
 function App() {
   useEffect(() => {

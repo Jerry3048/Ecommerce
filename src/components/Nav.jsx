@@ -1,14 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
-  AiOutlineSearch,
-  AiOutlineUser,
-  AiOutlineShopping,
-  AiOutlineCloseCircle,
-  AiOutlineStar, 
-  AiOutlineLogout 
-} from "react-icons/ai";
+import {AiOutlineHeart,AiOutlineShoppingCart,AiOutlineSearch,AiOutlineUser,AiOutlineShopping, AiOutlineCloseCircle,AiOutlineStar,AiOutlineLogout} from "react-icons/ai";
 import { NavLink, } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/Authstore";
@@ -116,29 +107,29 @@ function Nav() {
 
             {!hideIcons && (
               <>
-                <div className="relative ml-4">
-  <NavLink to="/Wishlist" aria-label="Wishlist">
-    <AiOutlineHeart size={24} />
-  </NavLink>
-  {wishlist.length > 0 && (
-    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-      {wishlist.length}
-    </span>
-  )}
-</div>
+          <div className="relative ml-4">
+            <NavLink to="/Wishlist" aria-label="Wishlist">
+              <AiOutlineHeart size={24} />
+            </NavLink>
+            {wishlist.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {wishlist.length}
+              </span>
+            )}
+          </div>
 
-{/* Cart with count */}
-<div className="relative ml-2">
-  <NavLink to="/CartPage" aria-label="Cart">
-    <AiOutlineShoppingCart size={24} />
-  </NavLink>
-  {cartItems.length > 0 && (
-    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-      {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-    </span>
-  )}
-</div>
-                {user && (
+          {/* Cart with count */}
+          <div className="relative ml-2">
+            <NavLink to="/CartPage" aria-label="Cart">
+              <AiOutlineShoppingCart size={24} />
+            </NavLink>
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+              </span>
+            )}
+          </div>
+                          {user && (
                   <div className="relative ml-2 bg-red-600 rounded-full text-white h-7 w-7 flex justify-center items-center" ref={dropdownRef}>
                     <button
                       className="font-light"
@@ -150,26 +141,26 @@ function Nav() {
                     {dropdownOpen && (
                       <div className="absolute right-0 top-6 mt-2  bg-gray-500/20 backdrop-blur-md text-white border rounded shadow-lg z-50 space-y-3 w-[230px] p-3">
                         <button
-                          className=" w-full text-left flex gap-3 hover:bg-gray-100"
+                          className=" w-full text-left flex gap-3 hover:bg-gray-600"
                         >
                           <AiOutlineUser size={24} />
                           Manage My Account
                         </button>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-100">
+                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
                           <AiOutlineShopping size={24} />
                           My Order
                         </button>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-100">
+                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
                           <AiOutlineCloseCircle size={24} />
                           My Cancellation
                         </button>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-100">
+                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
                           <AiOutlineStar size={24} />
                           My Reviews
                         </button>
                         <button
                           onClick={handleLogout}
-                          className="w-full text-left flex gap-3 hover:bg-gray-100"
+                          className="w-full text-left flex gap-3 hover:bg-gray-600"
                         >
                           <AiOutlineLogout size={24} />
                           Logout
