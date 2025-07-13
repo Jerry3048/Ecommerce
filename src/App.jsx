@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Home from   "/src/Pages/home";
-import SignUp from '/src/Pages/SignUp';
-import Page404 from '/src/Pages/Page404';
-import CartPage from '/src/Pages/CartPage';
-import Wishlist from '/src/Pages/Wishlist';
+import Home from   './Pages/Home';
+import SignUp from './Pages/SignUp';
+import Page404 from './Pages/Page404';
+import CartPage from './Pages/CartPage';
+import Wishlist from './Pages/Wishlist';
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase"; // your firebase config
