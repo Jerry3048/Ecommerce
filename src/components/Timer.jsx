@@ -36,9 +36,9 @@ import {
 } from "react-icons/fa";
 
 
-
 function Timer({duration}) {
-     const scrollRef = useRef(null);
+  
+  const scrollRef = useRef(null);
 
   const [time, setTime] = useState(duration);
   const [flashDetails, setFlashDetails] = useState([]);
@@ -59,7 +59,6 @@ function Timer({duration}) {
   const [showAllMonth,setShowAllMonth] = useState(false);
 
 
-  //  const [ProductBatch, setProductBatch] = useState([]);
    const [showAllProduct,setShowAllProduct] = useState(false);
    const [ProductDetails, setProductDetails] = useState([]);
    const [ProductCurrentBatch, setProductCurrentBatch] = useState([]);
@@ -67,7 +66,7 @@ function Timer({duration}) {
 
 
    const [Error, setError] = useState(null);
-   const [loading, setLoading] = useState(true);
+   const [Loading, setLoading] = useState(true);
   
  
 
@@ -298,7 +297,7 @@ function Timer({duration}) {
           </div>
 
         
-          {loading ? (
+          {Loading ? (
             <div className="flex justify-center items-center h-40 ">
               <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
             </div>
@@ -405,7 +404,7 @@ function Timer({duration}) {
                 </div>
               </div>
 
-              {loading ? (
+              {Loading ? (
                 <div className="flex justify-center items-center h-40">
                   <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
                 </div>
@@ -507,7 +506,7 @@ function Timer({duration}) {
               </div>
 
             
-              {loading ? (
+              {Loading ? (
                 <div className="flex justify-center items-center h-40">
                   <div className="animate-spin h-16 w-16 border-t-4 border-b-4 rounded-full border-gray-300"></div>
                 </div>

@@ -1,67 +1,126 @@
 import { useAuthStore } from "../store/Authstore";
 import Nav from "../components/Nav";
 import { AiOutlineDelete,AiOutlineShoppingCart } from "react-icons/ai";
+import { useEffect, useState  } from "react";
 
 function Wishlist() {
   const { wishlist, addToCart, removeFromWishlist } = useAuthStore();
+  const { products, fetchProducts, loading, error } = useAuthStore();
+  const [showAllMonth, setShowAllMonth] = useState(false);
+
+
+    useEffect(() => {
+    fetchProducts("/Goods/Detail.json");
+  }, [fetchProducts]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-600">{error}</p>;
+
 
   return (
-    <div>
+    <div className="space-y-10">
       <Nav />
-      <div className="p-6 max-w-6xl mx-auto">
+      <div className="p-6 w-[80%] mx-auto space-y-5">
         <h2 className="text-2xl font-bold mb-6">Recently Liked Items</h2>
 
         {wishlist.length === 0 ? (
           <p className="text-gray-600">No items viewed yet.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {wishlist.map((item, idx) => (
-              <div key={idx} className="bg-white border rounded-lg shadow-sm p-4 relative">
-                <button
-                  onClick={() => removeFromWishlist(item.name)}
-                  className="absolute top-2 right-2 text-red-600 bg-white w-10 h-10 hover:text-red-700 rounded-full flex justify-center items-center"
-                  title="Remove"
+          <div className="space-y-20">
+            <div className="text-2xl flex ">
+              <p>wishlist</p>
+              <p className="text-2xl font-bold">({wishlist.length})</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:grid-cols-5">
+              {wishlist.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border rounded-lg shadow-sm p-4 relative"
                 >
-                  <AiOutlineDelete size={24} className="" />
-                </button>
+                  <button
+                    onClick={() => removeFromWishlist(item.name)}
+                    className="absolute top-2 right-2 text-red-600 bg-white w-10 h-10 hover:text-red-700 rounded-full flex justify-center items-center"
+                    title="Remove"
+                  >
+                    <AiOutlineDelete size={24} className="" />
+                  </button>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 rounded"
+                  />
+                  <h3 className="mt-3 font-semibold text-lg">{item.name}</h3>
+                  <div className="flex items-center mt-2">
+                    <span className="text-orange-600 font-bold mr-2">
+                      ${item.discountedPrice}
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => addToCart(item)}
+                    className="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
+                  >
+                    <AiOutlineShoppingCart className="inline mr-2" size={24} />
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="w-[80%] mx-auto">
+        <div className="space-y-10 mt-10">
+          <div className="flex space-x-2">
+            <div className="w-4 h-7 rounded-md bg-red-600"></div>
+            <p className="text-rose-600 text-[10px] flex items-center">
+              This Month
+            </p>
+          </div>
+
+          <div className="flex justify-between items-center">
+            <p className="text-3xl font-semibold">Best Selling Products</p>
+            <div className="flex space-x-4">
+              <button
+                className="bg-red-600 text-white rounded-sm text-xs p-4"
+                onClick={() => setShowAllMonth(!showAllMonth)}
+              >
+                {showAllMonth ? "minimize" : "View All Products"}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4 xl:grid-cols-5">
+          {(showAllMonth ? products : products.slice(0, 8)).map(
+            (product, i) => (
+              <div
+                key={i}
+                className="bg-white border rounded-lg shadow-sm p-4 relative"
+              >
                 <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-40 object-cover rounded"
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-40  rounded"
                 />
-                <h3 className="mt-3 font-semibold text-lg">{item.name}</h3>
+                <h3 className="mt-3 font-semibold text-lg">{product.name}</h3>
                 <div className="flex items-center mt-2">
                   <span className="text-orange-600 font-bold mr-2">
-                    ${item.discountedPrice}
+                    ${product.discountedPrice}
                   </span>
-                  {/* <span className="text-gray-400 line-through text-sm">
-                    ${item.price}
-                  </span> */}
                 </div>
-                {/* <div className="flex items-center mt-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className={i < item.rating ? "text-yellow-500" : "text-gray-300"}
-                    >
-                      ★
-                    </span>
-                  ))}
-                  <span className="ml-2 text-sm text-gray-600">
-                    ({item.ratingCount})
-                  </span>
-                </div> */}
+
                 <button
-                  onClick={() => addToCart(item)}
+                  onClick={() => addToCart(product)}
                   className="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
                 >
-                  <AiOutlineShoppingCart className="inline mr-2" size={24}/>
+                  <AiOutlineShoppingCart className="inline mr-2" size={24} />
                   Add to Cart
                 </button>
               </div>
-            ))}
-          </div>
-        )}
+            )
+          )}
+        </div>
       </div>
     </div>
   );

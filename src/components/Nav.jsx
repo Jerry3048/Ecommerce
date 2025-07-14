@@ -139,7 +139,7 @@ function Nav() {
                     </button>
 
                     {dropdownOpen && (
-                      <div className="absolute right-0 top-6 mt-2  bg-gray-500/20 backdrop-blur-md text-white border rounded shadow-lg z-50 space-y-3 w-[230px] p-3">
+                      <div className="absolute right-0 top-6 mt-2  bg-black backdrop-blur-md text-white border rounded shadow-lg z-50 space-y-3 w-[230px] p-3">
                         <button
                           className=" w-full text-left flex gap-3 hover:bg-gray-600"
                         >

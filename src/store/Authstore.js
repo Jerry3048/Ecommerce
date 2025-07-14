@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import axios from 'axios';
 
 export const useAuthStore = create((set, get) => ({
   user: null,
@@ -8,6 +9,26 @@ export const useAuthStore = create((set, get) => ({
   cartItems: [],
   wishlist: [],
   viewedItems: [],
+  products: [],
+  loading: false,
+  error: null,
+
+
+    fetchProducts: async (apiUrl) => {
+    set({ loading: true, error: null });
+    try {
+      const response = await axios.get(apiUrl);
+      set({ products: response.data, loading: false });
+    } catch (err) {
+      set({ error: "Failed to fetch products", loading: false });
+      console.error(err);
+    }
+  },
+
+  setProducts: (data) => set({ products: data }),
+
+
+
 
   addToCart: (item) => {
     const existingItem = get().cartItems.find((i) => i.name === item.name);
@@ -58,14 +79,7 @@ export const useAuthStore = create((set, get) => ({
   }));
 },
 
-  addToViewed: (item) => {
-    const exists = get().viewedItems.find((i) => i.name === item.name);
-    if (!exists) {
-      set((state) => ({
-        viewedItems: [...state.viewedItems, item],
-      }));
-    }
-  },
+  
 }));
 
 export default useAuthStore;
