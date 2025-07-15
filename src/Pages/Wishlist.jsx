@@ -2,6 +2,7 @@ import { useAuthStore } from "../store/Authstore";
 import Nav from "../components/Nav";
 import { AiOutlineDelete,AiOutlineShoppingCart } from "react-icons/ai";
 import { useEffect, useState  } from "react";
+import  Footer  from "../components/Footer";
 
 function Wishlist() {
   const { wishlist, addToCart, removeFromWishlist } = useAuthStore();
@@ -18,7 +19,7 @@ function Wishlist() {
 
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-">
       <Nav />
       <div className="p-6 w-[80%] mx-auto space-y-5">
         <h2 className="text-2xl font-bold mb-6">Recently Liked Items</h2>
@@ -47,7 +48,7 @@ function Wishlist() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-40 rounded"
+                    className="w-full h-40 rounded bg-black"
                   />
                   <h3 className="mt-3 font-semibold text-lg">{item.name}</h3>
                   <div className="flex items-center mt-2">
@@ -70,23 +71,21 @@ function Wishlist() {
         )}
       </div>
 
-      <div className="w-[80%] mx-auto">
+      <div className="w-[80%] mx-auto space-y-5">
         <div className="space-y-10 mt-10">
+          <div className="flex justify-between items-center">
           <div className="flex space-x-2">
             <div className="w-4 h-7 rounded-md bg-red-600"></div>
-            <p className="text-rose-600 text-[10px] flex items-center">
-              This Month
+            <p className="text-black text-[20px] flex items-center">
+              Just For You
             </p>
           </div>
-
-          <div className="flex justify-between items-center">
-            <p className="text-3xl font-semibold">Best Selling Products</p>
             <div className="flex space-x-4">
               <button
                 className="bg-red-600 text-white rounded-sm text-xs p-4"
                 onClick={() => setShowAllMonth(!showAllMonth)}
               >
-                {showAllMonth ? "minimize" : "View All Products"}
+                {showAllMonth ? "minimize" : "See All"}
               </button>
             </div>
           </div>
@@ -101,7 +100,7 @@ function Wishlist() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-40  rounded"
+                  className="w-full h-40  rounded bg-black"
                 />
                 <h3 className="mt-3 font-semibold text-lg">{product.name}</h3>
                 <div className="flex items-center mt-2">
@@ -122,6 +121,7 @@ function Wishlist() {
           )}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

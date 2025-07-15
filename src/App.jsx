@@ -5,6 +5,8 @@ import SignUp from './Pages/SignUp';
 import Page404 from './Pages/Page404';
 import CartPage from './Pages/CartPage';
 import Wishlist from './Pages/Wishlist';
+import Checkout from "./Pages/Checkout";
+import UserAccount from './Pages/UserAccount';
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase'; // your firebase config
@@ -24,8 +26,10 @@ function App() {
             <Route index path="/" element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/CartPage" element={<CartPage />} />
-             <Route path="/Wishlist" element={<Wishlist/>} />
-             <Route path="*" element={<Page404/>} />
+            <Route path="/Wishlist" element={<Wishlist/>} />
+            <Route path="/Checkout" element={<Checkout/>} />
+            <Route path="/UserAccount" element={<UserAccount/>} />
+            <Route path="*" element={<Page404/>} />
 
 
           </Routes>
