@@ -1,20 +1,33 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
+// Zustand store for managing user authentication, cart, wishlist, product data, and more
 export const useAuthStore = create((set, get) => ({
+  // ------------------------
+  // Auth State
+  // ------------------------
   user: null,
   setUser: (user) => set({ user }),
   logout: () => set({ user: null }),
 
-  cartItems: [],
-  wishlist: [],
-  viewedItems: [],
+  // ------------------------
+  // App Data State
+  // ------------------------
   products: [],
   loading: false,
   error: null,
 
+  // ------------------------
+  // Cart & Wishlist State
+  // ------------------------
+  cartItems: [],
+  wishlist: [],
+  viewedItems: [],
 
-    fetchProducts: async (apiUrl) => {
+  // ------------------------
+  // Product Fetching
+  // ------------------------
+  fetchProducts: async (apiUrl) => {
     set({ loading: true, error: null });
     try {
       const response = await axios.get(apiUrl);
@@ -25,11 +38,14 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
+  // Manually set products (optional override)
   setProducts: (data) => set({ products: data }),
 
+  // ------------------------
+  // Cart Operations
+  // ------------------------
 
-
-
+  // Add product to cart (increase quantity if already in cart)
   addToCart: (item) => {
     const existingItem = get().cartItems.find((i) => i.name === item.name);
     if (existingItem) {
@@ -45,6 +61,7 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
+  // Update quantity of item in cart
   updateCartQuantity: (name, quantity) => {
     set((state) => ({
       cartItems: state.cartItems.map((item) =>
@@ -53,12 +70,18 @@ export const useAuthStore = create((set, get) => ({
     }));
   },
 
+  // Remove item from cart by name
   removeFromCart: (name) => {
     set((state) => ({
       cartItems: state.cartItems.filter((i) => i.name !== name),
     }));
   },
 
+  // ------------------------
+  // Wishlist Operations
+  // ------------------------
+
+  // Toggle item in wishlist (add if not exists, remove if exists)
   toggleWishlist: (item) => {
     set((state) => {
       const exists = state.wishlist.find((i) => i.name === item.name);
@@ -73,13 +96,13 @@ export const useAuthStore = create((set, get) => ({
       }
     });
   },
-  removeFromWishlist: (itemName) => {
-  set((state) => ({
-    wishlist: state.wishlist.filter((i) => i.name !== itemName),
-  }));
-},
 
-  
+  // Remove item from wishlist by name
+  removeFromWishlist: (itemName) => {
+    set((state) => ({
+      wishlist: state.wishlist.filter((i) => i.name !== itemName),
+    }));
+  },
 }));
 
 export default useAuthStore;

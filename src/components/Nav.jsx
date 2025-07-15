@@ -83,7 +83,7 @@ function Nav() {
             <NavLink to="/" className="hover:underline font-semibold">
               {t("home")}
             </NavLink>
-            <NavLink to="/about" className="hover:underline font-semibold">
+            <NavLink to="/About" className="hover:underline font-semibold">
               {t("about")}
             </NavLink>
             <NavLink to="/contact" className="hover:underline font-semibold">
@@ -140,12 +140,14 @@ function Nav() {
                 </div>
                 {user && (
                   <div
-                    className="relative ml-2 bg-red-600 rounded-full text-white h-7 w-7 flex justify-center items-center"
+                    className="relative ml-2 text-white h-7 w-7 flex justify-center items-center"
                     ref={dropdownRef}
                   >
                     <button
-                      className="font-light"
-                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                       className={`p-2 rounded-full transition-colors ${
+                        dropdownOpen? "bg-red-600 text-white" : " text-gray-700"
+                      }`}
+                         onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                       <AiOutlineUser size={24} />
                     </button>

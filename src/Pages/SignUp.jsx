@@ -64,7 +64,7 @@ function Auth() {
     <div>
       <Nav />
       <div className="flex items-center">
-        <img src={SideImg} alt="Side" className="w-[805px] pt-10 pb-10" />
+        <img src={SideImg} alt="Side" className="max-w-[40%] pt-10 pb-10" />
         <div className="flex-col justify-center items-center w-[50%] mx-auto">
           {isSignIn ? (
             <form onSubmit={handleSignUp} className="space-y-4 w-[50%] mx-auto">

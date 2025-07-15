@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useAuthStore } from "../store/Authstore";
+
+// Bank logos for payment method visuals
 import Bank1 from "/assets/arrow/image 32.png";
 import Bank2 from "/assets/arrow/image 31.png";
 import Bank3 from "/assets/arrow/image 33.png";
 import Bank4 from "/assets/arrow/image 30.png";
 
+// Initial form state
 const initialState = {
   firstname: "",
   country: "",
@@ -22,26 +25,41 @@ const initialState = {
 };
 
 function Checkout() {
-  const { cartItems, user } = useAuthStore();
+  const { cartItems, user } = useAuthStore(); // Auth store for user & cart data
+
+  // -------------------------------
+  // State declarations
+  // -------------------------------
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [couponCode, setCouponCode] = useState("");
   const [discountRate, setDiscountRate] = useState(0);
+  const [saveForCheckout, setSaveForCheckout] = useState(false);
+
+  // Static shipping cost
   const shippingFee = 1000;
 
+  // -------------------------------
+  // Derived totals
+  // -------------------------------
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.discountedPrice * item.quantity,
     0
   );
-
   const discountAmount = subtotal * discountRate;
   const grandTotal = subtotal + shippingFee - discountAmount;
 
+  // -------------------------------
+  // Handle input changes
+  // -------------------------------
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  // -------------------------------
+  // Validate form inputs
+  // -------------------------------
   const validate = () => {
     const newErrors = {};
     if (!form.firstname) newErrors.firstname = "First name is required";
@@ -55,6 +73,9 @@ function Checkout() {
     return newErrors;
   };
 
+  // -------------------------------
+  // Handle coupon logic
+  // -------------------------------
   const handleApplyCoupon = () => {
     if (couponCode.trim().toUpperCase() === "DISCOUNT10") {
       setDiscountRate(0.1);
@@ -66,6 +87,9 @@ function Checkout() {
     setCouponCode("");
   };
 
+  // -------------------------------
+  // Handle form submission
+  // -------------------------------
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
@@ -90,20 +114,23 @@ function Checkout() {
   return (
     <div className="min-h-screen relative">
       <Nav />
-      {/* Welcome message at top right */}
+
+      {/* Welcome badge */}
       <div className="absolute top-4 right-8 z-10">
         <span className="text-lg font-semibold text-gray-700 bg-white px-4 py-2 rounded shadow">
           {`Welcome${user?.name ? ` ${user.name}` : ""}`}
         </span>
       </div>
+
       <div className="flex flex-col lg:flex-row justify-between p-4 w-[80%] mx-auto">
-        {/* Checkout Form */}
-        <form
-          onSubmit={handleSubmit}
-          className=" rounded-lg shadow-md w-full max-w-lg space-y-6"
-        >
+
+        {/* ===============================
+            Left: Checkout Form
+        ================================ */}
+        <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
           <h2 className="text-2xl font-bold text-center">Checkout</h2>
 
+          {/* Dynamic input generation */}
           {[
             { label: "First Name", name: "firstname" },
             { label: "Country", name: "country" },
@@ -126,24 +153,39 @@ function Checkout() {
                 name={name}
                 value={form[name]}
                 onChange={handleChange}
-                className="mt-1 w-full bg-gray-100 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full bg-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               {required && errors[name] && (
                 <p className="text-red-500 text-xs">{errors[name]}</p>
               )}
             </div>
           ))}
+
+          {/* Save info checkbox */}
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="saveForCheckout"
+              checked={saveForCheckout}
+              onChange={() => setSaveForCheckout((prev) => !prev)}
+              className="h-4 w-4"
+            />
+            <label htmlFor="saveForCheckout" className="text-sm">
+              Save this information for faster checkout next time
+            </label>
+          </div>
         </form>
 
-        {/* Cart Summary */}
-        <div className="p-6 rounded shadow-md w-full max-w-lg grid  items-center">
+        {/* ===============================
+            Right: Cart Summary + Payment
+        ================================ */}
+        <div className="p-6 rounded shadow-md w-full max-w-lg grid items-center">
           <h3 className="text-lg font-semibold">Your Items</h3>
+
+          {/* Cart Items */}
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex justify-between items-center border-b pb-3"
-              >
+              <div key={idx} className="flex justify-between items-center border-b pb-3">
                 <div className="flex items-center gap-2">
                   <img
                     src={item.image}
@@ -153,7 +195,7 @@ function Checkout() {
                   <p className="font-medium">{item.name}</p>
                 </div>
                 <p className="text-sm text-red-600">
-                  ₦{item.discountedPrice} × {item.quantity}
+                  ${item.discountedPrice} × {item.quantity}
                 </p>
               </div>
             ))
@@ -161,28 +203,29 @@ function Checkout() {
             <p className="text-gray-500">No items in cart.</p>
           )}
 
-          <div className="space-y-2 text-sm text-gray-700">
+          {/* Totals */}
+          <div className="space-y-2 text-sm text-gray-700 mt-4">
             <div className="flex justify-between">
               <span>Subtotal:</span>
-              <span>₦{subtotal.toFixed(2)}</span>
+              <span>${subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping Fee:</span>
-              <span>₦{shippingFee.toFixed(2)}</span>
+              <span>${shippingFee.toFixed(2)}</span>
             </div>
             {discountRate > 0 && (
               <div className="flex justify-between text-green-600 font-semibold">
                 <span>Coupon Discount:</span>
-                <span>− ₦{discountAmount.toFixed(2)}</span>
+                <span>− ${discountAmount.toFixed(2)}</span>
               </div>
             )}
             <div className="flex justify-between font-bold text-base border-t pt-2">
               <span>Total:</span>
-              <span>₦{grandTotal.toFixed(2)}</span>
+              <span>${grandTotal.toFixed(2)}</span>
             </div>
           </div>
 
-          {/* Coupon Section */}
+          {/* Coupon Code Field */}
           <div className="flex gap-3 mt-4">
             <input
               type="text"
@@ -200,8 +243,8 @@ function Checkout() {
             </button>
           </div>
 
-          {/* Payment Method */}
-          <div>
+          {/* Payment Method Options */}
+          <div className="mt-4">
             <label className="block font-medium mb-2">Payment Method</label>
             <div className="flex flex-col gap-3">
               {[
@@ -211,26 +254,14 @@ function Checkout() {
                   label: "Bank Transfer",
                   icon: (
                     <div className="flex gap-2 ml-10">
-                      <img
-                        src={Bank1}
-                        alt="Bank 1"
-                        className="w-10 h-10 object-contain"
-                      />
-                      <img
-                        src={Bank2}
-                        alt="Bank 2"
-                        className="w-10 h-10 object-contain"
-                      />
-                      <img
-                        src={Bank3}
-                        alt="Bank 3"
-                        className="w-10 h-10 object-contain"
-                      />
-                      <img
-                        src={Bank4}
-                        alt="Bank 4"
-                        className="w-10 h-10 object-contain"
-                      />
+                      {[Bank1, Bank2, Bank3, Bank4].map((src, i) => (
+                        <img
+                          key={i}
+                          src={src}
+                          alt={`Bank ${i + 1}`}
+                          className="w-10 h-10 object-contain"
+                        />
+                      ))}
                     </div>
                   ),
                 },
@@ -261,6 +292,7 @@ function Checkout() {
             </div>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="bg-red-600 text-white w-full py-2 rounded hover:bg-red-700 font-semibold mt-6"
@@ -269,6 +301,7 @@ function Checkout() {
           </button>
         </div>
       </div>
+
       <Footer />
     </div>
   );
