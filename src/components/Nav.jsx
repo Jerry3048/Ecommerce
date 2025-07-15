@@ -1,15 +1,24 @@
 import { useState, useEffect, useRef } from "react";
-import {AiOutlineHeart,AiOutlineShoppingCart,AiOutlineSearch,AiOutlineUser,AiOutlineShopping, AiOutlineCloseCircle,AiOutlineStar,AiOutlineLogout} from "react-icons/ai";
-import { NavLink, } from "react-router";
+import {
+  AiOutlineHeart,
+  AiOutlineShoppingCart,
+  AiOutlineSearch,
+  AiOutlineUser,
+  AiOutlineShopping,
+  AiOutlineCloseCircle,
+  AiOutlineStar,
+  AiOutlineLogout,
+} from "react-icons/ai";
+import { NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/Authstore";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebase"; // make sure this is your Firebase config
+import { auth } from "../firebase/Firebase"; // make sure this is your Firebase config
 import { useLocation } from "react-router";
 import "../I18n";
 
 function Nav() {
-  const { user, setUser , wishlist, cartItems} = useAuthStore();
+  const { user, setUser, wishlist, cartItems } = useAuthStore();
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -107,30 +116,33 @@ function Nav() {
 
             {!hideIcons && (
               <>
-          <div className="relative ml-4">
-            <NavLink to="/Wishlist" aria-label="Wishlist">
-              <AiOutlineHeart size={24} />
-            </NavLink>
-            {wishlist.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                {wishlist.length}
-              </span>
-            )}
-          </div>
+                <div className="relative ml-4">
+                  <NavLink to="/Wishlist" aria-label="Wishlist">
+                    <AiOutlineHeart size={24} />
+                  </NavLink>
+                  {wishlist.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                      {wishlist.length}
+                    </span>
+                  )}
+                </div>
 
-          {/* Cart with count */}
-          <div className="relative ml-2">
-            <NavLink to="/CartPage" aria-label="Cart">
-              <AiOutlineShoppingCart size={24} />
-            </NavLink>
-            {cartItems.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-              </span>
-            )}
-          </div>
-                          {user && (
-                  <div className="relative ml-2 bg-red-600 rounded-full text-white h-7 w-7 flex justify-center items-center" ref={dropdownRef}>
+                {/* Cart with count */}
+                <div className="relative ml-2">
+                  <NavLink to="/CartPage" aria-label="Cart">
+                    <AiOutlineShoppingCart size={24} />
+                  </NavLink>
+                  {cartItems.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                      {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                    </span>
+                  )}
+                </div>
+                {user && (
+                  <div
+                    className="relative ml-2 bg-red-600 rounded-full text-white h-7 w-7 flex justify-center items-center"
+                    ref={dropdownRef}
+                  >
                     <button
                       className="font-light"
                       onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -140,7 +152,8 @@ function Nav() {
 
                     {dropdownOpen && (
                       <div className="absolute right-0 top-6 mt-2  bg-black backdrop-blur-md text-white border rounded shadow-lg z-50 space-y-3 w-[230px] p-3">
-                        <NavLink to= "/UserAccount"
+                        <NavLink
+                          to="/UserAccount"
                           className=" w-full text-left flex gap-3 hover:bg-gray-600"
                         >
                           <AiOutlineUser size={24} />

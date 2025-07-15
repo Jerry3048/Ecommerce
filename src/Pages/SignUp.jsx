@@ -3,7 +3,7 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import SideImg from "/assets/arrow/Side Image.png";
-import { auth, googleProvider } from "../firebase"; // <-- import auth
+import { auth, googleProvider } from "../firebase/Firebase"; // <-- import auth
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -14,7 +14,6 @@ import {
 import Googleicon from "/assets/arrow/Icon-Google.png";
 
 function Auth() {
-  
   const [isSignIn, setIsSignIn] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,37 +31,35 @@ function Auth() {
     } catch (err) {
       setError(err.message);
     }
-      setName("");
-      setEmail("");
-      setPassword("");
+    setName("");
+    setEmail("");
+    setPassword("");
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); 
+      navigate("/");
       // setSignIn(true)
       // alert("Logged in!");
     } catch (err) {
       setError(err.message);
-      
     }
-      setEmail("");
+    setEmail("");
     setPassword("");
   };
 
-
   const handleGoogleSignIn = async () => {
-  try {
-    await signInWithPopup(auth, googleProvider);
-    navigate("/"); 
-    // setSignIn(true)
-    // alert("Signed in with Google!");
-  } catch (err) {
-    setError(err.message);
-  }
-};
+    try {
+      await signInWithPopup(auth, googleProvider);
+      navigate("/");
+      // setSignIn(true)
+      // alert("Signed in with Google!");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
   return (
     <div>
       <Nav />
@@ -73,7 +70,11 @@ function Auth() {
             <form onSubmit={handleSignUp} className="space-y-4 w-[50%] mx-auto">
               <h2 className="text-2xl font-bold mb-6">Create an account</h2>
               <p>Enter your details below</p>
-              {error && <p className="text-white text-sm bg-black  flex justify-center items-center rounded-lg h-[40px]">{error}</p>}
+              {error && (
+                <p className="text-white text-sm bg-black  flex justify-center items-center rounded-lg h-[40px]">
+                  {error}
+                </p>
+              )}
               <input
                 type="text"
                 placeholder="Name"
@@ -104,10 +105,13 @@ function Auth() {
               <button
                 type="button"
                 className="flex justify-center w-full py-2 rounded border-1 border-gray-400"
-                 onClick={handleGoogleSignIn}
+                onClick={handleGoogleSignIn}
               >
-                <img src={Googleicon} alt="Googleicon" className="h-6 w-6 mr-2" />
-
+                <img
+                  src={Googleicon}
+                  alt="Googleicon"
+                  className="h-6 w-6 mr-2"
+                />
                 Sign up with Google
               </button>
               <p className="text-sm text-center mt-4">
