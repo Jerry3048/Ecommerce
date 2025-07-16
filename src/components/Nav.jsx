@@ -86,7 +86,7 @@ function Nav() {
             <NavLink to="/About" className="hover:underline font-semibold">
               {t("about")}
             </NavLink>
-            <NavLink to="/contact" className="hover:underline font-semibold">
+            <NavLink to="/Contact" className="hover:underline font-semibold">
               {t("contact")}
             </NavLink>
             {!user && (

@@ -32,7 +32,7 @@ function Wishlist() {
               <p>wishlist</p>
               <p className="text-2xl font-bold">({wishlist.length})</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 2xl:grid-cols-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 3xl:grid-cols-5">
               {wishlist.map((item, idx) => (
                 <div
                   key={idx}
@@ -90,7 +90,7 @@ function Wishlist() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4 2xl:grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4 3xl:grid-cols-5">
           {(showAllMonth ? products : products.slice(0, 8)).map(
             (product, i) => (
               <div
