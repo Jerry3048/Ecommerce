@@ -100,7 +100,7 @@ function Nav() {
           </nav>
 
           <div className="flex items-center">
-            <div className="flex items-center justify-center bg-gray-200 w-[200px] rounded px-2 ml-4 relative">
+            <div className="flex items-center justify-center bg-gray-200 w-[250px] rounded px-2 ml-4 relative">
               <input
                 type="text"
                 placeholder={t("search") || "Search..."}
