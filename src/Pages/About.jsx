@@ -135,7 +135,7 @@ export default function About() {
         >
           {teamMembers.map((member, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white rounded-lg shadow-md text-center space-y-4">
+              <div className="text-center space-y-4 mt-20">
                 <img src={member.image} alt={member.name} className="w-100 h-100 mx-auto bg-gray-500 p-5 " />
                 <div>
                   <h3 className="text-lg font-semibold">{member.name}</h3>
@@ -153,7 +153,7 @@ export default function About() {
       </div>
 
       {/* Services Section */}
-      <div className="flex justify-between items-center mt-20 w-[60%] mx-auto">
+      <div className="flex justify-between items-center mt-20 w-[60%] mx-auto mb-20">
         {[ 
           { icon: <FaShippingFast size={32} />, title: "FREE AND FAST DELIVERY", desc: "Free delivery for all orders over $140" },
           { icon: <FaHeadset size={32} />, title: "24/7 CUSTOMER SERVICE", desc: "Friendly 24/7 customer support" },

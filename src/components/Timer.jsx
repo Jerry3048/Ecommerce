@@ -661,30 +661,24 @@ function Timer({duration}) {
             </div>
           </div>
 
-        {/* service section */}
-        <div className="flex justify-between items-center mb-50 mt-20 w-[60%] mx-auto">
-              <div className="flex flex-col items-center">
-                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
-                    <FaShippingFast size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
-                </div>
-                <p className="text-2xl font-semibold text-center">FREE AND FAST DELIVERY</p>
-                <p>Free delivery for all orders over $140</p>
+        {/* Services Section */}
+        <div className="flex justify-between items-center mt-20 w-[60%] mx-auto mb-20">
+                {[ 
+                  { icon: <FaShippingFast size={32} />, title: "FREE AND FAST DELIVERY", desc: "Free delivery for all orders over $140" },
+                  { icon: <FaHeadset size={32} />, title: "24/7 CUSTOMER SERVICE", desc: "Friendly 24/7 customer support" },
+                  { icon: <FaMoneyBillWave size={32} />, title: "MONEY BACK GUARANTEE", desc: "We return money within 30 days" },
+                ].map((service, idx) => (
+                  <div key={idx} className="flex flex-col items-center text-center">
+                    <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
+                      <span className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3">
+                          {service.icon }
+                        </span>
+                    </div>
+                    <p className="text-2xl font-semibold mt-2">{service.title}</p>
+                    <p>{service.desc}</p>
+                  </div>
+                ))}
               </div>
-                 <div className="flex flex-col items-center">
-                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
-                    <FaHeadset size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
-                </div>
-                <p className="text-2xl font-semibold text-center">24/7 CUSTOMER SERVICE</p>
-                <p>Friendly 24/7 customer support</p>
-              </div>
-                <div className="flex flex-col items-center">
-                <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
-                    <FaMoneyBillWave size={32} className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3"/>  
-                </div>
-                <p className="text-2xl font-semibold text-center">MONEY BACK GUARANTEE</p>
-                <p>we return money within 30 days</p>
-              </div> 
-        </div>
 
        
 
