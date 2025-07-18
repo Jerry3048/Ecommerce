@@ -1,50 +1,19 @@
 import { create } from 'zustand';
-import axios from 'axios';
 
-// Zustand store for managing user authentication, cart, wishlist, product data, and more
+// Zustand store for managing user authentication, cart, wishlist,
 export const useAuthStore = create((set, get) => ({
-  // ------------------------
-  // Auth State
-  // ------------------------
   user: null,
   setUser: (user) => set({ user }),
   logout: () => set({ user: null }),
 
-  // ------------------------
-  // App Data State
-  // ------------------------
-  products: [],
-  loading: false,
-  error: null,
+ 
 
-  // ------------------------
-  // Cart & Wishlist State
-  // ------------------------
   cartItems: [],
   wishlist: [],
   viewedItems: [],
 
-  // ------------------------
-  // Product Fetching
-  // ------------------------
-  fetchProducts: async (apiUrl) => {
-    set({ loading: true, error: null });
-    try {
-      const response = await axios.get(apiUrl);
-      set({ products: response.data, loading: false });
-    } catch (err) {
-      set({ error: "Failed to fetch products", loading: false });
-      console.error(err);
-    }
-  },
 
-  // Manually set products (optional override)
-  setProducts: (data) => set({ products: data }),
-
-  // ------------------------
   // Cart Operations
-  // ------------------------
-
   // Add product to cart (increase quantity if already in cart)
   addToCart: (item) => {
     const existingItem = get().cartItems.find((i) => i.name === item.name);

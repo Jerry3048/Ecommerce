@@ -1,4 +1,5 @@
 import { useAuthStore } from "../store/Authstore";
+import { useProductStore } from "../store/Productstore";
 import Nav from "../components/Nav";
 import { AiOutlineDelete,AiOutlineShoppingCart } from "react-icons/ai";
 import { useEffect, useState  } from "react";
@@ -6,7 +7,7 @@ import  Footer  from "../components/Footer";
 
 function Wishlist() {
   const { wishlist, addToCart, removeFromWishlist } = useAuthStore();
-  const { products, fetchProducts, loading, error } = useAuthStore();
+  const { products, fetchProducts, loading, error } = useProductStore();
   const [showAllMonth, setShowAllMonth] = useState(false);
 
 

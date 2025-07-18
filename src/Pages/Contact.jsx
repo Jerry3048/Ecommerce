@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
         </div>
 
-        <div className="w-[60%]">
+        <div className="w-[65%]">
             {!submitted ? (
             // Contact Form
             <form

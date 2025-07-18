@@ -1,242 +1,264 @@
 [
   {
+    "id": "product-1",
+    "name": "Toddler Car Seat",
+    "Discountdescription": "Up to 10% off Voucher",
+    "Productdescription":"About the Product",
+    "price": 900,
+    "discountedPrice": 850,
+    "image": "/assets/productimage/CANON EOS DSLR Camera.png",
+    "views": [ 
+      "/assets/productimage/Iphone14-2.png",
+      "/assets/productimage/Iphone14-3.png",
+      "/assets/productimage/Iphone14-4.png",
+      "/assets/productimage/Iphone14.png"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "White", "Blue"],
+    "rating": 4,
+    "ratingCount": 120,
+    "category": "electronics",
+    "stock": 15,
+    "isFavorite": false
+  },
+  {
+    "id": "product-2",
+    "name": "CANON EOS DSLR Camera",
+    "Discountdescription": "Up to 10% off Voucher",
+    "Productdescription":"About the Product",
+    "price": 900,
+    "discountedPrice": 850,
+    "image": "/assets/productimage/CANON EOS DSLR Camera.png",
+    "views": [
+      "/assets/productimage/Iphone14-2.png",
+      "/assets/productimage/Iphone14-3.png",
+      "/assets/productimage/Iphone14-4.png",
+      "/assets/productimage/Iphone14.png"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "White", "Blue"],
+    "rating": 4,
+    "ratingCount": 120,
+    "category": "electronics",
+    "stock": 15,
+    "isFavorite": false
+  },
+  {
+    "id": "product-3",
+    "name": "ASUS FHD Gaming Laptop",
+    "Discountdescription": "Up to 10% off Voucher",
+    "Productdescription":"About the Product",
+    "price": 900000,
+    "discountedPrice": 850000,
+    "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+    "views": [
+      "/assets/productimage/Iphone14-2.png",
+      "/assets/productimage/Iphone14-3.png",
+      "/assets/productimage/Iphone14-4.png",
+      "/assets/productimage/Iphone14.png"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "White", "Blue"],
+    "rating": 4,
+    "ratingCount": 120,
+    "category": "electronics",
+    "stock": 15,
+    "isFavorite": false
+  },
+  {
+    "id": "product-4",
     "name": "iPhone 14 Series",
-    "description": "Up to 10% off Voucher",
+    "Discountdescription": "Up to 10% off Voucher",
+    "Productdescription":"About the Product",
     "price": 900000,
     "discountedPrice": 850000,
     "image": "/assets/productimage/Iphone14.png",
+    "views": [
+      "/assets/productimage/Iphone14-2.png",
+      "/assets/productimage/Iphone14-3.png",
+      "/assets/productimage/Iphone14-4.png",
+      "/assets/productimage/Iphone14.png"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "White", "Blue"],
     "rating": 4,
     "ratingCount": 120,
-    "category": "electronics"
+    "category": "electronics",
+    "stock": 15,
+    "isFavorite": false
   },
   {
+    "id": "product-5",
     "name": "Samsung Galaxy S25",
-    "description": "Save ₦30,000 on purchase",
+    "Discountdescription": "Save ₦30,000 on purchase",
+    "Productdescription":"About the Product",
     "price": 800000,
     "discountedPrice": 770000,
     "image": "/assets/productimage/s25Image.webp",
+    "views": [
+      "/assets/productimage/s25Image2.webp",
+      "/assets/productimage/s25Image3.webp",
+      "/assets/productimage/s25Image4.webp",
+      "/assets/productimage/s25Image.webp"
+    ],
+    "sizes": [],
+    "availableColors": ["Graphite", "Green", "Lavender"],
     "rating": 5,
     "ratingCount": 98,
-    "category": "electronics"
+    "category": "electronics",
+    "stock": 20,
+    "isFavorite": true
   },
   {
+    "id": "product-6",
     "name": "Pixel 19 Pro",
-    "description": "Special deal for first 100 buyers",
+    "Discountdescription": "Special deal for first 100 buyers",
+    "Productdescription":"About the Product",
     "price": 700000,
     "discountedPrice": 670000,
     "image": "/assets/productimage/pixel9image.jpg",
+    "views": [
+      "/assets/productimage/pixel9image2.jpg",
+      "/assets/productimage/pixel9image3.jpg",
+      "/assets/productimage/pixel9image4.jpg",
+      "/assets/productimage/pixel9image.jpg"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "Silver"],
     "rating": 3,
     "ratingCount": 45,
-    "category": "electronics"
+    "category": "electronics",
+    "stock": 30,
+    "isFavorite": false
   },
   {
+    "id": "product-7",
     "name": "Huawei Pura 80 Series",
-    "description": "₦5,000 cashback available",
+    "Discountdescription": "₦5,000 cashback available",
+    "Productdescription":"About the Product",
     "price": 600000,
     "discountedPrice": 580000,
     "image": "/assets/productimage/huaweipura80.jpg",
+    "views": [
+      "/assets/productimage/huaweipura80-2.jpg",
+      "/assets/productimage/huaweipura80-3.jpg",
+      "/assets/productimage/huaweipura80-4.jpg",
+      "/assets/productimage/huaweipura80.jpg"
+    ],
+    "sizes": [],
+    "availableColors": ["Gray", "Gold"],
     "rating": 4,
     "ratingCount": 60,
-    "category": "electronics"
+    "category": "electronics",
+    "stock": 10,
+    "isFavorite": false
   },
   {
+    "id": "product-8",
     "name": "Xiaomi 15 Series",
-    "description": "Free shipping on all orders",
+    "Discountdescription": "Free shipping on all orders",
+    "Productdescription":"About the Product",
     "price": 500000,
     "discountedPrice": 480000,
     "image": "/assets/productimage/Xiomi15image.jpg",
+    "views": [
+      "/assets/productimage/Xiomi15image2.jpg",
+      "/assets/productimage/Xiomi15image3.jpg",
+      "/assets/productimage/Xiomi15image4.jpg",
+      "/assets/productimage/Xiomi15image.jpg"
+    ],
+    "sizes": [],
+    "availableColors": ["White", "Black", "Pink"],
     "rating": 4,
     "ratingCount": 80,
-    "category": "electronics"
+    "category": "electronics",
+    "stock": 25,
+    "isFavorite": true
   },
   {
-    "name": "OnePlus 11",
-    "description": "Limited time offer: Free case",
-    "price": 550000,
-    "discountedPrice": 530000,
-    "image": "/assets/productimage/Iphone14.png",
+    "id": "product-9",
+    "name": "Jr.Zoom Soccer Gamepad",
+    "Discountdescription": "Secure and ergonomic design for toddlers",
+    "Productdescription":"About the Product",
+    "price": 0,
+    "discountedPrice": 1160,
+    "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
+    "views": [
+      "/assets/productimage/Xiomi15image2.jpg",
+      "/assets/productimage/Xiomi15image3.jpg",
+      "/assets/productimage/Xiomi15image4.jpg",
+      "/assets/productimage/Xiomi15image.jpg"
+    ],
+    "sizes": [],
     "rating": 5,
-    "ratingCount": 70,
-    "category": "electronics"
+    "ratingCount": 35,
+    "category": "shoes",
+    "stock": 25,
+    "isFavorite": true
   },
   {
-    "name": "Oppo Find X5",
-    "description": "Buy 1 Get 1 50% Off",
-    "price": 480000,
-    "discountedPrice": 460000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 3,
-    "ratingCount": 40,
-    "category": "electronics"
-  },
-  {
-    "name": "Vivo X80",
-    "description": "Extra warranty included",
-    "price": 470000,
-    "discountedPrice": 450000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 4,
-    "ratingCount": 55,
-    "category": "electronics"
-  },
-  {
-    "name": "Realme GT 2",
-    "description": "Special student discount",
-    "price": 420000,
-    "discountedPrice": 400000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 4,
-    "ratingCount": 30,
-    "category": "electronics"
-  },
-  {
-    "name": "Tecno Phantom X2",
-    "description": "Free screen protector",
-    "price": 390000,
-    "discountedPrice": 370000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 3,
-    "ratingCount": 25,
-    "category": "electronics"
-  },
-  {
-    "name": "Paracetamol",
-    "description": "Effective pain relief",
-    "price": 2000,
-    "discountedPrice": 1800,
-    "image": "/assets/productimage/Iphone14.png",
+    "id": "product-10",
+    "name": "Kids Electric Car",
+    "Discountdescription": "Secure and ergonomic design for toddlers",
+    "Productdescription":"About the Product",
+    "price": 0,
+    "discountedPrice": 900,
+    "image": "/assets/productimage/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png",
+    "views": [
+      "/assets/productimage/Xiomi15image2.jpg",
+      "/assets/productimage/Xiomi15image3.jpg",
+      "/assets/productimage/Xiomi15image4.jpg",
+      "/assets/productimage/Xiomi15image.jpg"
+    ],
+    "sizes": [],
     "rating": 5,
-    "ratingCount": 200,
-    "category": "medicine"
+    "ratingCount": 65,
+    "category":  "toy car",
+    "stock": 25,
+    "isFavorite": true
   },
   {
-    "name": "Women's Summer Dress",
-    "description": "Light and comfortable for summer",
-    "price": 15000,
-    "discountedPrice": 12000,
-    "image": "/assets/productimage/Iphone14.png",
+    "id": "product-11",
+    "name": "Curology Product Set",
+    "Discountdescription": "Secure and ergonomic design for toddlers",
+    "Productdescription":"About the Product",
+    "price": 0,
+    "discountedPrice": 500,
+    "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+    "views": [
+      "/assets/productimage/Xiomi15image2.jpg",
+      "/assets/productimage/Xiomi15image3.jpg",
+      "/assets/productimage/Xiomi15image4.jpg",
+      "/assets/productimage/Xiomi15image.jpg"
+    ],
+    "availableColors": ["Black", "White", "Blue"],
+    "sizes": [],
     "rating": 4,
-    "ratingCount": 85,
-    "category": "womenFashion"
+    "ratingCount": 145,
+   "category": "skincare",
+    "stock": 25,
+    "isFavorite": true
   },
   {
-    "name": "Men's Classic Shirt",
-    "description": "Perfect for office and casual wear",
-    "price": 10000,
-    "discountedPrice": 8000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 4,
-    "ratingCount": 60,
-    "category": "menFashion"
-  },
-  {
-    "name": "Yoga Mat",
-    "description": "Non-slip and durable",
-    "price": 5000,
-    "discountedPrice": 4000,
-    "image": "/assets/productimage/Iphone14.png",
+    "id": "product-12",
+    "name": "Quilted Satin Jacket",
+    "Discountdescription": "Save ₦30,000 on purchase",
+    "Productdescription": "Secure and ergonomic design for toddlers",
+    "price": 0,
+    "discountedPrice": 500,
+    "image": "/assets/productimage/Quilted Satin Jacket.png",
+    "views": [
+      "/assets/productimage/s25Image2.webp",
+      "/assets/productimage/s25Image3.webp",
+      "/assets/productimage/s25Image4.webp",
+      "/assets/productimage/s25Image.webp"
+    ],
+    "sizes": [],
+    "availableColors": ["Graphite", "Green", "Lavender"],
     "rating": 5,
-    "ratingCount": 150,
-    "category": "sportOutdoor"
-  },
-  {
-    "name": "Baby Stroller",
-    "description": "Safe and comfortable for babies",
-    "price": 35000,
-    "discountedPrice": 32000,
-    "image": "/assets/productimage/Iphone14.png",
-    "rating": 4,
-    "ratingCount": 40,
-    "category": "babiesToys"
-  },
-  {
-  "name": "Toddler Car Seat",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 45000,
-  "discountedPrice": 42000,
-  "image": "/assets/productimage/Iphone14.png",
-  "rating": 5,
-  "ratingCount": 65,
-  "category": "babiesToys"
-},
-{
-  "name": "CANON EOS DSLR Camera",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 360,
-  "discountedPrice": 42000,
-  "image": "/assets/productimage/CANON EOS DSLR Camera.png",
-  "rating": 4,
-  "ratingCount": 95,
-  "category": "camera"
-},
-{
-  "name": "ASUS FHD Gaming Laptop",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 700,
-  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
-  "rating": 5,
-  "ratingCount": 325,
-  "category": "Laptop"
-},
-{
-  "name": "Quilted Satin Jacket",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 500,
-  "image": "/assets/productimage/Quilted Satin Jacket.png",
-  "rating": 5,
-  "ratingCount": 325,
-  "category": "Laptop"
-},
-{
-  "name": "Curology Product Set",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 500,
-  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
-  "rating": 4,
-  "ratingCount": 145,
-  "category": "skincare"
-},
-{
-  "name": "Curology Product Set",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 500,
-  "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
-  "rating": 4,
-  "ratingCount": 145,
-  "category": "skincare"
-},
-{
-  "name": "Kids Electric Car",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 900,
-  "image": "/assets/productimage/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png",
-  "rating": 5,
-  "ratingCount": 65,
-  "category": "toy car"
-},
-{
-  "name": "Jr.Zoom Soccer Gamepad",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 1160,
-  "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
-  "rating": 5,
-  "ratingCount": 35,
-  "category": "shoes"
-},
-{
-  "name": "Jr.Zoom Soccer Gamepad",
-  "description": "Secure and ergonomic design for toddlers",
-  "price": 0,
-  "discountedPrice": 1160,
-  "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
-  "rating": 5,
-  "ratingCount": 35,
-  "category": "shoes"
-}
+    "ratingCount": 98,
+    "category": "electronics",
+    "stock": 20,
+    "isFavorite": true
+  }
 ]

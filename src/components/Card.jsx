@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { AiOutlineHeart, AiOutlineShoppingCart,AiOutlineEye } from 'react-icons/ai';
 import { useAuthStore } from "../store/Authstore";
+import { useNavigate } from 'react-router';
 
-function Card({name, price, discountedPrice, image, rating, ratingCount,hidePercentageOff }) {
-   const item = { name, price, discountedPrice, image, rating, ratingCount };
+function Card({ id, name, price, discountedPrice, image, rating, ratingCount, hidePercentageOff }) {
+  const item = { id, name, price, discountedPrice, image, rating, ratingCount };
+  const navigate = useNavigate();
    const { addToCart, toggleWishlist, } = useAuthStore();
    const percentageOff = Math.round(((price - discountedPrice) / price) * 100);
    const [loved, setLoved] = useState(false);
@@ -51,9 +53,16 @@ function Card({name, price, discountedPrice, image, rating, ratingCount,hidePerc
           />
         </button>
       </div>
-      <div className='bg-gray-300'><img src={image} alt={name} className=" h-70  rounded mx-auto w-full  p-5" /></div>
-      <div className='w-[80%] mx-auto'>
-          <h3 className="mt-2 text-lg font-semibold">{name}</h3>
+      <div
+        onClick={() => navigate(`/product/${id}`)}
+        className="cursor-pointer bg-gray-300"
+      >
+        <img src={image} alt={name} className="h-70 rounded mx-auto w-full p-5" />
+      </div>
+    <div className='w-[80%] mx-auto'>
+      <h3 className="mt-2 text-lg font-semibold cursor-pointer" onClick={() => navigate(`/product/${id}`)}>
+            {name}
+        </h3>
           <div className="flex items-center mt-1">
             <span className="text-orange-600 text-xl font-bold mr-2">
               ${discountedPrice}

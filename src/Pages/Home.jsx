@@ -4,7 +4,7 @@ import "../I18n";
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import Timer from "../components/Timer";
+import Sections from "../components/Sections";
 
 import { AiOutlineRight } from "react-icons/ai";
 import { NavLink } from "react-router";
@@ -77,8 +77,14 @@ function Home() {
   // Category Menu (with optional subcategories)
   // -----------------------------
   const categories = [
-    { name: t("womenFashion"), sub: [t("dresses"), t("tops"), t("shoes"), t("accessories")] },
-    { name: t("menFashion"), sub: [t("shirts"), t("trousers"), t("shoes"), t("accessories")] },
+    {
+      name: t("womenFashion"),
+      sub: [t("dresses"), t("tops"), t("shoes"), t("accessories")],
+    },
+    {
+      name: t("menFashion"),
+      sub: [t("shirts"), t("trousers"), t("shoes"), t("accessories")],
+    },
     { name: t("electronics") },
     { name: t("homeLifestyle") },
     { name: t("medicine") },
@@ -174,10 +180,8 @@ function Home() {
         </div>
       </div>
 
-      
-      <Timer duration={2 * 24 * 60 * 60 * 1000} />
+      <Sections/>
 
-   
       <Footer />
     </div>
   );
