@@ -25,7 +25,7 @@ const initialState = {
 };
 
 function Checkout() {
-  const { cartItems, user } = useAuthStore(); // Auth store for user & cart data
+  const { cartItems, user,removeFromCart } = useAuthStore(); // Auth store for user & cart data
 
   // -------------------------------
   // State declarations
@@ -186,13 +186,20 @@ function Checkout() {
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
               <div key={idx} className="flex justify-between items-center border-b pb-3">
-                <div className="flex items-center gap-2">
+                <div className="relative flex items-center gap-2">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-14 h-14 object-cover rounded bg-black"
+                    className="w-16 h-16 object-cover rounded bg-black"
                   />
-                  <p className="font-medium">{item.name}</p>
+                  {/* Remove from cart button */}
+                  <button
+                    onClick={() => removeFromCart(item.name)}
+                    className="text-white hover:text-red-600 bg-black rounded-full w-7 h-7 flex justify-center items-center absolute top-1"
+                  >
+                    x
+                  </button>
+                  <h3 className="font-medium">{item.name}</h3>
                 </div>
                 <p className="text-sm text-red-600">
                   ${item.discountedPrice} × {item.quantity}

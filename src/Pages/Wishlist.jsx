@@ -4,8 +4,10 @@ import Nav from "../components/Nav";
 import { AiOutlineDelete,AiOutlineShoppingCart } from "react-icons/ai";
 import { useEffect, useState  } from "react";
 import  Footer  from "../components/Footer";
+import { useNavigate } from 'react-router';
 
 function Wishlist() {
+  const navigate = useNavigate();
   const { wishlist, addToCart, removeFromWishlist } = useAuthStore();
   const { products, fetchProducts, loading, error } = useProductStore();
   const [showAllMonth, setShowAllMonth] = useState(false);
@@ -93,31 +95,35 @@ function Wishlist() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4 3xl:grid-cols-5">
           {(showAllMonth ? products : products.slice(0, 8)).map(
-            (product, i) => (
+            (product, id) => (
               <div
-                key={i}
-                className="bg-white border rounded-lg shadow-sm p-4 relative"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-40  rounded bg-black"
-                />
-                <h3 className="mt-3 font-semibold text-lg">{product.name}</h3>
-                <div className="flex items-center mt-2">
-                  <span className="text-orange-600 font-bold mr-2">
-                    ${product.discountedPrice}
-                  </span>
-                </div>
-
-                <button
-                  onClick={() => addToCart(product)}
-                  className="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
-                >
-                  <AiOutlineShoppingCart className="inline mr-2" size={24} />
-                  Add to Cart
-                </button>
+              key={id}
+              className="bg-white border rounded-lg shadow-sm p-4 relative"
+              onClick={() => navigate(`/product/${product.id}`)}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-40  rounded bg-black"
+              />
+              <h3 className="mt-3 font-semibold text-lg">{product.name}</h3>
+              <div className="flex items-center mt-2">
+                <span className="text-orange-600 font-bold mr-2">
+                  ${product.discountedPrice}
+                </span>
               </div>
+            
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // prevent navigating when adding to cart
+                  addToCart(product);
+                }}
+                className="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
+              >
+                <AiOutlineShoppingCart className="inline mr-2" size={24} />
+                Add to Cart
+              </button>
+            </div>
             )
           )}
         </div>

@@ -5,12 +5,14 @@ import Nav from "../components/Nav";
 import { useParams } from "react-router";
 import { useProductStore } from "../store/Productstore";
 import { useAuthStore } from "../store/Authstore";
+import { useNavigate } from "react-router";
 
 
 export default function ProductPage() {
+  const navigate = useNavigate();
     const {id}= useParams()
     const { products, fetchProducts} = useProductStore();
-    const { toggleWishlist } = useAuthStore();
+    const { toggleWishlist,addToCart } = useAuthStore();
 
  
     const [product, setCountryData] = useState(null);
@@ -19,6 +21,11 @@ export default function ProductPage() {
     const [colour, setColour] = useState("");
     const [liked, setLiked] = useState(false);
   
+
+    const handleBuyNow = () => {
+      addToCart({ ...product, quantity: 1 }); // or quantity: product.quantity if available
+      navigate("/checkout");
+    };
 
   useEffect(() => {
     fetchProducts("/Goods/Detail.json");
@@ -148,7 +155,9 @@ export default function ProductPage() {
                 <button onClick={() => handleQuantityChange("inc")} className="px-2 text-lg font-bold border-l  border-gray-400 hover:bg-red-600">+</button>
               </div>
     
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-1 rounded font-semibold">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-1 rounded font-semibold"
+               onClick={handleBuyNow}
+               >
                 Buy Now
               </button>
                
