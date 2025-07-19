@@ -10,6 +10,8 @@ import UserAccount from "./Pages/UserAccount";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import ProductDetails from "./Pages/ProductDetails";
+import ProductPage from "./Pages/ProductPage";
+
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/Firebase"; // your firebase config
@@ -35,6 +37,8 @@ function App() {
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/About" element={<About/>} />
         <Route path="/product/:id"  element={<ProductDetails />} />
+        <Route path="/products/:category/:subcategory?" element={<ProductPage />} />
+        
         <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>

@@ -343,7 +343,7 @@ function Sections() {
             ) : (
               <div className="mx-auto">
                 {monthSingleBatch.map((single, idx) => (
-                  <div className="w-full mb-5 mt-20 bg-black text-white flex justify-between">
+                  <div key={idx} className="w-full mb-5 mt-20 bg-black text-white flex justify-between">
                     <div className="font-semibold grid m-10 mr-0 space-y-5">
                       <p className="text-green-400">Category</p>
                       <p className="text-5xl ">{single.Discountdescription}</p>
@@ -483,7 +483,7 @@ function Sections() {
               ) : (
                 <div className="bg-black flex justify-end">
                   {monthSingleBatch.map((single, idx) => (
-                    <p>
+                    <div key={idx}>
                       <img
                         key={idx}
                         src={single.image}
@@ -497,7 +497,7 @@ function Sections() {
                           shop Now
                         </button>
                       </div>
-                    </p>
+                    </div>
                   ))}
                 </div>
               )}
@@ -510,7 +510,7 @@ function Sections() {
                 ) : (
                   <div className="bg-black">
                     {monthSingleBatch.map((single, idx) => (
-                      <div>
+                      <div key={idx}>
                         <img
                           key={idx}
                           src={single.image}
@@ -536,7 +536,7 @@ function Sections() {
                 ) : (
                   <div className="bg-black">
                     {monthSingleBatch.map((single, idx) => (
-                      <div>
+                      <div key={idx}>
                         <img
                           key={idx}
                           src={single.image}

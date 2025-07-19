@@ -22,6 +22,8 @@ const shuffleArray = (array) => {
 export const useProductStore = create((set, get) => ({
   products: [],
   selectedProduct: null,
+  selectedCategory: null,
+  selectedSubcategory: null,
 
   flashDetails: [],
   flashCurrentBatch: [],
@@ -111,4 +113,7 @@ export const useProductStore = create((set, get) => ({
       productCurrentBatch: productDetails[prev],
     });
   },
+
+  setSelectedCategory: (category) => set({ selectedCategory: category }),
+  setSelectedSubcategory: (subcategory) => set({ selectedSubcategory: subcategory }),
 }));

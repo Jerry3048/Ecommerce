@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useProductStore } from "../store/productStore";
 import "../I18n";
+import { useNavigate } from "react-router"; // Fixed import
 
 import { AiOutlineRight } from "react-icons/ai";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router"; // Fixed import
 
 import Arrow from "/assets/arrow/rightarrowwhite.png";
 
@@ -21,16 +22,38 @@ import HuwaweiLogo from "/assets/productimage/HuwaweiLogo.png";
 import Huaweipura80 from "/assets/productimage/huaweipura80.jpg";
 
 function Home() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
-  const { products } = useProductStore();
-  const [selectedCategory, setSelectedCategory] = useState("");
 
-  const Categories = [...new Set(products.map((item) => item.category))];
+  const {
+    products,
+    selectedCategory,
+    setSelectedCategory,
+    setSelectedSubcategory,
+  } = useProductStore();
 
+  // Generate category + subcategory map
+  const categoryMap = {};
+  products.forEach((product) => {
+    const { category, subcategory } = product;
+    if (!categoryMap[category]) {
+      categoryMap[category] = new Set();
+    }
+    if (subcategory) {
+      categoryMap[category].add(subcategory);
+    }
+  });
 
-  // -----------------------------
-  // Flash Sales Tabs (Auto-scroll)
-  // -----------------------------
+  const dynamicCategories = Object.entries(categoryMap).map(([category, subSet]) => ({
+    name: category,
+    sub: Array.from(subSet),
+  }));
+
+  const [activeMenu, setActiveMenu] = useState(null);
+  const toggleMenu = (index) => {
+    setActiveMenu(activeMenu === index ? null : index);
+  };
+
   const tabs = [
     {
       name: "iPhone 14 Series",
@@ -64,10 +87,8 @@ function Home() {
     },
   ];
 
-  const [activeTab, setActiveTab] = useState(0); // Tracks active promo tab
-  const tab = tabs[activeTab];
+  const [activeTab, setActiveTab] = useState(0);
 
-  // Auto-switch tab every 10s
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % tabs.length);
@@ -75,78 +96,66 @@ function Home() {
     return () => clearInterval(interval);
   }, [tabs.length]);
 
-  // -----------------------------
-  // Category Menu (with optional subsidebarCategories)
-  // -----------------------------
-  const sidebarCategories = [
-    {
-      name: t("womenFashion"),
-      sub: [t("dresses"), t("tops"), t("shoes"), t("accessories")],
-    },
-    {
-      name: t("menFashion"),
-      sub: [t("shirts"), t("trousers"), t("shoes"), t("accessories")],
-    },
-    { name: t("electronics") },
-    { name: t("homeLifestyle") },
-    { name: t("medicine") },
-    { name: t("sportOutdoor") },
-    { name: t("babiesToys") },
-    { name: t("groceriesPets") },
-    { name: t("healthBeauty") },
-  ];
-
-  const [activeMenu, setActiveMenu] = useState(null);
-  const toggleMenu = (index) => {
-    setActiveMenu(activeMenu === index ? null : index);
-  };
+  const tab = tabs[activeTab];
 
   return (
     <div>
-      {/* -----------------------------
-          Sidebar Category & Flash Tab
-      ------------------------------ */}
       <div className="w-[80%] mx-auto flex">
-        {/* Sidebar with sidebarCategories */}
+        {/* Sidebar */}
         <ul className="flex flex-col gap-5 border-r-1 w-[20%] border-gray-300">
-          {sidebarCategories.map((cat, index) => (
+          {dynamicCategories.map((cat, index) => (
             <li key={index} className="relative group">
               <button
-                  onClick={() => {
-                    toggleMenu(index);
-                    setSelectedCategory(cat.name); // set selected category here
-                  }}
-                  className={`w-full text-left py-2 flex items-center justify-between hover:bg-gray-100 ${
-                    selectedCategory === cat.name ? "bg-gray-200 font-bold" : ""
-                  }`}
-                >
-                  {cat.name}
-                  {Array.isArray(cat.sub) && cat.sub.length > 0 && (
-                    <AiOutlineRight className="inline" />
-                  )}
-                </button>
-
-              {/* Submenu for subsidebarCategories */}
-              <ul
-                className={`absolute left-full top-0 bg-white shadow-lg rounded z-50
-                  ${activeMenu === index ? "block" : "hidden"}
-                  group-hover:block`}
+                onClick={() => {
+                  toggleMenu(index);
+                  setSelectedCategory(cat.name);
+                  setSelectedSubcategory(null);
+                  navigate(`/products/${encodeURIComponent(cat.name)}`);
+                }}
+                className={`w-full text-left py-2 flex items-center justify-between hover:bg-gray-100 ${
+                  selectedCategory === cat.name ? "bg-gray-200 font-bold" : ""
+                }`}
               >
-                {Array.isArray(cat.sub) &&
-                  cat.sub.map((subcat) => (
+                {cat.name}
+                {Array.isArray(cat.sub) && cat.sub.length > 0 && (
+                  <AiOutlineRight className="inline" />
+                )}
+              </button>
+
+              {/* Submenu */}
+              {Array.isArray(cat.sub) && cat.sub.length > 0 && (
+                <ul
+                  className={`absolute left-full top-0 bg-white shadow-lg rounded z-50 ${
+                    activeMenu === index ? "block" : "hidden"
+                  } group-hover:block`}
+                >
+                  {cat.sub.map((subcat) => (
                     <li key={subcat} className="px-4 py-2 hover:bg-gray-200">
-                      {subcat}
+                      <button
+                        onClick={() => {
+                          setSelectedCategory(cat.name);
+                          setSelectedSubcategory(subcat);
+                          navigate(
+                            `/products/${encodeURIComponent(cat.name)}/${encodeURIComponent(
+                              subcat
+                            )}`
+                          );
+                        }}
+                        className="w-full text-left"
+                      >
+                        {subcat}
+                      </button>
                     </li>
                   ))}
-              </ul>
+                </ul>
+              )}
             </li>
           ))}
         </ul>
 
-        {/* Flash Sales Tab Section */}
+        {/* Flash Tab Section */}
         <div className="bg-black w-full m-3 mb-0 z-0 text-white">
           <div className="flex justify-between items-center w-[80%] mx-auto">
-            {/* Promo text and CTA */}
             <div className="max-w-[30%] space-y-6 m-10">
               <div className="flex space-x-3 items-center">
                 <img src={tab.logo} alt="Logo" className="w-10 h-10" />
@@ -160,14 +169,10 @@ function Home() {
                 <img src={Arrow} alt="Arrow" className="w-3 h-3 inline ml-2" />
               </NavLink>
             </div>
-
-            {/* Product image */}
             <div>
               <img src={tab.image} alt="promo" className="w-70 h-70 mt-4" />
             </div>
           </div>
-
-          {/* Dot navigation */}
           <div className="space-x-4 flex justify-center mb-10">
             {tabs.map((_, idx) => (
               <button
@@ -183,25 +188,6 @@ function Home() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="flex flex-wrap gap-4 p-5">
-        {products
-          .filter((product) => product.category === selectedCategory)
-          .map((product, index) => (
-            <div
-              key={index}
-              className="border rounded shadow-md p-4 w-[200px] bg-white"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-40 object-cover"
-              />
-              <h3 className="font-semibold mt-2">{product.name}</h3>
-              <p>{product.price}</p>
-            </div>
-          ))}
       </div>
     </div>
   );
