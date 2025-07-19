@@ -5,7 +5,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useRef } from "react";
 import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
-import { useProductStore } from "../store/Productstore";
+import { useProductStore } from "../store/productStore";
 import Timer from "../components/Timer";
 
 import {
@@ -70,7 +70,6 @@ function Sections() {
 
   const scrollRef = useRef(null);
 
-
   const [showAllFlash, setShowAllFlash] = useState(false);
   const [categoryDetails, setCategoryDetails] = useState([]);
   const [categoryCurrentBatch, setCategoryCurrentBatch] = useState([]);
@@ -79,7 +78,6 @@ function Sections() {
   const [showAllMonth, setShowAllMonth] = useState(false);
   const [showAllProduct, setShowAllProduct] = useState(false);
 
-  
   // flash sales
   useEffect(() => {
     if (!showAllFlash) {
@@ -174,7 +172,7 @@ function Sections() {
         <div className="flex justify-between items-center mx-auto w-[80%]">
           <div className="font-semibold text-3xl flex gap-4 items-end">
             <p className="mr-8">Flash Sales</p>
-            <Timer duration={2 * 24 * 60 * 60 * 1000} display2={"none"}/>
+            <Timer duration={2 * 24 * 60 * 60 * 1000} display2={"none"} />
           </div>
 
           <div className="flex space-x-4">
@@ -271,7 +269,7 @@ function Sections() {
         ) : (
           <div className="flex gap-4">
             {categoryCurrentBatch.map((cat, idx) => (
-              <div
+              <button
                 key={idx}
                 className="border border-gray-300 w-full text-center py-4 rounded"
               >
@@ -287,7 +285,7 @@ function Sections() {
                   )}
                   <div className="text-sm font-medium">{cat.name}</div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         )}
@@ -338,36 +336,38 @@ function Sections() {
             </div>
           )}
 
-
           {/* category of 1 */}
-            <div className="">
-              {error ? (
-                <div className=" text-center">{error.message}</div>
-              ) : (
-                <div className="mx-auto">
-                  {monthSingleBatch.map((single, idx) => (
-                    <div className="w-full mb-5 mt-20 bg-black text-white flex justify-between">
-                     <div className="font-semibold grid m-10 mr-0 space-y-5">
-                       <p className="text-green-400">Category</p>
-                       <p className="text-5xl ">{single.Discountdescription}</p>
-                        <Timer duration={2 * 24 * 60 * 60 * 1000} display1={"none"}/>
-                       <button className="bg-green-400 p-2 w-[100px] h-[40px]">
-                         Buy Now
-                       </button>
-                     </div>
+          <div className="">
+            {error ? (
+              <div className=" text-center">{error.message}</div>
+            ) : (
+              <div className="mx-auto">
+                {monthSingleBatch.map((single, idx) => (
+                  <div className="w-full mb-5 mt-20 bg-black text-white flex justify-between">
+                    <div className="font-semibold grid m-10 mr-0 space-y-5">
+                      <p className="text-green-400">Category</p>
+                      <p className="text-5xl ">{single.Discountdescription}</p>
+                      <Timer
+                        duration={2 * 24 * 60 * 60 * 1000}
+                        display1={"none"}
+                      />
+                      <button className="bg-green-400 p-2 w-[100px] h-[40px]">
+                        Buy Now
+                      </button>
+                    </div>
                     <div>
-                        <img
-                          key={idx}
-                          src={single.image}
-                          alt={single.name}
-                          className="h-[350px] w-[700px] mt-10"
-                        />
+                      <img
+                        key={idx}
+                        src={single.image}
+                        alt={single.name}
+                        className="h-[350px] w-[700px] mt-10"
+                      />
                     </div>
                   </div>
-                  ))}
-                </div>
-              )}
-            </div>  
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
@@ -453,25 +453,27 @@ function Sections() {
           <div className="relative bg-black h-[616px] w-[50%] flex justify-end items-center">
             {error ? (
               <div className=" text-center">{error.message}</div>
-            ) : (         
-                <div>
-                  {monthSingleBatch.map((single, idx) => (
-                    <div key={idx}>
-                        <img
-                          key={idx}
-                          src={single.image}
-                          alt={single.name}
-                          className="h-[400px]"
-                        />
-                        <div className="absolute left-10 bottom-10 text-white w-[50%] space-y-7">
-                          <p className="text-3xl">Play Station 5</p>
-                          <p>{single.Productdescription}</p>
-                          <button className="font-semibold underline">shop Now</button>
-                        </div>
+            ) : (
+              <div>
+                {monthSingleBatch.map((single, idx) => (
+                  <div key={idx}>
+                    <img
+                      key={idx}
+                      src={single.image}
+                      alt={single.name}
+                      className="h-[400px]"
+                    />
+                    <div className="absolute left-10 bottom-10 text-white w-[50%] space-y-7">
+                      <p className="text-3xl">Play Station 5</p>
+                      <p>{single.Productdescription}</p>
+                      <button className="font-semibold underline">
+                        shop Now
+                      </button>
                     </div>
-                  ))}
-                </div>
-            )}           
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 gap-4">
@@ -491,13 +493,15 @@ function Sections() {
                       <div className="absolute left-10 bottom-7 text-white w-[40%] space-y-7">
                         <p className="text-3xl">{single.name}</p>
                         <p>{single.Productdescription}</p>
-                        <button className="font-semibold underline">shop Now</button>
+                        <button className="font-semibold underline">
+                          shop Now
+                        </button>
                       </div>
                     </p>
                   ))}
                 </div>
               )}
-             </div>
+            </div>
 
             <div className="flex space-x-4 w-full">
               <div className="relative">
@@ -506,7 +510,7 @@ function Sections() {
                 ) : (
                   <div className="bg-black">
                     {monthSingleBatch.map((single, idx) => (
-                     <div>
+                      <div>
                         <img
                           key={idx}
                           src={single.image}
@@ -514,15 +518,16 @@ function Sections() {
                           className="h-[300px] p-5"
                         />
                         <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
-                        <p className="text-2xl">{single.name}</p>
-                        <p>{single.Productdescription}</p>
-                        <button className="font-semibold underline">shop Now</button>
+                          <p className="text-2xl">{single.name}</p>
+                          <p>{single.Productdescription}</p>
+                          <button className="font-semibold underline">
+                            shop Now
+                          </button>
+                        </div>
                       </div>
-                     </div>
                     ))}
                   </div>
                 )}
-               
               </div>
 
               <div className="relative">
@@ -539,15 +544,16 @@ function Sections() {
                           className="h-[300px] p-5"
                         />
                         <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
-                        <p className="text-2xl">{single.name}</p>
-                        <p>{single.Productdescription}</p>
-                        <button className="font-semibold underline">shop Now</button>
-                      </div>
+                          <p className="text-2xl">{single.name}</p>
+                          <p>{single.Productdescription}</p>
+                          <button className="font-semibold underline">
+                            shop Now
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>
                 )}
-               
               </div>
             </div>
           </div>

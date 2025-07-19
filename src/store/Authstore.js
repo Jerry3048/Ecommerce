@@ -20,12 +20,14 @@ export const useAuthStore = create((set, get) => ({
     if (existingItem) {
       set((state) => ({
         cartItems: state.cartItems.map((i) =>
-          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
+          i.name === item.name
+            ? { ...i, quantity: i.quantity + (item.quantity || 1) }
+            : i
         ),
       }));
     } else {
       set((state) => ({
-        cartItems: [...state.cartItems, { ...item, quantity: 1 }],
+        cartItems: [...state.cartItems, { ...item, quantity: item.quantity || 1 }],
       }));
     }
   },
