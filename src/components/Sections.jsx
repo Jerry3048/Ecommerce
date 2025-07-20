@@ -5,7 +5,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useRef } from "react";
 import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
-import { useProductStore } from "../store/productStore";
+import { useProductStore } from "../store/ProductStore";
 import Timer from "../components/Timer";
 
 import {

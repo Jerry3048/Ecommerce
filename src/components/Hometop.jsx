@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useProductStore } from "../store/productStore";
+import { useProductStore } from "../store/ProductStore";
 import "../I18n";
 import { useNavigate } from "react-router"; // Fixed import
 

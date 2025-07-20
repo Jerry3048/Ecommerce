@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useProductStore } from "../store/productStore";
+import { useProductStore } from "../store/ProductStore";
 import Card from "../components/Card";
 import Nav from "../components/Nav";    
 import Footer from "../components/Footer";

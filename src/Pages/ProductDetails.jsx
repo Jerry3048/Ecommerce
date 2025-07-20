@@ -3,7 +3,7 @@ import { FaHeart, FaStar } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { useParams, useNavigate } from "react-router";
-import { useProductStore } from "../store/productStore";
+import { useProductStore } from "../store/ProductStore";
 import { useAuthStore } from "../store/Authstore";
 
 export default function ProductPage() {
