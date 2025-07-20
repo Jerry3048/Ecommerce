@@ -5,7 +5,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useRef } from "react";
 import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
-import { useProductStore } from "../store/ProductStore";
+import { useProductStore } from "../store/Productstore";
 import Timer from "../components/Timer";
 
 import {
@@ -343,7 +343,10 @@ function Sections() {
             ) : (
               <div className="mx-auto">
                 {monthSingleBatch.map((single, idx) => (
-                  <div key={idx} className="w-full mb-5 mt-20 bg-black text-white flex justify-between">
+                  <div
+                    key={idx}
+                    className="w-full mb-5 mt-20 bg-black text-white flex justify-between"
+                  >
                     <div className="font-semibold grid m-10 mr-0 space-y-5">
                       <p className="text-green-400">Category</p>
                       <p className="text-5xl ">{single.Discountdescription}</p>
