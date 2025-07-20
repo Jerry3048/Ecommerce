@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Sections from "../components/Sections";
-import Hometop from "../components/Top"
+import Hometop from "../components/Hometop";
 
 
 

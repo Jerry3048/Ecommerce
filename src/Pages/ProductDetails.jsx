@@ -3,7 +3,7 @@ import { FaHeart, FaStar } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { useParams, useNavigate } from "react-router";
-import { useProductStore } from "../store/Productstore";
+import { useProductStore } from "../store/productStore";
 import { useAuthStore } from "../store/Authstore";
 
 export default function ProductPage() {
@@ -55,7 +55,7 @@ export default function ProductPage() {
   return (
     <div className="space-y-7">
       <Nav />
-      <div className="w-[80%] mx-auto p-10 flex items-center gap-10 h-[70vh]">
+      <div className="w-[80%] mx-auto p-10 lg:flex items-center justify-center lg:justify-left lg:gap-50 gap-20 lg:h-[70vh]">
         {/* Images */}
         <div className="flex gap-4">
           <div className="grid gap-4">
@@ -71,7 +71,7 @@ export default function ProductPage() {
           <img
             src={product.image}
             alt="Product"
-            className="h-[59vh] w-[70%] rounded shadow bg-gray-200 p-6"
+            className="max-h-[59vh] max-w-[100%] rounded shadow bg-gray-200 p-6"
           />
         </div>
 
