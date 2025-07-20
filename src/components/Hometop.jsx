@@ -21,7 +21,7 @@ import Pixel19 from "/assets/productimage/pixel9image.jpg";
 import HuwaweiLogo from "/assets/productimage/HuwaweiLogo.png";
 import Huaweipura80 from "/assets/productimage/huaweipura80.jpg";
 
-function Home() {
+function Hometop() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -193,4 +193,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Hometop;
