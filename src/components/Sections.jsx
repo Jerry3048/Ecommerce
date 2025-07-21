@@ -363,7 +363,7 @@ function Sections() {
                         key={idx}
                         src={single.image}
                         alt={single.name}
-                        className="h-[350px] w-[700px] mt-10"
+                        className="h-[350px] w-[500px] m-10"
                       />
                     </div>
                   </div>

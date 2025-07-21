@@ -44,12 +44,15 @@ function Hometop() {
     }
   });
 
-  const dynamicCategories = Object.entries(categoryMap).map(([category, subSet]) => ({
-    name: category,
-    sub: Array.from(subSet),
-  }));
+  const dynamicCategories = Object.entries(categoryMap).map(
+    ([category, subSet]) => ({
+      name: category,
+      sub: Array.from(subSet),
+    })
+  );
 
   const [activeMenu, setActiveMenu] = useState(null);
+  const [submenuPosition, setSubmenuPosition] = useState({ top: 0, left: 0 });
   const toggleMenu = (index) => {
     setActiveMenu(activeMenu === index ? null : index);
   };
@@ -102,61 +105,78 @@ function Hometop() {
     <div>
       <div className="w-[80%] mx-auto flex">
         {/* Sidebar */}
-        <ul className="flex flex-col gap-5 border-r-1 w-[20%] border-gray-300">
-          {dynamicCategories.map((cat, index) => (
-            <li key={index} className="relative group">
-              <button
-                onClick={() => {
-                  toggleMenu(index);
-                  setSelectedCategory(cat.name);
-                  setSelectedSubcategory(null);
-                  navigate(`/products/${encodeURIComponent(cat.name)}`);
+        <div className="w-[20%] max-h-[60vh] overflow-y-scroll border-r-1 border-gray-300">
+          <ul className="flex flex-col gap-5 overflow-visible">
+            {dynamicCategories.map((cat, index) => (
+              <li
+                key={index}
+                onMouseOver={(e) => {
+                  setActiveMenu(index);
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  setSubmenuPosition({ top: rect.top, left: rect.right });
                 }}
-                className={`w-full text-left py-2 flex items-center justify-between hover:bg-gray-100 ${
-                  selectedCategory === cat.name ? "bg-gray-200 font-bold" : ""
-                }`}
+                onMouseLeave={() => setActiveMenu(null)}
+                className="relative "
               >
-                {cat.name}
-                {Array.isArray(cat.sub) && cat.sub.length > 0 && (
-                  <AiOutlineRight className="inline" />
-                )}
-              </button>
-
-              {/* Submenu */}
-              {Array.isArray(cat.sub) && cat.sub.length > 0 && (
-                <ul
-                  className={`absolute left-full top-0 bg-white shadow-lg rounded z-50 ${
-                    activeMenu === index ? "block" : "hidden"
-                  } group-hover:block`}
+                <button
+                  onClick={() => {
+                    toggleMenu(index);
+                    setSelectedCategory(cat.name);
+                    setSelectedSubcategory(null);
+                    navigate(`/products/${encodeURIComponent(cat.name)}`);
+                  }}
+                  className={`w-full text-left p-2 flex items-center justify-between hover:bg-gray-100 ${
+                    selectedCategory === cat.name ? "bg-gray-200 font-bold" : ""
+                  }`}
                 >
-                  {cat.sub.map((subcat) => (
-                    <li key={subcat} className="px-4 py-2 hover:bg-gray-200">
-                      <button
-                        onClick={() => {
-                          setSelectedCategory(cat.name);
-                          setSelectedSubcategory(subcat);
-                          navigate(
-                            `/products/${encodeURIComponent(cat.name)}/${encodeURIComponent(
-                              subcat
-                            )}`
-                          );
-                        }}
-                        className="w-full text-left"
-                      >
-                        {subcat}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
+                  {cat.name}
+                  {Array.isArray(cat.sub) && cat.sub.length > 0 && (
+                    <AiOutlineRight className="inline" />
+                  )}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Render submenu as a fixed element */}
+        {activeMenu !== null &&
+          Array.isArray(dynamicCategories[activeMenu]?.sub) &&
+          dynamicCategories[activeMenu].sub.length > 0 && (
+            <ul
+              className="fixed bg-white shadow-lg rounded z-50 text-sm w-[150px]"
+              style={{
+                top: submenuPosition.top,
+                left: submenuPosition.left,
+              }}
+              onMouseEnter={() => setActiveMenu(activeMenu)}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              {dynamicCategories[activeMenu].sub.map((subcat) => (
+                <li key={subcat} className="px-4 py-2 hover:bg-gray-200">
+                  <button
+                    onClick={() => {
+                      setSelectedCategory(dynamicCategories[activeMenu].name);
+                      setSelectedSubcategory(subcat);
+                      navigate(
+                        `/products/${encodeURIComponent(
+                          dynamicCategories[activeMenu].name
+                        )}/${encodeURIComponent(subcat)}`
+                      );
+                    }}
+                    className="w-full text-left"
+                  >
+                    {subcat}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
 
         {/* Flash Tab Section */}
-        <div className="bg-black w-full m-3 mb-0 z-0 text-white">
+        <div className="bg-black w-full m-3 mb-0 z-0 text-white max-h-[60vh] relative">
           <div className="flex justify-between items-center w-[80%] mx-auto">
-            <div className="max-w-[30%] space-y-6 m-10">
+            <div className="max-w-[40%] space-y-6 m-10">
               <div className="flex space-x-3 items-center">
                 <img src={tab.logo} alt="Logo" className="w-10 h-10" />
                 <p>{tab.name}</p>
@@ -173,7 +193,7 @@ function Hometop() {
               <img src={tab.image} alt="promo" className="w-70 h-70 mt-4" />
             </div>
           </div>
-          <div className="space-x-4 flex justify-center mb-10">
+          <div className="space-x-4 flex justify-center mb-10 absolute bottom-3 left-0 right-0">
             {tabs.map((_, idx) => (
               <button
                 key={idx}

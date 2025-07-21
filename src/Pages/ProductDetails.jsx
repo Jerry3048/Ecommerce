@@ -7,10 +7,12 @@ import { useProductStore } from "../store/Productstore";
 import { useAuthStore } from "../store/Authstore";
 
 export default function ProductPage() {
+  const { products, fetchProducts } = useProductStore();
+  const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
-  const { products, fetchProducts } = useProductStore();
-  const { toggleWishlist, addToCart } = useAuthStore();
+  
+  const { toggleWishlist, addToCart,user } = useAuthStore();
 
   const [product, setCountryData] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -19,6 +21,11 @@ export default function ProductPage() {
   const [liked, setLiked] = useState(false);
 
   const handleBuyNow = () => {
+    if (!user) {
+      alert("You must be logged in to proceed to checkout.");
+      navigate("/signup");
+      return;
+    }
     addToCart({ ...product, quantity, size, colour });
     navigate("/checkout");
   };
@@ -41,6 +48,7 @@ export default function ProductPage() {
     if (product) {
       setSize(product.sizes?.[0] || "");
       setColour(product.availableColors?.[0] || "");
+      setSelectedImage(product.image)
     }
   }, [product]);
 
@@ -58,22 +66,25 @@ export default function ProductPage() {
       <div className="w-[80%] mx-auto p-10 lg:flex items-center justify-center lg:justify-left lg:gap-50 gap-20 lg:h-[70vh]">
         {/* Images */}
         <div className="flex gap-4">
-          <div className="grid gap-4">
-            {product.views.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt="thumb"
-                className="h-[13vh] bg-gray-200 cursor-pointer p-1"
-              />
-            ))}
+            <div className="grid gap-4">
+              {product.views.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`thumb-${i}`}
+                  className={`h-[13vh] w-[100%] p-1 bg-gray-200 cursor-pointer ${
+                    img === selectedImage ? "ring-2 ring-red-500" : ""
+                  }`}
+                  onClick={() => setSelectedImage(img)}
+                />
+              ))}
+            </div>
+            <img
+              src={selectedImage || product.image}
+              alt="Product"
+              className="max-h-[59vh] lg:w-[500px] rounded shadow bg-gray-200 p-6"
+            />
           </div>
-          <img
-            src={product.image}
-            alt="Product"
-            className="max-h-[59vh] max-w-[100%] rounded shadow bg-gray-200 p-6"
-          />
-        </div>
 
         {/* Product Info */}
         <div className="space-y-3">

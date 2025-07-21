@@ -1,24 +1,29 @@
 [
   {
     "id": "product-1",
-    "name": "Toddler Car Seat",
+    "name": "Toddler Seat",
     "Discountdescription": "Up to 10% off Voucher",
     "Productdescription": "About the Product",
     "price": 900,
     "discountedPrice": 850,
-    "image": "/assets/productimage/CANON EOS DSLR Camera.png",
-    "views": [ 
-      "/assets/productimage/Iphone14-2.png",
-      "/assets/productimage/Iphone14-3.png",
-      "/assets/productimage/Iphone14-4.png",
-      "/assets/productimage/Iphone14.png"
+
+    "image": "https://plus.unsplash.com/premium_photo-1750507176323-42aacfa5e1b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG9kZGxlcmNhciUyMHNlYXR8ZW58MHx8MHx8fDA%3D",
+
+    "views": [
+      "https://images.unsplash.com/photo-1668571789819-3a5143ff9b9c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dG9kZGxlcmNhciUyMHNlYXR8ZW58MHx8MHx8fDA%3D",
+
+      "https://media.istockphoto.com/id/1444963065/photo/child-car-seat-for-safety-in-the-rear-passenger-seat-of-a-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=zbWaeQucjlnSzgrv5sYWVHqyzNxRHcvBehfdrU-oVzM=",
+
+      "https://images.unsplash.com/photo-1658046157342-ae13ce3a22c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRvZGRsZXJjYXIlMjBzZWF0fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNoYWlyfGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Black", "White", "Blue"],
     "rating": 4,
     "ratingCount": 120,
-    "category": "electronics",
-    "subCategory": "car accessories",
+    "category": "furniture",
+    "subcategory": "chair",
     "stock": 15,
     "isFavorite": false
   },
@@ -31,40 +36,46 @@
     "discountedPrice": 850,
     "image": "/assets/productimage/CANON EOS DSLR Camera.png",
     "views": [
-      "/assets/productimage/Iphone14-2.png",
-      "/assets/productimage/Iphone14-3.png",
-      "/assets/productimage/Iphone14-4.png",
-      "/assets/productimage/Iphone14.png"
+      "https://media.istockphoto.com/id/174508097/photo/black-and-white-rangefinder-camera-on-a-white-surface.webp?a=1&b=1&s=612x612&w=0&k=20&c=j_ZFd9AZnXOyLMIUTbamRFWjlCbfuFvMq5NbB0WL9d8=",
+
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNhbWVyYXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FtZXJhfGVufDB8fDB8fHww",
+
+      "https://plus.unsplash.com/premium_photo-1663134149019-284682ece04c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FtZXJhfGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Black", "White", "Blue"],
     "rating": 4,
     "ratingCount": 120,
     "category": "electronics",
-    "subCategory": "camera",
+    "subcategory": "camera",
     "stock": 15,
     "isFavorite": false
   },
   {
     "id": "product-3",
-    "name": "ASUS FHD Gaming Laptop",
+    "name": "macBook Pro",
     "Discountdescription": "Up to 10% off Voucher",
     "Productdescription": "About the Product",
     "price": 900000,
     "discountedPrice": 850000,
-    "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+    "image": "https://images.unsplash.com/photo-1639087595550-e9770a85f8c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzE5fHxsYXB0b3B8ZW58MHx8MHx8fDA%3D",
     "views": [
-      "/assets/productimage/Iphone14-2.png",
-      "/assets/productimage/Iphone14-3.png",
-      "/assets/productimage/Iphone14-4.png",
-      "/assets/productimage/Iphone14.png"
+      "https://images.unsplash.com/photo-1524711212733-10ef1b0bec75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzcwfHxsYXB0b3B8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1650265424401-9d34eecae180?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDQ2fHxsYXB0b3B8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1541506618330-7c369fc759b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDcxfHxsYXB0b3B8ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1681702178635-52b7725c440a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDg0fHxsYXB0b3B8ZW58MHx8MHx8fDA%3D"
     ],
     "sizes": [],
     "availableColors": ["Black", "White", "Blue"],
     "rating": 4,
     "ratingCount": 120,
     "category": "electronics",
-    "subCategory": "laptop",
+    "subcategory": "laptop",
     "stock": 15,
     "isFavorite": false
   },
@@ -75,19 +86,22 @@
     "Productdescription": "About the Product",
     "price": 900000,
     "discountedPrice": 850000,
-    "image": "/assets/productimage/Iphone14.png",
+    "image":"https://images.unsplash.com/photo-1658494603398-2def8bb2742a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aXBob25lJTIwMTQlMjBzZXJpZXN8ZW58MHx8MHx8fDA%3D",
     "views": [
-      "/assets/productimage/Iphone14-2.png",
-      "/assets/productimage/Iphone14-3.png",
-      "/assets/productimage/Iphone14-4.png",
-      "/assets/productimage/Iphone14.png"
+      "https://images.unsplash.com/photo-1668184162572-4d21d85d8026?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aXBob25lJTIwMTQlMjBzZXJpZXN8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1639313265378-1c51cf8cfebd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGlwaG9uZSUyMDE0JTIwc2VyaWVzfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1695580160253-047a4e285454?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGlwaG9uZSUyMDE0JTIwc2VyaWVzfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1590460309911-8471bfd8da34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGlwaG9uZSUyMDE0JTIwc2VyaWVzfGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Black", "White", "Blue"],
     "rating": 4,
     "ratingCount": 120,
     "category": "electronics",
-    "subCategory": "smartphone",
+    "subcategory": "smartphone",
     "stock": 15,
     "isFavorite": false
   },
@@ -98,19 +112,22 @@
     "Productdescription": "About the Product",
     "price": 800000,
     "discountedPrice": 770000,
-    "image": "/assets/productimage/s25Image.webp",
+    "image": "https://images.unsplash.com/photo-1738830274216-20f63b8a0c02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGdhbGF4eSUyMHMyNXxlbnwwfHwwfHx8MA%3D%3D",
     "views": [
-      "/assets/productimage/s25Image2.webp",
-      "/assets/productimage/s25Image3.webp",
-      "/assets/productimage/s25Image4.webp",
-      "/assets/productimage/s25Image.webp"
+      "https://images.unsplash.com/photo-1738830246146-599b67d009db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2FsYXh5JTIwczI1fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1738830251513-a7bfef4b53c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FsYXh5JTIwczI1fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1738830241330-ae47f3708ad4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FsYXh5JTIwczI1fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1738830228067-ede76105594a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FsYXh5JTIwczI1fGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Graphite", "Green", "Lavender"],
     "rating": 5,
     "ratingCount": 98,
     "category": "electronics",
-    "subCategory": "smartphone",
+    "subcategory": "smartphone",
     "stock": 20,
     "isFavorite": true
   },
@@ -121,42 +138,49 @@
     "Productdescription": "About the Product",
     "price": 700000,
     "discountedPrice": 670000,
-    "image": "/assets/productimage/pixel9image.jpg",
+    "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
     "views": [
-      "/assets/productimage/pixel9image2.jpg",
-      "/assets/productimage/pixel9image3.jpg",
-      "/assets/productimage/pixel9image4.jpg",
-      "/assets/productimage/pixel9image.jpg"
+      "https://images.unsplash.com/photo-1533228100845-08145b01de14?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNtYXJ0cGhvbmV8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1531312267124-cd1f431feb1e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHNtYXJ0cGhvbmV8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1640936343842-268f9d87e764?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHxzbWFydHBob25lfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1528254609158-ae7dfaa48ab3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxzbWFydHBob25lfGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Black", "Silver"],
     "rating": 3,
     "ratingCount": 45,
     "category": "electronics",
-    "subCategory": "smartphone",
+    "subcategory": "smartphone",
     "stock": 30,
     "isFavorite": false
   },
   {
     "id": "product-7",
     "name": "Huawei Pura 80 Series",
+
     "Discountdescription": "₦5,000 cashback available",
     "Productdescription": "About the Product",
     "price": 600000,
     "discountedPrice": 580000,
     "image": "/assets/productimage/huaweipura80.jpg",
     "views": [
-      "/assets/productimage/huaweipura80-2.jpg",
-      "/assets/productimage/huaweipura80-3.jpg",
-      "/assets/productimage/huaweipura80-4.jpg",
-      "/assets/productimage/huaweipura80.jpg"
+      "https://images.unsplash.com/photo-1650580809796-39361e4d77f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjU1fHxzbWFydHBob25lfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1656834897728-0075f44d3976?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjcyfHxzbWFydHBob25lfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1655802282818-06e80ec3743d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzAyfHxzbWFydHBob25lfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1658954382178-52e68aab570d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDA4fHxzbWFydHBob25lfGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Gray", "Gold"],
     "rating": 4,
     "ratingCount": 60,
     "category": "electronics",
-    "subCategory": "smartphone",
+    "subcategory": "smartphone",
     "stock": 10,
     "isFavorite": false
   },
@@ -179,29 +203,32 @@
     "rating": 4,
     "ratingCount": 80,
     "category": "electronics",
-    "subCategory": "smartphone",
+    "subcategory": "smartphone",
     "stock": 25,
     "isFavorite": true
   },
   {
     "id": "product-9",
-    "name": "Jr.Zoom Soccer Gamepad",
+    "name": "Jr.Zoom Soccer boots",
     "Discountdescription": "Secure and ergonomic design for toddlers",
     "Productdescription": "About the Product",
     "price": 0,
     "discountedPrice": 1160,
     "image": "/assets/productimage/Jr. Zoom Soccer Cleats.png",
     "views": [
-      "/assets/productimage/Xiomi15image2.jpg",
-      "/assets/productimage/Xiomi15image3.jpg",
-      "/assets/productimage/Xiomi15image4.jpg",
-      "/assets/productimage/Xiomi15image.jpg"
+      "https://media.istockphoto.com/id/1761765961/photo/classic-football-boots-isolated-on-white-background-3.webp?a=1&b=1&s=612x612&w=0&k=20&c=-K5p_8dooiTg1XJhu34ebBmIedZLh3cgVc2ArLCjgCg=",
+
+      "https://media.istockphoto.com/id/508461644/photo/football-shoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=AtMEMQkQIGmgrvU_YKf6X5VC66ZlkfxOSUpjplT7r-M=",
+
+      "https://media.istockphoto.com/id/1421447511/photo/red-football-shoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=9OFoEJ5D97XJdmeTde8aeH_wnTYlcfqLBI9NWv_fEhg=",
+      
+      "https://media.istockphoto.com/id/544810576/photo/unrecognizable-little-football-player-against-green-grass-studi.webp?a=1&b=1&s=612x612&w=0&k=20&c=5C93ql893A8b7Jlk9qCw-wfmJWMqARER0iKk0bPLBqA="
     ],
     "sizes": [],
     "rating": 5,
     "ratingCount": 35,
     "category": "shoes",
-    "subCategory": "gamepad",
+    "subcategory": "Boots",
     "stock": 25,
     "isFavorite": true
   },
@@ -212,18 +239,21 @@
     "Productdescription": "About the Product",
     "price": 0,
     "discountedPrice": 900,
-    "image": "/assets/productimage/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png",
+    "image": "assets/productimage/New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png",
     "views": [
-      "/assets/productimage/Xiomi15image2.jpg",
-      "/assets/productimage/Xiomi15image3.jpg",
-      "/assets/productimage/Xiomi15image4.jpg",
-      "/assets/productimage/Xiomi15image.jpg"
+      "https://images.unsplash.com/photo-1712526144531-aa5efedf6e28?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHRveSUyMGNhcnN8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1594787317357-dcda50fd1d78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRveSUyMGNhcnN8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1591438252948-fa5dd3701c2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dG95JTIwY2Fyc3xlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1597670250484-0e9aff7f8804?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRveSUyMGNhcnN8ZW58MHx8MHx8fDA%3D"
     ],
     "sizes": [],
     "rating": 5,
     "ratingCount": 65,
     "category": "toy car",
-    "subCategory": "ride-on toys",
+    "subcategory": "ride-on toys",
     "stock": 25,
     "isFavorite": true
   },
@@ -234,19 +264,22 @@
     "Productdescription": "About the Product",
     "price": 0,
     "discountedPrice": 500,
-    "image": "/assets/productimage/ASUS FHD Gaming Laptop.png",
+    "image": "https://images.unsplash.com/photo-1567721913486-6585f069b332?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHNraW4lMjBjYXJlfGVufDB8fDB8fHww",
     "views": [
-      "/assets/productimage/Xiomi15image2.jpg",
-      "/assets/productimage/Xiomi15image3.jpg",
-      "/assets/productimage/Xiomi15image4.jpg",
-      "/assets/productimage/Xiomi15image.jpg"
+      "https://images.unsplash.com/photo-1721403396830-d290f04c08a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjMxfHxza2luJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1695938104275-6284a26c9d12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM2fHxza2luJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1582103540024-f12c99ace136?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjQ0fHxza2luJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1571782742478-0816a4773a10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjg0fHxza2luJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D"
     ],
     "availableColors": ["Black", "White", "Blue"],
     "sizes": [],
     "rating": 4,
     "ratingCount": 145,
     "category": "skincare",
-    "subCategory": "treatment kit",
+    "subcategory": "treatment kit",
     "stock": 25,
     "isFavorite": true
   },
@@ -259,18 +292,492 @@
     "discountedPrice": 500,
     "image": "/assets/productimage/Quilted Satin Jacket.png",
     "views": [
-      "/assets/productimage/s25Image2.webp",
-      "/assets/productimage/s25Image3.webp",
-      "/assets/productimage/s25Image4.webp",
-      "/assets/productimage/s25Image.webp"
+      "https://media.istockphoto.com/id/1210106212/photo/black-jacket-and-t-shirt-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=HJUw6UjA_85kVwHcfEzG3MBSJYrQUu7Q97d830ZfLCo=",
+
+      "https://plus.unsplash.com/premium_photo-1664699106511-83abe0a2ec69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fHNhdGluJTIwamFja2V0fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1742392133846-a8b416e81661?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNhdGluJTIwamFja2V0fGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1727516299214-c4d54704b045?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fHNhdGluJTIwamFja2V0fGVufDB8fDB8fHww"
     ],
     "sizes": [],
     "availableColors": ["Graphite", "Green", "Lavender"],
     "rating": 5,
     "ratingCount": 98,
     "category": "electronics",
-    "subCategory": "jacket accessories",
+    "subcategory": "jacket accessories",
     "stock": 20,
     "isFavorite": true
+  },
+  {
+    "id": "product-13",
+    "name": "Sample Microwave 1",
+    "Discountdescription": "Special deal available",
+    "Productdescription": "High quality and reliable product.",
+    "price": 11037,
+    "discountedPrice": 12353,
+    "image": "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWljcm93YXZlfGVufDB8fDB8fHww",
+    "views": [
+      "https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1pY3Jvd2F2ZXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1693786229416-2dd310137f18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWljcm93YXZlfGVufDB8fDB8fHww",
+
+      "https://media.istockphoto.com/id/1840316788/photo/mars-energy-efficient-cooking-heating-lemon-rice-shrimps-with-bens-rice-in-a-microwave.webp?a=1&b=1&s=612x612&w=0&k=20&c=mzuXPQOn1mmxGY9uaCLyclkvAMTXCF5YwxENNgmeaFI=",
+
+      "https://media.istockphoto.com/id/1406993092/photo/a-cropped-photo-of-an-anonymous-caucasian-female-heating-food-in-the-oven.webp?a=1&b=1&s=612x612&w=0&k=20&c=_xmox5yAJIbSuTsyMsS1abnO2SDjXsYWwtw8XGSIeg0="
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "Red"],
+    "rating": 1,
+    "ratingCount": 478,
+    "category": "home appliances",
+    "subcategory": "microwave",
+    "stock": 97,
+    "isFavorite": false
+  },
+  {
+    "id": "product-14",
+    "name": "Sample Perfume 2",
+    "Discountdescription": "Limited time offer",
+    "Productdescription": "Top-notch item with premium features.",
+    "price": 8551,
+    "discountedPrice": 10653,
+    "image": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyZnVtZXxlbnwwfHwwfHx8MA%3D%3D",
+    "views": [
+      "https://images.unsplash.com/photo-1458538977777-0549b2370168?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1593487568720-92097fb460fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1595425959632-34f2822322ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D"
+    ],
+    "sizes": [],
+    "availableColors": ["Gray", "Blue", "Red"],
+    "rating": 3,
+    "ratingCount": 291,
+    "category": "beauty",
+    "subcategory": "perfume",
+    "stock": 59,
+    "isFavorite": false
+  },
+  {
+    "id": "product-15",
+    "name": "Gown",
+    "Discountdescription": "Flash sale",
+    "Productdescription": "Top-notch item with premium features.",
+    "price": 7258,
+    "discountedPrice": 17633,
+    "image": "https://plus.unsplash.com/premium_photo-1673977132933-2a028c2f05a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8R293bnxlbnwwfHwwfHx8MA%3D%3D",
+    "views": [
+      "https://images.unsplash.com/photo-1656574781686-40935ee15db5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvd258ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1676235965555-319270f871ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fEdvd258ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1656574781075-83cacaad9c7c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fEdvd258ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1671576642314-11a11284ea36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fEdvd258ZW58MHx8MHx8fDA%3D"
+    ],
+    "sizes": [],
+    "availableColors": ["Red", "Gray"],
+    "rating": 5,
+    "ratingCount": 192,
+    "category": "fashion",
+    "subcategory": "women's dress",
+    "stock": 95,
+    "isFavorite": false
+  },
+  {
+    "id": "product-16",
+    "name": "Luxury 3-Seater Sofa",
+    "Discountdescription": "20% off this weekend",
+    "Productdescription": "Plush velvet finish with ergonomic design.",
+    "price": 82000,
+    "discountedPrice": 65600,
+    "image": "https://media.istockphoto.com/id/1340943121/photo/front-view-of-grey-sofa.webp?a=1&b=1&s=612x612&w=0&k=20&c=kZJ-66MIgfHBjbXAtLPbPHPk1p3esHk1ElpM9in4Wtw=",
+    "views": [
+      "https://media.istockphoto.com/id/2222803815/photo/beige-two-seater-sofa-rear-isometric-view-3d-render-illustration.webp?a=1&b=1&s=612x612&w=0&k=20&c=bjmOWDjfP07GYsHIwQV3NI4WK5LWQ6wmxf54IBA5Ii4=",
+
+      "https://images.unsplash.com/photo-1698936061086-2bf99c7b9fc5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8MyUyMHNlYXRlciUyMHNvZmF8ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1661310048986-a5ce0ede1f83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8MyUyMHNlYXRlciUyMHNvZmF8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDMlMjBzZWF0ZXIlMjBzb2ZhfGVufDB8fDB8fHww"
+    ],
+    "sizes": [],
+    "availableColors": ["Grey", "Navy Blue", "Cream"],
+    "rating": 4,
+    "ratingCount": 215,
+    "category": "furniture",
+    "subcategory": "sofa",
+    "stock": 10,
+    "isFavorite": false
+  },
+  {
+    "id": "product-17",
+    "name": "Silk Evening Gown",
+    "Discountdescription": "Buy now and get 10% off",
+    "Productdescription": "Elegant silk gown perfect for formal occasions.",
+    "price": 32000,
+    "discountedPrice": 28800,
+    "image": "https://media.istockphoto.com/id/909364218/photo/luxury-sparkling-womens-dresses-on-hangers.webp?a=1&b=1&s=612x612&w=0&k=20&c=I9NTevvedz5A81SLdwGOa3veRXbp_chXi9kDspSuRuM=",
+    "views": [
+      "https://plus.unsplash.com/premium_photo-1661890560407-ec98856efdd2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXZlbmluZyUyMGdvd258ZW58MHx8MHx8fDA%3D",
+
+      "https://media.istockphoto.com/id/1498090700/photo/sexy-women-is-in-purple-evening-dress-fashion-still.webp?a=1&b=1&s=612x612&w=0&k=20&c=An17yTQHMPaFJ7dK09ZWXvY9fwSKa39Dw0AG8PuEdWk=",
+
+      "https://media.istockphoto.com/id/1440786783/photo/beautiful-woman-with-bright-make-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=cz3kf8IW4EYauebCiFddJwEqgWCw1b22cAyZMP1v0Vs=",
+
+      "https://images.unsplash.com/photo-1543868067-52959e8eef59?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGV2ZW5pbmclMjBnb3dufGVufDB8fDB8fHww"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "availableColors": ["Red", "Black", "Green"],
+    "rating": 5,
+    "ratingCount": 98,
+    "category": "fashion",
+    "subcategory": "women's dress",
+    "stock": 35,
+    "isFavorite": true
+  },
+  {
+    "id": "product-18",
+    "name": "Hydrating Face Serum",
+    "Discountdescription": "Limited-time beauty deal",
+    "Productdescription": "Deep hydration serum with hyaluronic acid and Vitamin C.",
+    "price": 7800,
+    "discountedPrice": 7020,
+    "image":  "https://media.istockphoto.com/id/2054223203/photo/cosmetic-essence-in-glass-bottle-with-pipette-in-transparent-water-with-bubbles.webp?a=1&b=1&s=612x612&w=0&k=20&c=2z_C6nOkZ49f80LY49ji-8nyARhSAgvJ8UjjMew54LQ=",
+    "views": [
+      "https://images.unsplash.com/photo-1743926959711-73960c2a7b4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkcmF0aW5nJTIwZmFjY2UlMjBzZXJ1bXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1668025757022-a75458371576?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aHlkcmF0aW5nJTIwZmFjY2UlMjBzZXJ1bXxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1648712787778-1a521521bd1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGh5ZHJhdGluZyUyMGZhY2NlJTIwc2VydW18ZW58MHx8MHx8fDA%3D",
+
+      "https://media.istockphoto.com/id/2212603116/photo/young-woman-applying-moisturizing-serum-on-her-hands-sitting-in-the-living-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=rywswUfknxYrQYyDTYWKU7LGhbXKIW-NAfzZKf8dEEY="
+    ],
+    "sizes": [],
+    "availableColors": [],
+    "rating": 4,
+    "ratingCount": 324,
+    "category": "beauty",
+    "subcategory": "skincare",
+    "stock": 120,
+    "isFavorite": true
+  },
+  {
+    "id": "product-19",
+    "name": "Adjustable Dumbbell Set",
+    "Discountdescription": "Fitness week offer",
+    "Productdescription": "Durable and space-saving dumbbells with adjustable weights.",
+    "price": 35000,
+    "discountedPrice": 29750,
+    "image": "https://media.istockphoto.com/id/2185628286/photo/collection-of-adjustable-dumbbells-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=qeE7rMpr5uPCeYBca9xnhQ2axUDrqKEDYQHYNn0hV6k=",
+    "views": [
+      "https://media.istockphoto.com/id/1085190458/photo/weight-plates-stacking-at-the-gym.webp?a=1&b=1&s=612x612&w=0&k=20&c=h22rGV2loz6nsO6CVls_JEQP5EEDxPv49XAf5iIThwg=",
+
+      "https://media.istockphoto.com/id/1388512812/photo/dumbbells-for-strength-training.webp?a=1&b=1&s=612x612&w=0&k=20&c=hQ1LRkjgu_g4aQzt3ZJHr1sc1kSH-2H6jTBdpNBfuJk=",
+
+      "https://media.istockphoto.com/id/1374747351/photo/modern-adjustable-dumbbell-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=CVHqx6MHwWASA7yKi73bD2GpPnXGR_DEF6719mmk8YQ=",
+
+      "https://media.istockphoto.com/id/173830040/photo/weights.webp?a=1&b=1&s=612x612&w=0&k=20&c=ibSqD2VAuFzW5krREv9F7b7DznOG_FnDJo-58QBOEq4="
+    ],
+    "sizes": [],
+    "availableColors": ["Black"],
+    "rating": 4,
+    "ratingCount": 187,
+    "category": "sports",
+    "subcategory": "fitness equipment",
+    "stock": 40,
+    "isFavorite": false
+  },
+  {
+    "id": "product-20",
+    "name": "PowerMax Kitchen Blender",
+    "Discountdescription": "Kitchen appliance mega sale",
+    "Productdescription": "Multi-speed blender for smoothies, sauces, and more.",
+    "price": 18500,
+    "discountedPrice": 15725,
+    "image": "https://plus.unsplash.com/premium_photo-1718043036199-d98bef36af46?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGtpdGNoZW4lMjBibGVuZGVyfGVufDB8fDB8fHww",
+    "views": [
+      "https://images.unsplash.com/photo-1740046702887-20cfb02df909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fGtpdGNoZW4lMjBibGVuZGVyfGVufDB8fDB8fHww",
+
+      "https://plus.unsplash.com/premium_photo-1718479228696-1c9abe09907b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxraXRjaGVuJTIwYmxlbmRlcnxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://plus.unsplash.com/premium_photo-1718043036192-f4c9a7e0e36c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGtpdGNoZW4lMjBibGVuZGVyfGVufDB8fDB8fHww",
+
+      "https://plus.unsplash.com/premium_photo-1681826669172-c544ce43f65d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8a2l0Y2hlbiUyMGJsZW5kZXJ8ZW58MHx8MHx8fDA%3D"
+    ],
+    "sizes": [],
+    "availableColors": ["White", "Black"],
+    "rating": 3,
+    "ratingCount": 152,
+    "category": "home appliances",
+    "subcategory": "blender",
+    "stock": 27,
+    "isFavorite": true
+  },
+
+  {
+    "id": "product-21",
+    "name": "Classic Leather Shoes",
+    "Discountdescription": "Special deal available",
+    "Productdescription": "Premium quality men's formal shoes.",
+    "price": 4500,
+    "discountedPrice": 3999,
+    "image": "https://images.unsplash.com/photo-1638609348722-aa2a3a67db26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww",
+    "views": [
+      "https://media.istockphoto.com/id/523113015/photo/mens-brown-shoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=H7krXfshd8LYK9O-0q-xFfr8ZT2utvm5aI-P444hzKs=",
+
+      "https://media.istockphoto.com/id/185011763/photo/shoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=iseVXyDsnnSkSrP32NFh8DXEPMaTx9kBlJXEM0QXCdM=",
+
+      "https://images.unsplash.com/photo-1641893843833-a006778dc00b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxlYXRoZXIlMjBzaG9lc3xlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://images.unsplash.com/photo-1616406432452-07bc5938759d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww"
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "Brown"],
+    "rating": 4,
+    "ratingCount": 120,
+    "category": "fashion",
+    "subcategory": "men's shoes",
+    "stock": 15,
+    "isFavorite": false
+  },
+  {
+    "id": "product-22",
+    "name": "ladies jeans",
+    "Discountdescription": "Get it now at a special price!",
+    "Productdescription": "Stylish women's evening wear.",
+    "price": 6000,
+    "discountedPrice": 5100,
+    "image": "https://images.unsplash.com/photo-1621783014861-dc6ef309bd05?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGxhZGllcyUyMHJlZCUyMGplYW5zfGVufDB8fDB8fHww",
+    "views": [
+      "https://images.unsplash.com/photo-1573920372704-3b46ad13f5f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGxhZGllcyUyMHJlZCUyMGplYW5zfGVufDB8fDB8fHww",
+
+      "https://images.unsplash.com/photo-1538873808457-e53085a169fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGxhZGllcyUyMHJlZCUyMGplYW5zfGVufDB8fDB8fHww",
+
+      "https://plus.unsplash.com/premium_photo-1673977133336-098f45be0932?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGxhZGllcyUyMHJlZCUyMGplYW5zfGVufDB8fDB8fHww",
+
+      "https://media.istockphoto.com/id/1307401279/photo/skinny-jeans-are-so-last-season.webp?a=1&b=1&s=612x612&w=0&k=20&c=LYUW80hWu_SAGkqXkqym3lW_FVGmE-VcAskgOKo8Ftw="
+    ],
+    "sizes": [],
+    "availableColors": ["Red"],
+    "rating": 4,
+    "ratingCount": 210,
+    "category": "fashion",
+    "subcategory": "women's dress",
+    "stock": 18,
+    "isFavorite": true
+  },
+  {
+    "id": "product-23",
+    "name": "Kid's Summer Outfit",
+    "Discountdescription": "Back to school sale!",
+    "Productdescription": "Comfortable clothes for kids.",
+    "price": 2500,
+    "discountedPrice": 2100,
+    "image": "https://images.unsplash.com/photo-1601925240970-98447486fcdb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww",
+    "views": [
+      "https://plus.unsplash.com/premium_photo-1675183689613-f28f2d39cb9b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://media.istockphoto.com/id/477001758/photo/dressing-closet-with-baby-clothes-arranged-on-hangers.webp?a=1&b=1&s=612x612&w=0&k=20&c=jrsPfX2RKzcIgIf1pNdQATmjTnmMqNP8TdIEPRgI5j4=",
+
+      "https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww",
+
+      "https://media.istockphoto.com/id/1208354758/photo/organic-cotton-clothing-on-the-kids-chair-in-children-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=1Hw0tUoZwakg6VEiKvmrnJjdrsM96-dfztyBshgvFN8="
+    ],
+    "sizes": [],
+    "availableColors": ["Yellow", "Blue"],
+    "rating": 4,
+    "ratingCount": 75,
+    "category": "fashion",
+    "subcategory": "kids' wear",
+    "stock": 25,
+    "isFavorite": false
+  },
+  {
+    "id": "product-24",
+    "name": "Leather Handbag",
+    "Discountdescription": "Luxury leather at a low price",
+    "Productdescription": "Elegant and durable handbag.",
+    "price": 3500,
+    "discountedPrice": 3100,
+    "image": "https://plus.unsplash.com/premium_photo-1670984076180-22a6c8f27f2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGVhdGhlciUyMGhhbmRiYWd8ZW58MHx8MHx8fDA%3D",
+    "views": [
+      "https://media.istockphoto.com/id/463378191/photo/women-handbag.webp?a=1&b=1&s=612x612&w=0&k=20&c=hvrE3ZboEW4AMIPu2lScqdHYpy5p2EdW0f4YwiFLFds=",
+
+      "https://images.unsplash.com/photo-1691480150204-66dd1eb77391?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGxlYXRoZXIlMjBoYW5kYmFnfGVufDB8fDB8fHww",
+
+      "https://media.istockphoto.com/id/1335392524/photo/womens-bag-of-red-color-genuine-leather-grey-painted-wooden-background-space-for-text.webp?a=1&b=1&s=612x612&w=0&k=20&c=Za6sthB5OOv6uyYcQqg_Dz7IqG1vKkqwTFFAFL6ezmI=",
+
+      "https://images.unsplash.com/photo-1691480250099-a63081ecfcb8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGxlYXRoZXIlMjBoYW5kYmFnfGVufDB8fDB8fHww"
+
+    ],
+    "sizes": [],
+    "availableColors": ["Black", "Tan"],
+    "rating": 4,
+    "ratingCount": 92,
+    "category": "fashion",
+    "subcategory": "bags",
+    "stock": 20,
+    "isFavorite": true
+  },
+  {
+    "id": "product-25",
+    "name": "Microwave Oven",
+    "Discountdescription": "Hot deal!",
+    "Productdescription": "800W countertop microwave with grill.",
+    "price": 9000,
+    "discountedPrice": 8300,
+    "image": "https://images.unsplash.com/photo-1668910231038-e342ad670789?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWljcm93YXZlJTIwb3ZlbnxlbnwwfHwwfHx8MA%3D%3D",
+    "views": [
+      "https://images.unsplash.com/photo-1626143508000-4b5904e5e84a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWljcm93YXZlJTIwb3ZlbnxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://plus.unsplash.com/premium_photo-1723892428471-c57c4c49b7d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fG1pY3Jvd2F2ZSUyMG92ZW58ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1661333482652-09fd50d33c95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fG1pY3Jvd2F2ZSUyMG92ZW58ZW58MHx8MHx8fDA%3D",
+      
+      "https://images.unsplash.com/photo-1707255280298-e540809f4c01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE1fHxtaWNyb3dhdmUlMjBvdmVufGVufDB8fDB8fHww"
+
+    ],
+    "sizes": [],
+    "availableColors": ["Silver"],
+    "rating": 4,
+    "ratingCount": 140,
+    "category": "home appliances",
+    "subcategory": "microwave",
+    "stock": 10,
+    "isFavorite": false
+  },
+  {
+    "id": "product-26",
+    "name": "Multi-speed Blender",
+    "Discountdescription": "Kitchen essential at a discount",
+    "Productdescription": "Blender with 4 speed settings.",
+    "price": 4000,
+    "discountedPrice": 3599,
+    "image": "https://media.istockphoto.com/id/997926924/photo/electric-blender-on-the-kitchen-table-3d-rendering.webp?a=1&b=1&s=612x612&w=0&k=20&c=47S8Sx8KR_grsEWVxBSB0-MaOxQowyxCLvrIUSA9nEA=",
+    "views": [
+      "https://media.istockphoto.com/id/1389902786/photo/young-woman-making-green-smoothie-at-home-kitchen.webp?a=1&b=1&s=612x612&w=0&k=20&c=tPExZ7OeZVwwuM4g1mZkTBcsu3V0IJnoIee9_5BWjLc=",
+
+      "https://media.istockphoto.com/id/2060488409/photo/new-modern-ai-high-technology-luxury-beautiful-electronic-product-design-multi-high-speed.webp?a=1&b=1&s=612x612&w=0&k=20&c=cWYDEniJyM108YN40IS5A4fS3EyFBDHFxDs5Ef50jzI=",
+
+      "https://media.istockphoto.com/id/905299384/photo/blender-with-fresh-vegetables.webp?a=1&b=1&s=612x612&w=0&k=20&c=2HgfG3hrkuKqpMAvxtMRM2_TLhz7k5LgQYyTD5tVyEM=",
+
+      "https://media.istockphoto.com/id/2060487938/photo/new-modern-ai-high-technology-luxury-beautiful-electronic-product-design-multi-high-speed.webp?a=1&b=1&s=612x612&w=0&k=20&c=q41wsAaaySv0CaNpLSKfxJnpgM2n65ki94DYeeRMRz8="
+    ],
+    "sizes": [],
+    "availableColors": ["White", "Black"],
+    "rating": 4,
+    "ratingCount": 80,
+    "category": "home appliances",
+    "subcategory": "blender",
+    "stock": 22,
+    "isFavorite": true
+  },
+  {
+    "id": "product-27",
+    "name": "Powerful Vacuum Cleaner",
+    "Discountdescription": "Clean more for less",
+    "Productdescription": "Bagless vacuum cleaner with strong suction.",
+    "price": 7500,
+    "discountedPrice": 6999,
+    "image": "https://media.istockphoto.com/id/461983497/photo/red-and-black-small-vacuum-cleaner.webp?a=1&b=1&s=612x612&w=0&k=20&c=6XB_SS2qG17dOVyZAiGn1ST0FDTPOQQmJ750FUSljnQ=",
+    "views": [
+      "https://media.istockphoto.com/id/461983497/photo/red-and-black-small-vacuum-cleaner.webp?a=1&b=1&s=612x612&w=0&k=20&c=6XB_SS2qG17dOVyZAiGn1ST0FDTPOQQmJ750FUSljnQ=",
+
+      "https://images.unsplash.com/photo-1603618090561-412154b4bd1b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHZhY3V1bSUyMGNsZWFuZXJ8ZW58MHx8MHx8fDA%3D",
+
+      "https://images.unsplash.com/photo-1632475855984-dc56de2af5f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHZhY3V1bSUyMGNsZWFuZXJ8ZW58MHx8MHx8fDA%3D",
+
+      "https://plus.unsplash.com/premium_photo-1664372899494-774422f7ce61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHZhY3V1bSUyMGNsZWFuZXJ8ZW58MHx8MHx8fDA%3D"
+    ],
+    "sizes": [],
+    "availableColors": ["Red"],
+    "rating": 4,
+    "ratingCount": 110,
+    "category": "home appliances",
+    "subcategory": "vacuum cleaner",
+    "stock": 12,
+    "isFavorite": false
+  },
+  {
+    "id": "product-28",
+    "name": "Air Conditioner",
+    "Discountdescription": "Cool deal!",
+    "Productdescription": "1.5HP split unit AC with remote.",
+    "price": 22000,
+    "discountedPrice": 20500,
+    "image": "https://media.istockphoto.com/id/2146633902/photo/hand-holding-remote-control-in-front-of-the-air-conditioner.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZNNfHUpZQX49q_L51SJKgFMG6xEKCLDDVpl3-gAVhGQ=",
+    "views": [
+      "https://media.istockphoto.com/id/1581204508/photo/portable-mobile-air-conditioner-stands-in-the-bedroom-at-home-copy-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=NwzVuyizDheA4RlwMDaBsXCsL1rn9-k18-vswO6deN4=",
+
+      "https://plus.unsplash.com/premium_photo-1714875083906-e9771ecea92f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGFpciUyMGNvbmRpdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+
+      "https://media.istockphoto.com/id/2200755380/photo/external-split-wall-type-of-house-air-conditioner-compressor-unit-installed-on-the-outside-of.webp?a=1&b=1&s=612x612&w=0&k=20&c=eXA88LUlltGJa1fHOKwXSqRIyq-hleI5n7Rf4TVfKys=",
+
+      "https://images.unsplash.com/photo-1621185036821-17b739803f34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGFpciUyMGNvbmRpdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+    ],
+    "sizes": [],
+    "availableColors": ["White"],
+    "rating": 5,
+    "ratingCount": 65,
+    "category": "home appliances",
+    "subcategory": "air conditioner",
+    "stock": 9,
+    "isFavorite": true
+  },
+  {
+    "id": "product-29",
+    "name": "Makeup Set",
+    "Discountdescription": "Glam up and save!",
+    "Productdescription": "Full set of professional makeup tools.",
+    "price": 5500,
+    "discountedPrice": 4999,
+    "image": "https://images.unsplash.com/photo-1500840216050-6ffa99d75160?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D",
+    "views": [
+      "https://plus.unsplash.com/premium_photo-1684407616442-8d5a1b7c978e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFrZXVwfGVufDB8fDB8fHww",
+
+      "https://media.istockphoto.com/id/2166413052/photo/close-up-cosmetic-eye-shadow-palette-lipstick-foundation-young-asian-beauty-girl-collect.webp?a=1&b=1&s=612x612&w=0&k=20&c=wKQzdCsyzHTbbjCywH6a-6OHII9U5DHe-Qm94OJ915E=",
+
+      "https://media.istockphoto.com/id/1737533288/photo/flat-lay-with-makeup-products-and-tools-on-color-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Iel8Vp7-BqYEVTbML6NoDwCY5-vBt7hrc56eAgtNbqQ=",
+
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFrZXVwfGVufDB8fDB8fHww"
+    ],
+    "sizes": [],
+    "availableColors": ["Multicolor"],
+    "rating": 4,
+    "ratingCount": 200,
+    "category": "beauty",
+    "subcategory": "makeup",
+    "stock": 14,
+    "isFavorite": false
+  },
+  {
+    "id": "product-30",
+    "name": "Floral Perfume",
+    "Discountdescription": "Fresh scent deal",
+    "Productdescription": "Long-lasting floral fragrance.",
+    "price": 3000,
+    "discountedPrice": 2700,
+    "image": "https://media.istockphoto.com/id/1328673585/photo/bottles-of-essential-oil-with-rosemary-thyme-cinnamon-sticks-cardamom-mint-lavender-rose.webp?a=1&b=1&s=612x612&w=0&k=20&c=9QUqJmDxSOVt0nhQZy2qgxGYMbgrWd1-MecBp9riEWQ=",
+    "views": [
+      "https://media.istockphoto.com/id/2175396731/photo/young-woman-smelling-perfume.webp?a=1&b=1&s=612x612&w=0&k=20&c=KO2RjHNZ9Ej29Povp0aj-XOXoM0X1H1lJ84vWkNJ1bg=",
+
+      "https://media.istockphoto.com/id/2149954181/photo/three-luxury-perfume-bottles.webp?a=1&b=1&s=612x612&w=0&k=20&c=5gilsvwRksAj90KATyWzKgHalog9cfaZScJJl-24ch8=",
+
+      "https://images.unsplash.com/photo-1506915925765-ed31516b9080?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D",
+      
+      "https://images.unsplash.com/photo-1624613533305-28d421d70875?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D"
+    ],
+    "sizes": [],
+    "availableColors": [],
+    "rating": 4,
+    "ratingCount": 132,
+    "category": "beauty",
+    "subcategory": "perfume",
+    "stock": 16,
+    "isFavorite": false
   }
 ]
