@@ -32,9 +32,9 @@ export default function ContactPage() {
   return (
     <div className="space-y-10">
         <Nav/>
-      <div className="space-y-12 flex w-[80%] mx-auto justify-between items-center h-[70vh]">
+      <div className="space-y-12 md:flex w-[80%] mx-auto justify-between items-center md:h-[70vh]">
         {/* Contact Details Section */}
-        <div className="max-w-[30%]">
+        <div className="md:max-w-[30%] w-full">
             <div className="bg-white rounded shadow p-6 text-center space-y-4">
             
               <p className=" space-y-3 text-sm">
@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
         </div>
 
-        <div className="w-[65%]">
+        <div className="md:w-[65%]">
             {!submitted ? (
             // Contact Form
             <form

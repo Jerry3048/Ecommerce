@@ -31,6 +31,11 @@ export const useProductStore = create((set, get) => ({
 
   monthCurrentBatch: [],
   monthSingleBatch: [],
+  newArrivalSingle1:[],
+  newArrivalSingle2:[],
+  newArrivalSingle3:[],
+  newArrivalSingle4:[],
+
 
   productDetails: [],
   productCurrentBatch: [],
@@ -50,7 +55,11 @@ export const useProductStore = create((set, get) => ({
 
       const flash = getBatches(shuffleArray(data), 8);
       const month = getBatches(shuffleArray(data), 4);
-      const single = getBatches(shuffleArray(data), 1);
+      const single1 = getBatches(shuffleArray(data), 1);
+      const single2 = getBatches(shuffleArray(data), 1);
+      const single3 = getBatches(shuffleArray(data), 1);
+      const single4 = getBatches(shuffleArray(data), 1);
+      const single5 = getBatches(shuffleArray(data), 1);
       const products = getBatches(shuffleArray(data), 8);
 
       set({
@@ -60,7 +69,11 @@ export const useProductStore = create((set, get) => ({
         flashBatchIndex: 0,
 
         monthCurrentBatch: month[0] || [],
-        monthSingleBatch: single[0] || [],
+        monthSingleBatch: single1[0] || [],
+        newArrivalSingle1:single2[0] || [],
+        newArrivalSingle2:single3[0] || [],
+        newArrivalSingle3:single4[0] || [],
+        newArrivalSingle4:single5[0] || [],
 
         productDetails: products,
         productCurrentBatch: products[0] || [],

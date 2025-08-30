@@ -103,10 +103,10 @@ function Hometop() {
 
   return (
     <div>
-      <div className="w-[80%] mx-auto flex">
+      <div className="w-[95%] mx-auto flex flex-col md:flex-row">
         {/* Sidebar */}
-        <div className="w-[20%] max-h-[60vh] overflow-y-scroll border-r-1 border-gray-300">
-          <ul className="flex flex-col gap-5 overflow-visible">
+        <div className="md:w-[40%] lg:w-[30%]  xl7:w-[30%] w-full max-h-[60vh] overflow-y-scroll border-r-0 md:border-r-1 border-gray-300">
+          <ul className="flex flex-row md:flex-col gap-5 overflow-visible">
             {dynamicCategories.map((cat, index) => (
               <li
                 key={index}
@@ -131,7 +131,7 @@ function Hometop() {
                 >
                   {cat.name}
                   {Array.isArray(cat.sub) && cat.sub.length > 0 && (
-                    <AiOutlineRight className="inline" />
+                    <AiOutlineRight className=" hidden md:inline" />
                   )}
                 </button>
               </li>
@@ -173,31 +173,49 @@ function Hometop() {
             </ul>
           )}
 
-        {/* Flash Tab Section */}
-        <div className="bg-black w-full m-3 mb-0 z-0 text-white max-h-[60vh] relative">
-          <div className="flex justify-between items-center w-[80%] mx-auto">
-            <div className="max-w-[40%] space-y-6 m-10">
-              <div className="flex space-x-3 items-center">
-                <img src={tab.logo} alt="Logo" className="w-10 h-10" />
-                <p>{tab.name}</p>
+        <div className="bg-black w-full px-4 md:px-8 lg:px-12 text-white relative py-8">
+          {/* Flex container */}
+          <div className="flex flex-col lg:flex-row justify-between items-center w-full lg:w-[80%] mx-auto">
+            
+            {/* Left content */}
+            <div className="w-full lg:w-1/2 space-y-4 md:space-y-6 mb-6 lg:mb-0 text-center lg:text-left">
+              {/* Logo + Name */}
+              <div className="flex justify-center lg:justify-start items-center space-x-3">
+                <img src={tab.logo} alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
+                <p className="text-lg md:text-xl">{tab.name}</p>
               </div>
-              <p className="font-inter font-semibold text-[40px]">
+
+              {/* Description */}
+              <p className="font-inter font-semibold text-2xl md:text-3xl lg:text-5xl leading-snug">
                 {tab.description}
               </p>
-              <NavLink to="#" className="underline">
+
+              {/* CTA link */}
+              <NavLink
+                to="#"
+                className="underline inline-flex items-center text-sm md:text-base"
+              >
                 {t("shopNow")}
                 <img src={Arrow} alt="Arrow" className="w-3 h-3 inline ml-2" />
               </NavLink>
             </div>
-            <div>
-              <img src={tab.image} alt="promo" className="w-70 h-70 mt-4" />
+
+            {/* Right content (Image) */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <img
+                src={tab.image}
+                alt="promo"
+                className="w-48 h-48 md:w-60 md:h-60 lg:w-80 lg:h-80 object-contain mt-4"
+              />
             </div>
           </div>
-          <div className="space-x-4 flex justify-center mb-10 absolute bottom-3 left-0 right-0">
+
+          {/* Dots navigation */}
+          <div className="flex justify-center space-x-3 mt-6 lg:mt-8 absolute bottom-3 left-0 right-0">
             {tabs.map((_, idx) => (
               <button
                 key={idx}
-                className={`w-2 h-2 rounded-full transition duration-200 border-1 ${
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition duration-200 border ${
                   activeTab === idx
                     ? "bg-red-700 border-white"
                     : "bg-gray-500 hover:bg-white/60"

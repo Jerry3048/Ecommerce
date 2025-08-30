@@ -28,22 +28,22 @@ function Timer({duration,display1, display2}) {
     <div>
           <div 
           style={{display:display1}}
-          className="font-semibold text-3xl flex gap-4 items-end">
+          className="font-semibold text-3xl flex gap-1 sm:gap-3 md:gap-4 items-end">
             <div className="flex flex-col items-center">
-              <span className="text-[11px]">Days</span>
+              <span className="text-xs">Days</span>
               <span>{timeParts.days}</span>
             </div>
-            <span className="text-orange-500 text-3xl mx-1">:</span>
+            <span className="text-orange-500 text-3xl md:mx-1">:</span>
             <div className="flex flex-col items-center">
               <span className="text-xs">Hours</span>
               <span>{timeParts.hours}</span>
             </div>
-            <span className="text-orange-500 text-3xl mx-1">:</span>
+            <span className="text-orange-500 text-3xl md:mx-1">:</span>
             <div className="flex flex-col items-center">
               <span className="text-xs">Minutes</span>
               <span>{timeParts.minutes}</span>
             </div>
-            <span className="text-orange-500 text-3xl mx-1">:</span>
+            <span className="text-orange-500 text-3xl md:mx-1">:</span>
             <div className="flex flex-col items-center">
               <span className="text-xs">Seconds</span>
               <span>{timeParts.seconds}</span>

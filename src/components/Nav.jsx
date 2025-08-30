@@ -8,12 +8,13 @@ import {
   AiOutlineCloseCircle,
   AiOutlineStar,
   AiOutlineLogout,
+  AiOutlineMenu,
 } from "react-icons/ai";
 import { NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/Authstore";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebase/Firebase"; // make sure this is your Firebase config
+import { auth } from "../firebase/Firebase";
 import { useLocation } from "react-router";
 import "../I18n";
 
@@ -22,8 +23,8 @@ function Nav() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
-  // const navigate = useNavigate();
 
   const hideIcons = ["/signup"].includes(location.pathname);
 
@@ -34,17 +35,16 @@ function Nav() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      setUser(null); // clear user from zustand
+      setUser(null);
       setDropdownOpen(false);
     } catch (error) {
       console.error("Logout failed:", error.message);
     }
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    const handleClickOutside = () => {
+      if (dropdownRef.current && !(dropdownRef.current).contains()) {
         setDropdownOpen(false);
       }
     };
@@ -54,32 +54,32 @@ function Nav() {
 
   return (
     <div>
-      <div className="bg-black text-white h-[40px] flex">
-        <div className="flex justify-end items-center w-[90%]">
-          <p>
-            {t("summerSale")}
-            <NavLink to="#" className="underline ml-3">
-              {t("shopNow")}
-            </NavLink>
-          </p>
-          <select
-            value={i18n.language}
-            onChange={handleLanguageChange}
-            className="ml-[25%] rounded bg-black outline-0"
-          >
-            <option value="en">English</option>
-            <option value="fr">French</option>
-          </select>
-        </div>
+      {/* Top bar */}
+      <div className="bg-black text-white h-[40px] flex justify-center space-x-10 items-center px-4 sm:px-10">
+        <p className="hidden sm:block text-sm">
+          {t("summerSale")}
+          <NavLink to="#" className="underline ml-3">
+            {t("shopNow")}
+          </NavLink>
+        </p>
+        <select
+          value={i18n.language}
+          onChange={handleLanguageChange}
+          className="rounded bg-black outline-0 text-sm "
+        >
+          <option value="en">English</option>
+          <option value="fr">French</option>
+        </select>
       </div>
 
-      <div className="border-b-1 border-gray-300 mt-4">
-        <div className="w-[80%] mx-auto flex justify-between items-center h-[50px]">
-          <div>
-            <p className="font-extrabold cursor-default">{t("exclusive")}</p>
-          </div>
+      {/* Navbar */}
+      <div className="border-b border-gray-300 mt-4">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-[60px]">
+          {/* Logo */}
+          <p className="font-extrabold text-lg cursor-default">{t("exclusive")}</p>
 
-          <nav className="flex space-x-8">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex gap-8">
             <NavLink to="/" className="hover:underline font-semibold">
               {t("home")}
             </NavLink>
@@ -99,24 +99,22 @@ function Nav() {
             )}
           </nav>
 
-          <div className="flex items-center">
-            <div className="flex items-center justify-center bg-gray-200 w-[250px] rounded px-2 ml-4 relative">
+          {/* Right side icons */}
+          <div className="flex items-center gap-3">
+            {/* Search */}
+            <div className="hidden sm:flex items-center bg-gray-200 w-[180px] md:w-[250px] rounded px-2 relative">
               <input
                 type="text"
                 placeholder={t("search") || "Search..."}
-                className="outline-none px-2 py-1"
+                className="w-full outline-none px-2 py-1 bg-transparent text-sm"
               />
-              <button>
-                <AiOutlineSearch
-                  size={20}
-                  className="absolute right-0 top-2 font-light"
-                />
-              </button>
+              <AiOutlineSearch size={20} className="absolute right-2 top-2" />
             </div>
 
             {!hideIcons && (
               <>
-                <div className="relative ml-4">
+                {/* Wishlist */}
+                <div className="relative">
                   <NavLink to="/Wishlist" aria-label="Wishlist">
                     <AiOutlineHeart size={24} />
                   </NavLink>
@@ -127,8 +125,8 @@ function Nav() {
                   )}
                 </div>
 
-                {/* Cart with count */}
-                <div className="relative ml-2">
+                {/* Cart */}
+                <div className="relative">
                   <NavLink to="/CartPage" aria-label="Cart">
                     <AiOutlineShoppingCart size={24} />
                   </NavLink>
@@ -138,47 +136,38 @@ function Nav() {
                     </span>
                   )}
                 </div>
+
+                {/* User Dropdown */}
                 {user && (
-                  <div
-                    className="relative ml-2 text-white h-7 w-7 flex justify-center items-center"
-                    ref={dropdownRef}
-                  >
+                  <div className="relative" ref={dropdownRef}>
                     <button
-                       className={`p-2 rounded-full transition-colors ${
-                        dropdownOpen? "bg-red-600 text-white" : " text-gray-700"
+                      className={`p-1 rounded-full transition-colors ${
+                        dropdownOpen ? "bg-red-600 text-white" : "text-gray-700"
                       }`}
-                         onClick={() => setDropdownOpen(!dropdownOpen)}
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                       <AiOutlineUser size={24} />
                     </button>
 
                     {dropdownOpen && (
-                      <div className="absolute right-0 top-6 mt-2  bg-black backdrop-blur-md text-white border rounded shadow-lg z-50 space-y-3 w-[230px] p-3">
-                        <NavLink
-                          to="/UserAccount"
-                          className=" w-full text-left flex gap-3 hover:bg-gray-600"
-                        >
-                          <AiOutlineUser size={24} />
-                          Manage My Account
+                      <div className="absolute right-[-200%] md:right-0 top-8 bg-black/50 text-white rounded shadow-lg z-50 w-[220px] p-3 space-y-2">
+                        <NavLink to="/UserAccount" className="flex gap-2 hover:bg-gray-600 p-2 rounded">
+                          <AiOutlineUser size={20} /> Manage My Account
                         </NavLink>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
-                          <AiOutlineShopping size={24} />
-                          My Order
+                        <button className="flex gap-2 hover:bg-gray-600 p-2 rounded w-full text-left">
+                          <AiOutlineShopping size={20} /> My Order
                         </button>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
-                          <AiOutlineCloseCircle size={24} />
-                          My Cancellation
+                        <button className="flex gap-2 hover:bg-gray-600 p-2 rounded w-full text-left">
+                          <AiOutlineCloseCircle size={20} /> My Cancellation
                         </button>
-                        <button className="w-full text-left flex gap-3 hover:bg-gray-600">
-                          <AiOutlineStar size={24} />
-                          My Reviews
+                        <button className="flex gap-2 hover:bg-gray-600 p-2 rounded w-full text-left">
+                          <AiOutlineStar size={20} /> My Reviews
                         </button>
                         <button
                           onClick={handleLogout}
-                          className="w-full text-left flex gap-3 hover:bg-gray-600"
+                          className="flex gap-2 hover:bg-gray-600 p-2 rounded w-full text-left"
                         >
-                          <AiOutlineLogout size={24} />
-                          Logout
+                          <AiOutlineLogout size={20} /> Logout
                         </button>
                       </div>
                     )}
@@ -186,8 +175,44 @@ function Nav() {
                 )}
               </>
             )}
+
+            {/* Mobile menu toggle */}
+            <button
+              className="md:hidden p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <AiOutlineMenu size={24} />
+            </button>
           </div>
         </div>
+
+        {/* Mobile Nav */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white text-black flex flex-col gap-4 p-4">
+            <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>
+              {t("home")}
+            </NavLink>
+            <NavLink to="/About" onClick={() => setMobileMenuOpen(false)}>
+              {t("about")}
+            </NavLink>
+            <NavLink to="/Contact" onClick={() => setMobileMenuOpen(false)}>
+              {t("contact")}
+            </NavLink>
+            {!user && (
+              <NavLink to="/signup" onClick={() => setMobileMenuOpen(false)}>
+                {t("signUp")}
+              </NavLink>
+            )}
+            <div className="flex items-center bg-gray-200 rounded px-2">
+              <input
+                type="text"
+                placeholder={t("search") || "Search..."}
+                className="w-full outline-none px-2 py-1 bg-transparent text-sm"
+              />
+              <AiOutlineSearch size={20} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

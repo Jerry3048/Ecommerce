@@ -53,20 +53,8 @@ const getBatches = (arr, size) => {
 };
 
 function Sections() {
-  const {
-    fetchProducts,
-    flashCurrentBatch,
-    nextFlashBatch,
-    prevFlashBatch,
-    nextProductBatch,
-    prevProductBatch,
-    productCurrentBatch,
-    monthCurrentBatch,
-    monthSingleBatch,
-    loading,
-    error,
-    AllItems,
-  } = useProductStore();
+  const {fetchProducts,flashCurrentBatch,nextFlashBatch,prevFlashBatch,nextProductBatch,prevProductBatch,productCurrentBatch,monthCurrentBatch,monthSingleBatch,newArrivalSingle1,
+newArrivalSingle2,newArrivalSingle3,newArrivalSingle4,loading,error,AllItems,} = useProductStore();
 
   const scrollRef = useRef(null);
 
@@ -170,12 +158,12 @@ function Sections() {
         </div>
 
         <div className="flex justify-between items-center mx-auto w-[80%]">
-          <div className="font-semibold text-3xl flex gap-4 items-end">
+          <div className="font-semibold text-3xl md:flex gap-4 items-end">
             <p className="mr-8">Flash Sales</p>
             <Timer duration={2 * 24 * 60 * 60 * 1000} display2={"none"} />
           </div>
 
-          <div className="flex space-x-4">
+          <div className="flex space-x-1 md:space-x-4">
             <button
               onClick={prevFlashBatch}
               className="bg-gray-400 w-7 h-7 rounded-full flex items-center justify-center"
@@ -267,7 +255,7 @@ function Sections() {
             {categoryError.message}
           </div>
         ) : (
-          <div className="flex gap-4">
+          <div className="grid lg:grid-cols-6 gap-4 grid-cols-3">
             {categoryCurrentBatch.map((cat, idx) => (
               <button
                 key={idx}
@@ -321,13 +309,15 @@ function Sections() {
           ) : error ? (
             <div className="text-red-500 text-center">{error.message}</div>
           ) : showAllMonth ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-4">
               {AllItems.map((item, idx) => (
-                <Card key={idx} {...item} hidePercentageOff />
+                <div key={idx} className="flex mx-auto w-full">
+                  <Card {...item} hidePercentageOff />
+                </div>
               ))}
             </div>
           ) : (
-            <div className="flex gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-4">
               {monthCurrentBatch.map((item, idx) => (
                 <div key={idx} className="flex mx-auto w-full">
                   <Card {...item} hidePercentageOff />
@@ -337,40 +327,41 @@ function Sections() {
           )}
 
           {/* category of 1 */}
-          <div className="">
-            {error ? (
-              <div className=" text-center">{error.message}</div>
-            ) : (
-              <div className="mx-auto">
-                {monthSingleBatch.map((single, idx) => (
-                  <div
-                    key={idx}
-                    className="w-full mb-5 mt-20 bg-black text-white flex justify-between"
-                  >
-                    <div className="font-semibold grid m-10 mr-0 space-y-5">
-                      <p className="text-green-400">Category</p>
-                      <p className="text-5xl ">{single.Discountdescription}</p>
-                      <Timer
-                        duration={2 * 24 * 60 * 60 * 1000}
-                        display1={"none"}
-                      />
-                      <button className="bg-green-400 p-2 w-[100px] h-[40px]">
-                        Buy Now
-                      </button>
-                    </div>
-                    <div>
-                      <img
-                        key={idx}
-                        src={single.image}
-                        alt={single.name}
-                        className="h-[350px] w-[500px] m-10"
-                      />
-                    </div>
+      <div className="">
+          {error ? (
+            <div className="text-center">{error.message}</div>
+          ) : (
+            <div className="mx-auto">
+              {monthSingleBatch.map((single, idx) => (
+                <div
+                  key={idx}
+                  className="w-full mb-5 mt-20 bg-black text-white flex flex-col lg:flex-row justify-between items-center"
+                >
+                  {/* Left content */}
+                  <div className="font-semibold grid m-6 lg:m-10 lg:mr-0 space-y-5 text-center lg:text-left">
+                    <p className="text-green-400 text-sm md:text-base">Category</p>
+                    <p className="text-2xl md:text-4xl lg:text-5xl">{single.Discountdescription}</p>
+                    
+                    <Timer duration={2 * 24 * 60 * 60 * 1000} display1={"none"} />
+                    
+                    <button className="bg-green-400 px-4 py-2 w-fit rounded-md text-black font-medium hover:bg-green-500 transition">
+                      Buy Now
+                    </button>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+
+                  {/* Right image */}
+                  <div className="w-full lg:w-1/2 flex justify-center">
+                    <img
+                      src={single.image}
+                      alt={single.name}
+                      className="w-full max-w-md h-auto object-contain p-4"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
         </div>
       </section>
 
@@ -411,13 +402,13 @@ function Sections() {
         ) : error ? (
           <div className="text-red-500 text-center">{error.message}</div>
         ) : showAllProduct ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-4">
             {AllItems.map((item, idx) => (
               <Card key={idx} {...item} hidePercentageOff />
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-4">
             {productCurrentBatch.map((item, idx) => (
               <div key={idx}>
                 <Card {...item} hidePercentageOff />
@@ -438,7 +429,7 @@ function Sections() {
       </section>
 
       {/* new arival     */}
-      <section className="mx-auto space-y-10 mt-10 w-[80%]">
+      <section className="mx-auto space-y-10 mt-10 w-[80%] hidden md:block">
         <div className="flex space-x-2">
           <div className="w-4 h-7 rounded-md bg-red-600"></div>
           <p className="text-rose-600 text-[10px] flex items-center">
@@ -458,15 +449,15 @@ function Sections() {
               <div className=" text-center">{error.message}</div>
             ) : (
               <div>
-                {monthSingleBatch.map((single, idx) => (
+                {newArrivalSingle1.map((single, idx) => (
                   <div key={idx}>
                     <img
                       key={idx}
                       src={single.image}
                       alt={single.name}
-                      className="h-[400px]"
+                      className="h-[400px] pr-5"
                     />
-                    <div className="absolute left-10 bottom-10 text-white w-[50%] space-y-7">
+                    <div className="absolute left-10 bottom-10 text-white w-[50%] space-y-7 bg-black/20">
                       <p className="text-3xl">Play Station 5</p>
                       <p>{single.Productdescription}</p>
                       <button className="font-semibold underline">
@@ -480,12 +471,12 @@ function Sections() {
           </div>
 
           <div className="grid grid-cols-1 gap-4">
-            <div className="relative">
+            <div className="relative w-[100%]">
               {error ? (
                 <div className=" text-center">{error.message}</div>
               ) : (
                 <div className="bg-black flex justify-end">
-                  {monthSingleBatch.map((single, idx) => (
+                  {newArrivalSingle2.map((single, idx) => (
                     <div key={idx}>
                       <img
                         key={idx}
@@ -507,12 +498,12 @@ function Sections() {
             </div>
 
             <div className="flex space-x-4 w-full">
-              <div className="relative">
+              <div className="relative ">
                 {error ? (
                   <div className=" text-center">{error.message}</div>
                 ) : (
-                  <div className="bg-black">
-                    {monthSingleBatch.map((single, idx) => (
+                  <div className="bg-black w-[100%]">
+                    {newArrivalSingle3.map((single, idx) => (
                       <div key={idx}>
                         <img
                           key={idx}
@@ -520,7 +511,7 @@ function Sections() {
                           alt={single.name}
                           className="h-[300px] p-5"
                         />
-                        <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
+                        <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3 bg-black/20">
                           <p className="text-2xl">{single.name}</p>
                           <p>{single.Productdescription}</p>
                           <button className="font-semibold underline">
@@ -537,8 +528,8 @@ function Sections() {
                 {error ? (
                   <div className=" text-center">{error.message}</div>
                 ) : (
-                  <div className="bg-black">
-                    {monthSingleBatch.map((single, idx) => (
+                  <div className="bg-black w-[100%]">
+                    {newArrivalSingle4.map((single, idx) => (
                       <div key={idx}>
                         <img
                           key={idx}
@@ -546,7 +537,7 @@ function Sections() {
                           alt={single.name}
                           className="h-[300px] p-5"
                         />
-                        <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3">
+                        <div className="absolute left-5 bottom-1 text-white w-[70%] space-y-3 bg-black/20">
                           <p className="text-2xl">{single.name}</p>
                           <p>{single.Productdescription}</p>
                           <button className="font-semibold underline">
@@ -564,35 +555,38 @@ function Sections() {
       </section>
 
       {/* Services Section */}
-      <section className="flex justify-between items-center mt-20 w-[60%] mx-auto mb-20">
-        {[
-          {
-            icon: <FaShippingFast size={32} />,
-            title: "FREE AND FAST DELIVERY",
-            desc: "Free delivery for all orders over $140",
-          },
-          {
-            icon: <FaHeadset size={32} />,
-            title: "24/7 CUSTOMER SERVICE",
-            desc: "Friendly 24/7 customer support",
-          },
-          {
-            icon: <FaMoneyBillWave size={32} />,
-            title: "MONEY BACK GUARANTEE",
-            desc: "We return money within 30 days",
-          },
-        ].map((service, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center">
-            <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
-              <span className="text-white bg bg-black rounded-full w-13 h-13 flex justify-center items-cente p-3">
-                {service.icon}
-              </span>
-            </div>
-            <p className="text-2xl font-semibold mt-2">{service.title}</p>
-            <p>{service.desc}</p>
-          </div>
-        ))}
-      </section>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 w-[90%] md:w-[80%] lg:w-[70%] mx-auto mb-20">
+  {[
+    {
+      icon: <FaShippingFast size={32} />,
+      title: "FREE AND FAST DELIVERY",
+      desc: "Free delivery for all orders over $140",
+    },
+    {
+      icon: <FaHeadset size={32} />,
+      title: "24/7 CUSTOMER SERVICE",
+      desc: "Friendly 24/7 customer support",
+    },
+    {
+      icon: <FaMoneyBillWave size={32} />,
+      title: "MONEY BACK GUARANTEE",
+      desc: "We return money within 30 days",
+    },
+  ].map((service, idx) => (
+    <div
+      key={idx}
+      className="flex flex-col items-center text-center px-5"
+    >
+      <div className="bg-gray-400 w-20 h-20 rounded-full flex justify-center items-center">
+        <span className="text-white bg-black rounded-full w-14 h-14 flex justify-center items-center p-3">
+          {service.icon}
+        </span>
+      </div>
+      <p className="text-xl md:text-2xl font-semibold mt-4">{service.title}</p>
+      <p className="text-sm md:text-base text-gray-300">{service.desc}</p>
+    </div>
+  ))}
+</section>
     </div>
   );
 }
