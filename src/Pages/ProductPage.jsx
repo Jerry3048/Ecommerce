@@ -20,13 +20,13 @@ function ProductsPage() {
   return (
     <div className="">
       <Nav />
-      <div className="p-6 min-h-[80vh] w-[80%] mx-auto">
+      <div className="p-6 min-h-[80vh] w-[90%]  lg:w-[80%] mx-auto">
         <h1 className="text-2xl font-bold mb-4 capitalize">
           {subcategory ? `${subcategory} in ${category}` : category}
         </h1>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
             {filteredProducts.map((product, index) => (
               <Card key={index} {...product} />
             ))}

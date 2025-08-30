@@ -105,7 +105,7 @@ function Hometop() {
     <div>
       <div className="w-[95%] mx-auto flex flex-col md:flex-row">
         {/* Sidebar */}
-        <div className="md:w-[40%] lg:w-[30%]  xl7:w-[30%] w-full max-h-[60vh] overflow-y-scroll border-r-0 md:border-r-1 border-gray-300">
+        <div className="md:w-[40%] lg:w-[30%]  xl7:w-[30%] w-full max-h-[60vh] overflow-y-scroll border-r-0 md:border-r-1 md:mr-2 border-gray-300">
           <ul className="flex flex-row md:flex-col gap-5 overflow-visible">
             {dynamicCategories.map((cat, index) => (
               <li

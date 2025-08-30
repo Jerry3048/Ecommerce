@@ -63,16 +63,16 @@ export default function ProductPage() {
   return (
     <div className="space-y-7">
       <Nav />
-      <div className="w-[80%] mx-auto p-10 lg:flex items-center justify-center lg:justify-left lg:gap-50 gap-20 lg:h-[70vh]">
+      <div className="w-[80%] md:p-10 mx-auto lg:flex items-center justify-center lg:justify-left gap-10 lg:h-[70vh]">
         {/* Images */}
-        <div className="flex gap-4">
-            <div className="grid gap-4">
+        <div className="md:flex  grid grid-cols-1 gap-4">
+            <div className="flex md:grid gap-4 overflow-x-auto overflow-visible md:overflow-hidden">
               {product.views.map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt={`thumb-${i}`}
-                  className={`h-[13vh] w-[100%] p-1 bg-gray-200 cursor-pointer ${
+                  className={`h-[110px] w-[200px] p-1 bg-gray-200 cursor-pointer ${
                     img === selectedImage ? "ring-2 ring-red-500" : ""
                   }`}
                   onClick={() => setSelectedImage(img)}
@@ -82,7 +82,7 @@ export default function ProductPage() {
             <img
               src={selectedImage || product.image}
               alt="Product"
-              className="max-h-[59vh] lg:w-[500px] rounded shadow bg-gray-200 p-6"
+              className=" h-[350px] md:h-[500px] w-full md:w-[400px] rounded shadow bg-gray-200 p-6"
             />
           </div>
 
