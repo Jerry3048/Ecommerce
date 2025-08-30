@@ -57,7 +57,7 @@ function Card({ id, name, price, discountedPrice, image, rating, ratingCount, hi
         onClick={() => navigate(`/product/${id}`)}
         className="cursor-pointer bg-gray-300"
       >
-        <img src={image} alt={name} className="h-70 rounded mx-auto w-full p-5" />
+        <img src={image} alt={name} className="h-70 rounded mx-auto w-[400px] p-5" />
       </div>
     <div className='w-[80%] mx-auto'>
       <h3 className="mt-2 text-lg font-semibold cursor-pointer" onClick={() => navigate(`/product/${id}`)}>
