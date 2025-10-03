@@ -11,7 +11,7 @@ function Home() {
     <div>
       <Nav />
       <Hometop/>
-     <Sections />
+      <Sections />
       <Footer />
     </div>
   );
