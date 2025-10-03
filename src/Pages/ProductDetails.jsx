@@ -63,7 +63,7 @@ export default function ProductPage() {
   return (
     <div className="space-y-7">
       <Nav />
-      <div className="w-[80%] md:p-10 mx-auto 2xl:flex items-center justify-center lg:justify-left gap-10 2xl:h-[70vh]">
+      <div className="w-[80%] md:p-10 mx-auto 2xl:flex items-center justify-center lg:justify-left gap-10 lg:h-[70vh]">
         {/* Images */}
         <div className="md:flex  grid grid-cols-1 gap-4">
             <div className="flex md:grid gap-4 overflow-x-auto overflow-visible md:overflow-hidden">
